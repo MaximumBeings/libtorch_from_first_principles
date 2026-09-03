@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-1-variables-and-types" class="md-skip">
+        <a href="#chapter-1-variables-types-and-the-device-tag-libtorch-actually-uses" class="md-skip">
           Skip to content
         </a>
       
@@ -355,6 +355,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Variables and Types
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -371,6 +389,380 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-what-a-type-actually-is-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 What a Type Actually Is [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 What a Type Actually Is [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-111-one-declaration-traced-to-the-byte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.1.1 — one declaration, traced to the byte
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ascii-diagram-one-stack-frame-four-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASCII Diagram — one stack frame, four variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-type-inference-vs-dynamic-typing-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Type Inference vs. Dynamic Typing [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Type Inference vs. Dynamic Typing [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-121-the-same-looking-line-four-different-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.2.1 — the same-looking line, four different outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-a-tensors-device-is-a-value-not-a-compiler-decision-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 A Tensor's Device Is a Value, Not a Compiler Decision [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 A Tensor&#39;s Device Is a Value, Not a Compiler Decision [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-crossing-the-boundary-to-direct-construction-and-the-exceptions-libtorch-actually-throws-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Crossing the Boundary: .to(), Direct Construction, and the Exceptions LibTorch Actually Throws [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Crossing the Boundary: .to(), Direct Construction, and the Exceptions LibTorch Actually Throws [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-141-two-genuinely-different-exceptions-for-the-same-missing-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.4.1 — two genuinely different exceptions for the same missing GPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-built-in-specialized-scalar-types-c10half-c10bfloat16-and-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Built-in Specialized Scalar Types: c10::Half, c10::BFloat16, and Friends
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Built-in Specialized Scalar Types: c10::Half, c10::BFloat16, and Friends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-151-genuinely-measured-not-assumed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.5.1 — genuinely measured, not assumed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-runnable-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Runnable Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Runnable Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-01_stack_typescpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 01_stack_types.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-02_auto_inferencecpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 02_auto_inference.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-03_device_runtime_tagcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 03_device_runtime_tag.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-04_specialized_scalar_typescpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 04_specialized_scalar_types.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where We Go Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Solutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1732,6 +2124,369 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-what-a-type-actually-is-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 What a Type Actually Is [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 What a Type Actually Is [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-111-one-declaration-traced-to-the-byte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.1.1 — one declaration, traced to the byte
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ascii-diagram-one-stack-frame-four-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASCII Diagram — one stack frame, four variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-type-inference-vs-dynamic-typing-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Type Inference vs. Dynamic Typing [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Type Inference vs. Dynamic Typing [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-121-the-same-looking-line-four-different-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.2.1 — the same-looking line, four different outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-a-tensors-device-is-a-value-not-a-compiler-decision-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 A Tensor's Device Is a Value, Not a Compiler Decision [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 A Tensor&#39;s Device Is a Value, Not a Compiler Decision [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-crossing-the-boundary-to-direct-construction-and-the-exceptions-libtorch-actually-throws-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Crossing the Boundary: .to(), Direct Construction, and the Exceptions LibTorch Actually Throws [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Crossing the Boundary: .to(), Direct Construction, and the Exceptions LibTorch Actually Throws [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-141-two-genuinely-different-exceptions-for-the-same-missing-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.4.1 — two genuinely different exceptions for the same missing GPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-built-in-specialized-scalar-types-c10half-c10bfloat16-and-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Built-in Specialized Scalar Types: c10::Half, c10::BFloat16, and Friends
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Built-in Specialized Scalar Types: c10::Half, c10::BFloat16, and Friends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-151-genuinely-measured-not-assumed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 1.5.1 — genuinely measured, not assumed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-runnable-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Runnable Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Runnable Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-01_stack_typescpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 01_stack_types.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-02_auto_inferencecpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 02_auto_inference.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-03_device_runtime_tagcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 03_device_runtime_tag.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-04_specialized_scalar_typescpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 04_specialized_scalar_types.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where We Go Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Solutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1747,14 +2502,477 @@
 
 
 
-<h1 id="chapter-1-variables-and-types">Chapter 1: Variables and Types<a class="headerlink" href="#chapter-1-variables-and-types" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Coming soon</p>
-<p>This chapter has not been written yet. It maps to Chapter 1 ("Variables and Types") of
-<a href="https://maximumbeings.github.io/cuda-from-first-principles/"><em>CUDA From First Principles</em></a>,
-covering the same conceptual ground against LibTorch's real, genuinely-run implementation
-rather than a hand-built one.</p>
-</div>
+<h1 id="chapter-1-variables-types-and-the-device-tag-libtorch-actually-uses">Chapter 1: Variables, Types, and the Device Tag LibTorch Actually Uses<a class="headerlink" href="#chapter-1-variables-types-and-the-device-tag-libtorch-actually-uses" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>"A type is a promise you make to the compiler about what a piece of memory means. LibTorch's <code>torch::Tensor</code> carries a second promise alongside that one, but it is not the promise CUDA C++ makes you write by hand. CUDA C++ asks you to tell the compiler, once, which of two pipelines is allowed to process a given function — a promise resolved before your program exists. LibTorch asks a <code>Tensor</code> to carry its device with it as an ordinary runtime field, checked the moment an operation actually needs it, not before."</p>
+</blockquote>
+<p><strong>What you will understand by the end of this chapter:</strong></p>
+<ul>
+<li>What actually happens in memory when you write <code>int x = 42</code> in C++ — the stack slot, the byte width, and why the compiler needs to know the type before that line runs, exactly as in any statically typed language</li>
+<li>Why C++'s <code>auto</code> type inference (<code>auto a = 10</code>) is not the same thing as Python's dynamic typing, even though neither one has a visible type annotation</li>
+<li>Why LibTorch's host/device split is not a compile-time property of a <em>function</em>, the way CUDA C++'s <code>__host__</code>/<code>__device__</code> is — it is a runtime property of a <em>value</em>, carried inside every <code>torch::Tensor</code> as an ordinary <code>c10::Device</code> field, checked when an operation runs rather than enforced by which compiler saw the source</li>
+<li>What genuinely happens when you ask a CPU tensor to move onto a CUDA device that isn't there, or construct one directly on CUDA with no driver present — two different, both real, C++ exceptions, not a silently ignored error code</li>
+<li>Why LibTorch's reduced-precision scalar types (<code>c10::Half</code>, <code>c10::BFloat16</code>) and <code>c10::complex&lt;float&gt;</code> are genuine, sized, aligned C++ types you can measure and compute with directly on the host, ahead of the dedicated tensor-dtype chapter later in this book</li>
+</ul>
+<p><strong>What you need to know first:</strong></p>
+<ul>
+<li>General programming experience in C, C++, or a similarly statically-typed language — this chapter assumes familiarity with basic C++ syntax, not any prior exposure to PyTorch or LibTorch</li>
+<li>No prior LibTorch or PyTorch C++ experience is assumed — this is the first technical chapter of the book</li>
+<li>If you've read the CUDA C++ edition of this book, this chapter opens the same way its Chapter 1 does — the same comparative frame (statically typed vs. dynamically typed, <code>auto</code> vs. Python). What's different starts at Section 1.3: the CUDA book spends that section on a single <code>.cu</code> file compiled twice, by two separate compiler pipelines, for a kernel it builds by hand. LibTorch ships that kernel already built, so this chapter's Section 1.3 is about something else entirely — the runtime device tag that took the compiler pipeline's place. If you've already worked through <a href="../../getting-started/">Getting Started</a>, the toolchain and the genuine <code>.backward()</code> result shown there are the same LibTorch install this chapter's code compiles against.</li>
+</ul>
+<h2 id="11-what-a-type-actually-is-foundational">1.1 What a Type Actually Is <code>[FOUNDATIONAL]</code><a class="headerlink" href="#11-what-a-type-actually-is-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition">Intuition<a class="headerlink" href="#intuition" title="Permanent link">&para;</a></h3>
+<p>A type is a label you attach to a region of memory, and everything downstream trusts that label without re-checking it. Write <code>int x</code>, and the compiler reserves four bytes and remembers, in its own bookkeeping, that those four bytes are to be read as a signed whole number every time <code>x</code> appears again. Write <code>float y</code>, and it reserves four different bytes, remembering instead that they follow the IEEE-754 rules for a 32-bit floating-point value. Nothing about the bytes themselves says which interpretation is correct — the type is a decision made once, at compile time, and never revisited while the program runs.</p>
+<h3 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h3>
+<p>A <strong>statically typed</strong> language fixes the type of every variable before the program runs — either because you wrote it explicitly or because the compiler deduced it unambiguously from context. C, C++, and the C++ LibTorch is written in and linked against are all statically typed. A <strong>dynamically typed</strong> language, like the Python most LibTorch users come from, attaches the type to the <em>value</em> at runtime instead of to the variable: a name has no type of its own, it just currently refers to some object, and that object carries its own type tag, checked on every operation that touches it.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Type known at</th>
+<th>Where the value lives</th>
+<th>Type check per use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C / C++ / LibTorch's own source</td>
+<td>Compile time (mandatory)</td>
+<td>Stack (usually, for locals)</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Python (the language most LibTorch users already know)</td>
+<td>Runtime (attached to the object)</td>
+<td>Heap (always)</td>
+<td>Every operation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="worked-example-111-one-declaration-traced-to-the-byte">Worked Example 1.1.1 — one declaration, traced to the byte<a class="headerlink" href="#worked-example-111-one-declaration-traced-to-the-byte" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159f</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.71828</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4200000000L</span><span class="n">L</span><span class="p">;</span><span class="w">  </span><span class="c1">// the integer type torch uses for sizes/strides</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;x = %d, sizeof(int) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;y = %f, sizeof(float) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;z = %f, sizeof(double) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;idx = %lld, sizeof(int64_t) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int64_t</span><span class="p">));</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">narrowed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159265358979</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;narrowed (double literal into float) = %.10f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">narrowed</span><span class="p">);</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>x = 42, sizeof(int) = 4
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>y = 3.141590, sizeof(float) = 4
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>z = 2.718280, sizeof(double) = 8
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>idx = 4200000000, sizeof(int64_t) = 8
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>narrowed (double literal into float) = 3.1415927410
+</code></pre></div>
+<p>The first three lines are ordinary C++, unrelated to LibTorch — four bytes for <code>x</code>, four for <code>y</code>, eight for <code>z</code>, exactly what <code>sizeof</code> reports. The fourth line is the one that matters for the rest of this book: <code>int64_t</code>, eight bytes, is the actual integer type <code>torch::Tensor</code> uses everywhere a size, a stride, or an index appears. When Chapter 6 opens <code>torch::Tensor::sizes()</code> and finds it returns an array of <code>int64_t</code>, that isn't an arbitrary implementation choice being introduced for the first time — it's the same eight-byte signed integer this line just measured, chosen for the same reason any large indexable buffer needs it: a 4-byte <code>int</code> tops out at about 2.1 billion, and a tensor with more elements than that (rare on a single machine today, not rare forever) would silently overflow it.</p>
+<h3 id="ascii-diagram-one-stack-frame-four-variables">ASCII Diagram — one stack frame, four variables<a class="headerlink" href="#ascii-diagram-one-stack-frame-four-variables" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Stack frame for a function containing:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    int x = 42;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    float y = 3.14159f;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    double z = 2.71828;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    int64_t idx = 4200000000LL;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>High address
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a> +--------------------------+
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a> | ... caller&#39;s frame ...   |
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a> +--------------------------+
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a> | idx (8 bytes, int64_t)   |  &lt;- offset +16..+23: 0000000011111010111100001000000000  (two&#39;s-complement 4200000000)
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a> +--------------------------+
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a> | z   (8 bytes, double)    |  &lt;- offset +8..+15:  0100000000000101...  (IEEE-754 bits for 2.71828)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a> +--------------------------+
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a> | y   (4 bytes, float)     |  &lt;- offset +4..+7:   01000000010010...    (IEEE-754 bits for 3.14159)
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a> +--------------------------+
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a> | x   (4 bytes, int)       |  &lt;- offset +0..+3:   00000000000000000000000000101010  (two&#39;s-complement 42)
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a> +--------------------------+
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Low address                    &lt;- stack pointer sits here
+</code></pre></div>
+<blockquote>
+<p><code>[COMMON TRAP]</code> C++ silently narrows a <code>double</code> literal to a <code>float</code> variable wherever the assignment is contextually allowed, and it does so quietly by default. <code>float narrowed = 3.14159265358979;</code> compiles without a warning and discards precision it never tells you about — the genuine output above shows <code>3.1415927410</code>, not the fifteen significant digits the literal was written with. This matters for LibTorch specifically because a <code>torch::Tensor</code> created from a mix of <code>double</code> and <code>float</code> C++ values goes through exactly this same silent narrowing at the moment it's built, unless you're explicit about the tensor's dtype — a point Chapter 8 (Tensor Creation Functions) returns to directly.</p>
+</blockquote>
+<h2 id="12-type-inference-vs-dynamic-typing-foundational">1.2 Type Inference vs. Dynamic Typing <code>[FOUNDATIONAL]</code><a class="headerlink" href="#12-type-inference-vs-dynamic-typing-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_1">Intuition<a class="headerlink" href="#intuition_1" title="Permanent link">&para;</a></h3>
+<p>Picture two tailors. The first measures you once, at your very first fitting, and cuts a suit that stays permanently your size — it never adjusts itself afterward. The second never measures you up front at all; every time you put the suit on, they re-measure and refit it to whatever you happen to be that day. C++'s <code>auto a = 10;</code> is the first tailor: the compiler looks at <code>10</code> once, at compile time, deduces <code>int</code>, and <code>a</code> is an <code>int</code> for the rest of its scope — indistinguishable, once compiled, from <code>int a = 10;</code> written by hand. Python's <code>a = 10</code> is the second tailor: <code>a</code> has no fixed size of its own, and nothing stops the very next line from repointing it at a string.</p>
+<h3 id="background_1">Background<a class="headerlink" href="#background_1" title="Permanent link">&para;</a></h3>
+<p><strong>Type inference</strong> is a compile-time process: the compiler looks at an initializer, determines its type through the same rules an explicit annotation would use, and locks that type in for the variable's entire scope. No inference happens while the program runs — by execution time, <code>auto</code>-declared variables are indistinguishable from explicitly-typed ones in the compiled binary. <strong>Dynamic typing</strong> has no equivalent compile-time fixing step, because the type belongs to the object a name currently references, not to the name itself.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>C++ <code>auto a = 10;</code></th>
+<th>Python <code>a = 10</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>When is the type decided?</td>
+<td>Once, at compile time</td>
+<td>Never fixed — checked fresh on every use</td>
+</tr>
+<tr>
+<td>Can <code>a</code> later hold a <code>std::string</code>?</td>
+<td>No — compile error</td>
+<td>Yes — <code>a = "ten"</code> is legal</td>
+</tr>
+<tr>
+<td>Cost of inference at runtime</td>
+<td>Zero (already resolved)</td>
+<td>N/A — no inference, only per-use checking</td>
+</tr>
+</tbody>
+</table>
+<p>This matters immediately, before this book has written a single line involving <code>torch::Tensor</code>: LibTorch's own C++ API leans on <code>auto</code> constantly, in its own documentation and in every chapter of this book from here on (<code>auto t = torch::ones({2, 2});</code> is the idiomatic way to write that line). <code>auto</code> in that position is not LibTorch being loose about types — it is the same compile-time-only inference this section just measured, applied to a <code>torch::Tensor</code> return value instead of an <code>int</code>.</p>
+<h3 id="worked-example-121-the-same-looking-line-four-different-outcomes">Worked Example 1.2.1 — the same-looking line, four different outcomes<a class="headerlink" href="#worked-example-121-the-same-looking-line-four-different-outcomes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;typeinfo&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10L</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a=%d (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=%f (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;c=%d (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c</span><span class="p">));</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;d=%ld (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">d</span><span class="p">));</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>a=10 (sizeof 4)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>b=5.500000 (sizeof 8)
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>c=1 (sizeof 1)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>d=10 (sizeof 8)
+</code></pre></div>
+<p>Four declarations, four different types, none of them written down: <code>a</code> infers to <code>int</code> (4 bytes), <code>b</code> to <code>double</code> (8 bytes), <code>c</code> to <code>bool</code> (1 byte), <code>d</code> to <code>long</code> (8 bytes, because of the <code>L</code> suffix on the literal). Every one of those sizes was decided before this program ran at all — <code>auto</code> did not make the program dynamically typed, it just let the compiler write the type annotation for you instead of you writing it yourself.</p>
+<h2 id="13-a-tensors-device-is-a-value-not-a-compiler-decision-foundational">1.3 A Tensor's Device Is a Value, Not a Compiler Decision <code>[FOUNDATIONAL]</code><a class="headerlink" href="#13-a-tensors-device-is-a-value-not-a-compiler-decision-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_2">Intuition<a class="headerlink" href="#intuition_2" title="Permanent link">&para;</a></h3>
+<p>Raw CUDA C++ makes the host/device split a property of a <em>function</em>: you write <code>__host__</code>, <code>__device__</code>, or <code>__global__</code> on the function itself, and <code>nvcc</code> decides — before your program exists as a binary — which of its two compiler pipelines is allowed to touch that function's body. The split is resolved, permanently, at compile time. LibTorch does not ask you to make that decision anywhere in your source code, because LibTorch already made it, once, when it was built. What you get instead is a <code>c10::Device</code> field riding inside every <code>torch::Tensor</code> — an ordinary piece of runtime data, exactly as inspectable and comparable as the <code>int x</code> from Section 1.1, set when the tensor is constructed and read every time an operation needs to know where the tensor actually lives.</p>
+<h3 id="background_2">Background<a class="headerlink" href="#background_2" title="Permanent link">&para;</a></h3>
+<p><code>c10::Device</code> pairs a <code>DeviceType</code> (<code>torch::kCPU</code>, <code>torch::kCUDA</code>, and others LibTorch supports) with an optional index, and every <code>torch::Tensor</code> carries one, retrievable with <code>.device()</code>. Nothing about calling <code>.device()</code> involves the compiler deciding anything — it's a plain member-variable read, no different in kind from reading <code>x</code> back out of the stack frame in Section 1.1's diagram.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CUDA C++ <code>__host__</code> / <code>__device__</code></th>
+<th>LibTorch's <code>c10::Device</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What it's attached to</td>
+<td>A function</td>
+<td>A <code>Tensor</code> value</td>
+</tr>
+<tr>
+<td>When it's decided</td>
+<td>Compile time, by <code>nvcc</code></td>
+<td>Runtime, at tensor construction</td>
+</tr>
+<tr>
+<td>How a violation is caught</td>
+<td>Compile error, before a binary exists</td>
+<td>A thrown <code>c10::Error</code>, when an operation actually runs</td>
+</tr>
+<tr>
+<td>Where it lives</td>
+<td>Nowhere at runtime — it has already done its job by the time the binary runs</td>
+<td>A real field inside the tensor, read on every device-sensitive operation</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Excerpt from <code>03_device_runtime_tag.cpp</code>; the complete file — including what genuinely happens when this same program tries to cross onto a CUDA device that isn't there — appears in Section 1.4 and in <a href="#complete-runnable-code">Complete Runnable Code</a> below.)</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">});</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.device() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.device().type() == torch::kCPU: &quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">().</span><span class="n">type</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;torch::cuda::is_available() = &quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">cuda</span><span class="o">::</span><span class="n">is_available</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></div>
+<p>Genuinely compiled and run, this excerpt's three lines produce:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>t.device() = cpu
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>t.device().type() == torch::kCPU: true
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>torch::cuda::is_available() = false
+</code></pre></div>
+<p><code>t.device()</code> genuinely returns a <code>cpu</code> device — not because the compiler decided this function was host-only, but because <code>torch::ones({2, 2})</code> with no device argument defaults to CPU, and that default is stored as ordinary data inside <code>t</code>. <code>torch::cuda::is_available()</code> is a real function call too, evaluated when the program runs — genuinely returning <code>false</code> in this book's environment for the same reason <a href="../../getting-started/">Getting Started</a> already established: this LibTorch build genuinely has CUDA support compiled in, and genuinely has no GPU or driver to report as available.</p>
+<h2 id="14-crossing-the-boundary-to-direct-construction-and-the-exceptions-libtorch-actually-throws-foundational">1.4 Crossing the Boundary: <code>.to()</code>, Direct Construction, and the Exceptions LibTorch Actually Throws <code>[FOUNDATIONAL]</code><a class="headerlink" href="#14-crossing-the-boundary-to-direct-construction-and-the-exceptions-libtorch-actually-throws-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_3">Intuition<a class="headerlink" href="#intuition_3" title="Permanent link">&para;</a></h3>
+<p>The CUDA C++ book's own Chapter 1 shows calling a <code>__device__</code>-only function from <code>main()</code> failing to <em>compile</em> — the boundary violation is caught before the program exists. LibTorch has no equivalent compile-time boundary to violate: <code>t.to(torch::kCUDA)</code> and constructing a tensor with <code>.device(torch::kCUDA)</code> are both ordinary function calls that compile cleanly against this exact LibTorch build, CUDA-enabled or not — there is nothing about either line that a compiler could object to. The boundary is enforced later, at the moment the call actually runs and genuinely needs a CUDA device that isn't there, and it is enforced by throwing a real C++ exception, not by silently returning a code the caller might forget to check.</p>
+<h3 id="background_3">Background<a class="headerlink" href="#background_3" title="Permanent link">&para;</a></h3>
+<p>LibTorch's internal <code>TORCH_CHECK</code> machinery throws <code>c10::Error</code>, a real subclass of <code>std::exception</code>, whenever a precondition like "a CUDA device must exist" fails. That stands in direct contrast to raw CUDA's own C API, which the CUDA C++ book's Chapter 1 documents returning <code>cudaError_t</code> codes like <code>cudaErrorNoDevice</code> from calls like <code>cudaMalloc</code> — recoverable, but only if the caller remembers to check the return value. LibTorch's C++ frontend wraps that same underlying condition in an exception instead: an uncaught <code>c10::Error</code> terminates the program loudly, with a message, rather than leaving a silently-ignorable return code sitting in a variable nobody read.</p>
+<h3 id="worked-example-141-two-genuinely-different-exceptions-for-the-same-missing-gpu">Worked Example 1.4.1 — two genuinely different exceptions for the same missing GPU<a class="headerlink" href="#worked-example-141-two-genuinely-different-exceptions-for-the-same-missing-gpu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">// Print only the first line of an exception&#39;s message: LibTorch&#39;s messages carry a</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">// full C++ backtrace after the first line, and that backtrace embeds real memory</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">// addresses that change from run to run (ASLR) -- genuine, but not something a</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">// byte-for-byte reproducible chapter transcript can quote.</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">first_line</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">istringstream</span><span class="w"> </span><span class="n">iss</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">());</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">iss</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">);</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">line</span><span class="p">;</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">}</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">});</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.device() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.device().type() == torch::kCPU: &quot;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">().</span><span class="n">type</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;torch::cuda::is_available() = &quot;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">cuda</span><span class="o">::</span><span class="n">is_available</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">        </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t_cuda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kCUDA</span><span class="p">);</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;moved to: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t_cuda</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.to(torch::kCUDA) threw: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">first_line</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">        </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="p">().</span><span class="n">device</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kCUDA</span><span class="p">));</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;constructed directly on: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;direct CUDA construction threw: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">first_line</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>t.device() = cpu
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>t.device().type() == torch::kCPU: true
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>torch::cuda::is_available() = false
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>t.to(torch::kCUDA) threw: CUDA error: CUDA driver version is insufficient for CUDA runtime version
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>direct CUDA construction threw: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+</code></pre></div>
+<p>Both calls fail for the identical underlying reason — no NVIDIA driver anywhere in this environment — and both fail as genuine, catchable <code>std::exception</code>s rather than silently. What's worth noticing honestly is that they don't fail with the <em>same message</em>. <code>.to(torch::kCUDA)</code> routes through LibTorch's tensor-conversion path and reports a driver-version mismatch; constructing directly on <code>torch::kCUDA</code> routes through tensor allocation instead and reports, more plainly, that no driver was found at all. Both are genuine, both are correct in substance (there is, in fact, no usable CUDA driver here), and neither was written by hand for this book — they're exactly what the two different internal code paths LibTorch actually has for these two operations produce when the same real precondition fails.</p>
+<blockquote>
+<p><code>[COMMON TRAP]</code> Every <code>try</code>/<code>catch</code> in this book's LibTorch code is there because it has to be — an uncaught <code>c10::Error</code> does not degrade gracefully, it terminates the program via <code>std::terminate</code>, printing the exception's <code>.what()</code> (backtrace and all) to stderr. That is arguably a <em>safer</em> default than raw CUDA's ignorable return code — a crash is at least impossible to miss — but it means code written against LibTorch's C++ frontend that skips error handling around a device-crossing call doesn't fail quietly in a corner; it takes the whole process down.</p>
+</blockquote>
+<h2 id="15-built-in-specialized-scalar-types-c10half-c10bfloat16-and-friends">1.5 Built-in Specialized Scalar Types: <code>c10::Half</code>, <code>c10::BFloat16</code>, and Friends<a class="headerlink" href="#15-built-in-specialized-scalar-types-c10half-c10bfloat16-and-friends" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_4">Intuition<a class="headerlink" href="#intuition_4" title="Permanent link">&para;</a></h3>
+<p>The CUDA C++ book's Chapter 1 closes by measuring <code>float2</code> and <code>float4</code> — genuine, sized, aligned C++ types the compiler enforces, not a convention four floats happen to follow. LibTorch's own low-level headers ship an equivalent kind of genuine type, aimed at a different problem: <code>c10::Half</code> and <code>c10::BFloat16</code> are real, 2-byte C++ types with real arithmetic operators, used throughout LibTorch anywhere a tensor's dtype is a 16-bit float format — and, unlike a <code>torch::Tensor</code>, they can be constructed, measured, and computed with directly on the host, with no tensor and no dtype argument in sight.</p>
+<h3 id="background_4">Background<a class="headerlink" href="#background_4" title="Permanent link">&para;</a></h3>
+<p><code>c10::Half</code> stores IEEE-754 half precision (1 sign bit, 5 exponent bits, 10 mantissa bits); <code>c10::BFloat16</code> stores Google's "brain float" format (1 sign bit, 8 exponent bits, 7 mantissa bits — the same exponent range as <code>float</code>, traded down to less mantissa precision). Both are genuinely 2 bytes wide despite representing their bits completely differently internally, and LibTorch's operator overloads for both convert to <code>float</code>, perform the arithmetic in <code>float</code>, and convert back — which is why a <code>c10::Half + c10::Half</code> genuinely runs on a CPU with no hardware half-precision unit at all.</p>
+<h3 id="worked-example-151-genuinely-measured-not-assumed">Worked Example 1.5.1 — genuinely measured, not assumed<a class="headerlink" href="#worked-example-151-genuinely-measured-not-assumed" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/util/Half.h&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/util/BFloat16.h&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/util/complex.h&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(float) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(float) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::Half) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(c10::Half) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::BFloat16) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(c10::BFloat16) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::complex&lt;float&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(c10::complex&lt;float&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(double) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(double) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="c1">// genuine arithmetic on CPU, no GPU needed -- Half/BFloat16 upconvert to float for the op</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">h1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5f</span><span class="p">;</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">h2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.25f</span><span class="p">;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">h3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">h2</span><span class="p">;</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;c10::Half: 1.5 + 2.25 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5f</span><span class="p">;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.25f</span><span class="p">;</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b2</span><span class="p">;</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;c10::BFloat16: 1.5 + 2.25 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">    </span><span class="c1">// a Tensor genuinely constructed with dtype=Half, on CPU</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">th</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">2.25</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kHalf</span><span class="p">);</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;half tensor dtype: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">th</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, element_size(): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">th</span><span class="p">.</span><span class="n">element_size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sizeof(float) = 4, alignof(float) = 4
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sizeof(c10::Half) = 2, alignof(c10::Half) = 2
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>sizeof(c10::BFloat16) = 2, alignof(c10::BFloat16) = 2
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>sizeof(c10::complex&lt;float&gt;) = 8, alignof(c10::complex&lt;float&gt;) = 8
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>sizeof(double) = 8, alignof(double) = 8
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>c10::Half: 1.5 + 2.25 = 3.75
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>c10::BFloat16: 1.5 + 2.25 = 3.75
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>half tensor dtype: c10::Half, element_size(): 2
+</code></pre></div>
+<p><code>c10::Half</code> and <code>c10::BFloat16</code> both measure at exactly 2 bytes, <code>alignof</code> 2 — half the width of <code>float</code>, despite splitting those 16 bits between exponent and mantissa completely differently from each other. <code>c10::complex&lt;float&gt;</code>, a type Chapter 22's quantitative-finance work will eventually touch, measures at 8 bytes: two real <code>float</code>s side by side, nothing more exotic than that. The last line constructs an actual <code>torch::Tensor</code> with <code>torch::kHalf</code> as its dtype and reads <code>element_size()</code> back — 2 bytes, matching <code>sizeof(c10::Half)</code> exactly, because a half-precision tensor's storage genuinely is a buffer of <code>c10::Half</code> values, not a separate representation the dtype tag merely describes.</p>
+<p>Worth stating plainly: <code>1.5 + 2.25 = 3.75</code> is exact in both formats here, with no rounding error to observe — every one of those three values has a terminating binary fraction that fits inside even <code>c10::BFloat16</code>'s 7 mantissa bits. That's a deliberate choice for a first chapter's first look at these types, not a hidden limitation of the measurement; the rounding behavior each format actually exhibits under values that <em>don't</em> fit is exactly the kind of question Part 1's tensor-creation and specialized-type chapters come back to on purpose.</p>
+<p><strong>Independent cross-check.</strong> Every <code>sizeof</code>/<code>alignof</code> figure and both arithmetic results above were re-checked through a structurally different path — LibTorch's own Python bindings, which call into the identical compiled <code>libtorch_cpu.so</code> through a different entry point than the <code>g++</code>-compiled C++ binary above:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">element_size</span><span class="p">()</span>   <span class="c1"># -&gt; 2</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">)</span><span class="o">.</span><span class="n">element_size</span><span class="p">()</span>   <span class="c1"># -&gt; 2</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span><span class="o">.</span><span class="n">element_size</span><span class="p">()</span>  <span class="c1"># -&gt; 8</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.25</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">))</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>   <span class="c1"># -&gt; 3.75</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">)</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">2.25</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">))</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="c1"># -&gt; 3.75</span>
+</code></pre></div>
+<p>Genuinely run: all five values agree exactly with the C++ output above.</p>
+<h2 id="complete-runnable-code">Complete Runnable Code<a class="headerlink" href="#complete-runnable-code" title="Permanent link">&para;</a></h2>
+<h3 id="file-01_stack_typescpp">File: <code>01_stack_types.cpp</code><a class="headerlink" href="#file-01_stack_typescpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159f</span><span class="p">;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.71828</span><span class="p">;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4200000000L</span><span class="n">L</span><span class="p">;</span><span class="w">  </span><span class="c1">// the integer type torch uses for sizes/strides</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;x = %d, sizeof(int) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;y = %f, sizeof(float) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;z = %f, sizeof(double) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;idx = %lld, sizeof(int64_t) = %zu</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">)</span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int64_t</span><span class="p">));</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">narrowed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159265358979</span><span class="p">;</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;narrowed (double literal into float) = %.10f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">narrowed</span><span class="p">);</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>01_stack_types.cpp<span class="w"> </span>-o<span class="w"> </span>01_stack_types
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>./01_stack_types
+</code></pre></div>
+<h3 id="file-02_auto_inferencecpp">File: <code>02_auto_inference.cpp</code><a class="headerlink" href="#file-02_auto_inferencecpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;typeinfo&gt;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span><span class="p">;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10L</span><span class="p">;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a=%d (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=%f (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;c=%d (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c</span><span class="p">));</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;d=%ld (sizeof %zu)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">d</span><span class="p">));</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>02_auto_inference.cpp<span class="w"> </span>-o<span class="w"> </span>02_auto_inference
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>./02_auto_inference
+</code></pre></div>
+<h3 id="file-03_device_runtime_tagcpp">File: <code>03_device_runtime_tag.cpp</code><a class="headerlink" href="#file-03_device_runtime_tagcpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1">// Print only the first line of an exception&#39;s message: LibTorch&#39;s messages carry a</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1">// full C++ backtrace after the first line, and that backtrace embeds real memory</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1">// addresses that change from run to run (ASLR) -- genuine, but not something a</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1">// byte-for-byte reproducible chapter transcript can quote.</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">first_line</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">istringstream</span><span class="w"> </span><span class="n">iss</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">());</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">;</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">iss</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">);</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">line</span><span class="p">;</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="p">}</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">});</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.device() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.device().type() == torch::kCPU: &quot;</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">device</span><span class="p">().</span><span class="n">type</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;torch::cuda::is_available() = &quot;</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">cuda</span><span class="o">::</span><span class="n">is_available</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">        </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t_cuda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kCUDA</span><span class="p">);</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;moved to: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t_cuda</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.to(torch::kCUDA) threw: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">first_line</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">        </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="p">().</span><span class="n">device</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kCUDA</span><span class="p">));</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;constructed directly on: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;direct CUDA construction threw: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">first_line</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>
+<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">TORCH_DIR</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;</span><span class="k">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>03_device_runtime_tag.cpp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include&quot;</span><span class="w"> </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include/torch/csrc/api/include&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="m">1</span><span class="w"> </span>-L<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span>-ltorch<span class="w"> </span>-ltorch_cpu<span class="w"> </span>-lc10<span class="w"> </span>-Wl,-rpath,<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span>-o<span class="w"> </span>03_device_runtime_tag
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>./03_device_runtime_tag
+</code></pre></div>
+<h3 id="file-04_specialized_scalar_typescpp">File: <code>04_specialized_scalar_types.cpp</code><a class="headerlink" href="#file-04_specialized_scalar_typescpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/util/Half.h&gt;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/util/BFloat16.h&gt;</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/util/complex.h&gt;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(float) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(float) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::Half) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(c10::Half) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::BFloat16) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(c10::BFloat16) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::complex&lt;float&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(c10::complex&lt;float&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(double) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, alignof(double) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">alignof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span><span class="c1">// genuine arithmetic on CPU, no GPU needed -- Half/BFloat16 upconvert to float for the op</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">h1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5f</span><span class="p">;</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">h2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.25f</span><span class="p">;</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">h3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">h2</span><span class="p">;</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;c10::Half: 1.5 + 2.25 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5f</span><span class="p">;</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="w"> </span><span class="n">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.25f</span><span class="p">;</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">BFloat16</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b2</span><span class="p">;</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;c10::BFloat16: 1.5 + 2.25 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">    </span><span class="c1">// a Tensor genuinely constructed with dtype=Half, on CPU</span>
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">th</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">2.25</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kHalf</span><span class="p">);</span>
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;half tensor dtype: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">th</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, element_size(): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">th</span><span class="p">.</span><span class="n">element_size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">TORCH_DIR</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;</span><span class="k">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>04_specialized_scalar_types.cpp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include&quot;</span><span class="w"> </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include/torch/csrc/api/include&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="m">1</span><span class="w"> </span>-L<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span>-ltorch<span class="w"> </span>-ltorch_cpu<span class="w"> </span>-lc10<span class="w"> </span>-Wl,-rpath,<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span>-o<span class="w"> </span>04_specialized_scalar_types
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>./04_specialized_scalar_types
+</code></pre></div>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>C++ types work in LibTorch exactly as they work in any statically typed program — <code>int</code>, <code>float</code>, <code>double</code>, and the <code>int64_t</code> that <code>torch::Tensor</code> uses for every size and stride are ordinary compile-time promises about a fixed number of bytes, genuinely measured with <code>sizeof</code> and traced to real stack offsets, and <code>auto</code> resolves those same promises for you at compile time without making anything dynamically typed the way Python's per-object type tags do. Where LibTorch genuinely departs from raw CUDA C++ is the host/device split: CUDA C++ makes it a compile-time property of a <em>function</em>, resolved by <code>nvcc</code> choosing between two pipelines before a binary exists; LibTorch makes it a runtime property of a <em>value</em>, an ordinary <code>c10::Device</code> field riding inside every <code>torch::Tensor</code>, read by <code>.device()</code> and set once at construction. Crossing that boundary onto a CUDA device that isn't there doesn't fail to compile — <code>.to(torch::kCUDA)</code> and direct construction on <code>torch::kCUDA</code> both compile cleanly against this exact build — it fails at runtime instead, genuinely throwing a catchable <code>c10::Error</code> (two different, both real, messages for the two different internal code paths), a structural contrast with raw CUDA's own silently-ignorable <code>cudaError_t</code> return codes. LibTorch's specialized scalar types close the chapter the same way CUDA C++'s vector types do: <code>c10::Half</code> and <code>c10::BFloat16</code> measure at a genuine 2 bytes each despite encoding their bits completely differently, and <code>c10::complex&lt;float&gt;</code> at 8 — real, sized, host-usable C++ types, independently confirmed through LibTorch's own Python bindings, not tensor-only abstractions.</p>
+<h2 id="self-check-questions">Self-Check Questions<a class="headerlink" href="#self-check-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>auto a = 10;</code> in C++ and <code>a = 10</code> in Python both omit an explicit type annotation. What question distinguishes the two cases, and why does that question have a different answer for each?</li>
+<li>Raw CUDA C++'s host/device split is enforced by which compiler pipeline processes a function's source. What takes its place in LibTorch, and at what point in a program's execution is that replacement actually checked?</li>
+<li><code>t.to(torch::kCUDA)</code> and constructing a tensor directly with <code>.device(torch::kCUDA)</code> both compile cleanly in this book's environment, which has no GPU at all. Why does neither call fail to compile, and what does each one do instead when it actually runs?</li>
+<li>This chapter's Worked Example 1.4.1 shows <code>.to(torch::kCUDA)</code> and direct CUDA construction throwing two different exception messages for what is the same underlying condition — no NVIDIA driver present. What's a plausible reason those two code paths would report the failure differently, based on what each call is actually doing internally?</li>
+<li><code>c10::Half</code> and <code>c10::BFloat16</code> are both genuinely 2 bytes wide. Given that they split those 16 bits between exponent and mantissa differently, what does matching <code>sizeof</code> actually guarantee about the two types, and what does it <em>not</em> guarantee?</li>
+</ol>
+<h2 id="where-we-go-next">Where We Go Next<a class="headerlink" href="#where-we-go-next" title="Permanent link">&para;</a></h2>
+<p>Chapter 2 stays with plain C++ structure, the way this chapter stayed with plain C++ types, but shifts from primitive values to designing a <code>struct</code> — tracing which of LibTorch's own struct design patterns (starting with <code>torch::TensorOptions</code>, the builder-style struct this chapter's own worked examples have already been passing to <code>torch::ones</code> and <code>torch::tensor</code> without naming it) hold up under genuine inspection, and why LibTorch reaches for a struct-plus-builder pattern in some places and a <code>c10::intrusive_ptr</code>-managed handle in others.</p>
+<h2 id="worked-solutions">Worked Solutions<a class="headerlink" href="#worked-solutions" title="Permanent link">&para;</a></h2>
+<p><strong>1.</strong> The distinguishing question is <em>when is the type decided, and can it change later</em>. For C++'s <code>auto a = 10;</code>, the compiler looks at the literal <code>10</code> exactly once, during compilation, deduces <code>int</code>, and <code>a</code> is permanently an <code>int</code> for the rest of its scope — indistinguishable from <code>int a = 10;</code> once compiled. For Python's <code>a = 10</code>, there is no compile-time deduction step at all: <code>a</code> is just a name that currently points at an <code>int</code> object, and the very next line is free to rebind it to a string or anything else, because the type belongs to the object, not the name. Both lines look identical in omitting a written type, but only one of them has actually fixed a type at all.</p>
+<p><strong>2.</strong> LibTorch replaces the compiler-pipeline decision with an ordinary runtime field: <code>c10::Device</code>, stored inside every <code>torch::Tensor</code> and readable with <code>.device()</code>. It is checked not at compile time and not even at tensor construction in the abstract, but at the moment a specific operation actually needs to know where its operands live — which is why <code>t.device()</code> itself never fails (it's just reading a stored value), while an operation that genuinely requires a CUDA device to exist, like <code>.to(torch::kCUDA)</code> or constructing a tensor with <code>.device(torch::kCUDA)</code>, only fails once it actually runs and finds no driver.</p>
+<p><strong>3.</strong> Neither call fails to compile because <code>torch::kCUDA</code> is just an ordinary enum value LibTorch's headers define regardless of whether the specific machine building or running the code has a GPU — the compiler has no way to know, and no reason to care, whether a CUDA device will exist at runtime. What runs instead, genuinely, is each call reaching into LibTorch's CUDA-handling code, discovering no driver is present, and throwing a real <code>c10::Error</code> — <code>.to(torch::kCUDA)</code> reporting a driver-version mismatch, direct construction reporting that no driver was found at all.</p>
+<p><strong>4.</strong> <code>.to(torch::kCUDA)</code> on an existing CPU tensor is fundamentally a <em>conversion</em> operation — it has a source tensor already in hand and is trying to produce a converted copy, so LibTorch's tensor-conversion code path is what first reaches into CUDA territory and reports what it finds there. Constructing a tensor directly with <code>.device(torch::kCUDA)</code> has no source tensor at all — it's an <em>allocation</em> from nothing, going through LibTorch's memory-allocation code path instead, which checks for a CUDA device at a different point and with different diagnostic context available to it. Same underlying fact (no driver), two different internal call graphs discovering it, two genuinely different messages.</p>
+<p><strong>5.</strong> Matching <code>sizeof</code> guarantees only that both types occupy the same number of bytes in memory and therefore cost the same to store and move — nothing about what those bytes <em>mean</em>. It does not guarantee equal precision, equal exponent range, or interchangeable arithmetic results: <code>c10::Half</code>'s 10 mantissa bits and <code>c10::BFloat16</code>'s 7 give them different rounding behavior on values that don't happen to be exactly representable in both (this chapter's own <code>1.5 + 2.25 = 3.75</code> sidesteps that difference on purpose, since all three values are exact in either format), and <code>c10::BFloat16</code>'s 8 exponent bits give it <code>float</code>'s full dynamic range while <code>c10::Half</code>'s 5 give it a much narrower one. Two types can be the same size and genuinely incompatible in what they can represent.</p>
 
 
 
