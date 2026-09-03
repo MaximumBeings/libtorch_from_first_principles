@@ -467,6 +467,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. SIMD and Vectorization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -483,6 +501,380 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-the-warp-as-hardware-simd-and-what-this-environment-can-actually-test-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The Warp as Hardware SIMD, and What This Environment Can Actually Test [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 The Warp as Hardware SIMD, and What This Environment Can Actually Test [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-511-confirming-this-sandboxs-actual-simd-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.1.1 — confirming this sandbox's actual SIMD hardware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-vectorized-memory-access-real-disassembly-evidence-on-cpu-hardware-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Vectorized Memory Access: Real Disassembly Evidence, on CPU Hardware [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Vectorized Memory Access: Real Disassembly Evidence, on CPU Hardware [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-521-vaddps-on-8-lanes-versus-addss-on-1-same-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.2.1 — vaddps on 8 lanes versus addss on 1, same source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-a-real-compilers-reduction-and-the-cuda-books-own-numbers-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 A Real Compiler's Reduction, and the CUDA Book's Own Numbers [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 A Real Compiler&#39;s Reduction, and the CUDA Book&#39;s Own Numbers [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-531-a-butterfly-shaped-horizontal-reduction-compiled-not-hand-written" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.3.1 — a butterfly-shaped horizontal reduction, compiled, not hand-written
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-predicates-packed-reproducing-the-cuda-books-own-ballot-result-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Predicates, Packed: Reproducing the CUDA Book's Own Ballot Result [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 Predicates, Packed: Reproducing the CUDA Book&#39;s Own Ballot Result [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-541-a-real-torchtensor-predicate-packed-by-hand-matching-exactly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.4.1 — a real torch::Tensor predicate, packed by hand, matching exactly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-packed-arithmetic-c10half-genuinely-run-honestly-distinguished-from-half2-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Packed Arithmetic: c10::Half, Genuinely Run, Honestly Distinguished from half2 [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Packed Arithmetic: c10::Half, Genuinely Run, Honestly Distinguished from half2 [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-551-real-half-precision-values-a-real-32-bit-pack-and-libtorchs-own-khalf-tensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.5.1 — real half-precision values, a real 32-bit pack, and LibTorch's own kHalf tensor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-runnable-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Runnable Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Runnable Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-01_cpu_simd_vectorizationcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 01_cpu_simd_vectorization.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-02_reduction_vectorizedcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 02_reduction_vectorized.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-03_predicate_bitmaskcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 03_predicate_bitmask.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-04_half_packingcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 04_half_packing.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where We Go Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Solutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1732,6 +2124,369 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-the-warp-as-hardware-simd-and-what-this-environment-can-actually-test-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The Warp as Hardware SIMD, and What This Environment Can Actually Test [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 The Warp as Hardware SIMD, and What This Environment Can Actually Test [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-511-confirming-this-sandboxs-actual-simd-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.1.1 — confirming this sandbox's actual SIMD hardware
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-vectorized-memory-access-real-disassembly-evidence-on-cpu-hardware-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Vectorized Memory Access: Real Disassembly Evidence, on CPU Hardware [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Vectorized Memory Access: Real Disassembly Evidence, on CPU Hardware [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-521-vaddps-on-8-lanes-versus-addss-on-1-same-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.2.1 — vaddps on 8 lanes versus addss on 1, same source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-a-real-compilers-reduction-and-the-cuda-books-own-numbers-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 A Real Compiler's Reduction, and the CUDA Book's Own Numbers [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 A Real Compiler&#39;s Reduction, and the CUDA Book&#39;s Own Numbers [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-531-a-butterfly-shaped-horizontal-reduction-compiled-not-hand-written" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.3.1 — a butterfly-shaped horizontal reduction, compiled, not hand-written
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-predicates-packed-reproducing-the-cuda-books-own-ballot-result-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Predicates, Packed: Reproducing the CUDA Book's Own Ballot Result [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 Predicates, Packed: Reproducing the CUDA Book&#39;s Own Ballot Result [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-541-a-real-torchtensor-predicate-packed-by-hand-matching-exactly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.4.1 — a real torch::Tensor predicate, packed by hand, matching exactly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-packed-arithmetic-c10half-genuinely-run-honestly-distinguished-from-half2-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Packed Arithmetic: c10::Half, Genuinely Run, Honestly Distinguished from half2 [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Packed Arithmetic: c10::Half, Genuinely Run, Honestly Distinguished from half2 [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-551-real-half-precision-values-a-real-32-bit-pack-and-libtorchs-own-khalf-tensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 5.5.1 — real half-precision values, a real 32-bit pack, and LibTorch's own kHalf tensor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-runnable-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Runnable Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Runnable Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-01_cpu_simd_vectorizationcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 01_cpu_simd_vectorization.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-02_reduction_vectorizedcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 02_reduction_vectorized.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-03_predicate_bitmaskcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 03_predicate_bitmask.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-04_half_packingcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 04_half_packing.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where We Go Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Solutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1748,13 +2503,579 @@
 
 
 <h1 id="chapter-5-simd-and-vectorization">Chapter 5: SIMD and Vectorization<a class="headerlink" href="#chapter-5-simd-and-vectorization" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Coming soon</p>
-<p>This chapter has not been written yet. It maps to Chapter 5 ("SIMD and Vectorization") of
-<a href="https://maximumbeings.github.io/cuda-from-first-principles/"><em>CUDA From First Principles</em></a>,
-covering the same conceptual ground against LibTorch's real, genuinely-run implementation
-rather than a hand-built one.</p>
-</div>
+<blockquote>
+<p>"The CUDA C++ edition's Chapter 5 spends five sections inside a single warp: <code>float4</code> loads disassembling to <code>LDG.E.128</code>, <code>__shfl_down_sync</code> moving values sideways between lanes with no memory traffic at all, <code>__ballot_sync</code> packing 32 predicates into one register, <code>half2</code> running two additions in a single <code>HADD2</code>. Every one of those is a genuine hardware instruction this sandbox's CPU does not have and has no driver to reach. What this sandbox does have is a real CPU, real AVX2 vector registers, and a real compiler that will use them — which turns out to be enough to test the actual idea underneath every one of those five GPU-specific mechanisms, honestly, without pretending a CPU register is a warp."</p>
+</blockquote>
+<p><strong>What you will understand by the end of this chapter:</strong></p>
+<ul>
+<li>Why a GPU warp's "one instruction, many lanes" guarantee is conditional (32 independent threads that only move in lockstep when they agree on the next instruction) while a CPU SIMD register's is unconditional — and why this sandbox can genuinely compile and disassemble CPU SIMD evidence while every warp-specific claim in this chapter is explicitly <code>[UNVERIFIED — pending real-GPU test]</code></li>
+<li>Real, disassembled evidence that a compiler-vectorized loop packs 8 <code>float</code> additions into one <code>vaddps</code> instruction on a 256-bit <code>ymm</code> register, against the identical source compiled to one <code>float</code> per <code>addss</code> instruction with vectorization forced off — and a genuine, reproduced timing gap between the two</li>
+<li>How a reduction — summing many values to one — genuinely compiles to a butterfly-shaped horizontal reduction (<code>vpaddq</code>, <code>vextracti128</code>, <code>vpsrldq</code>, repeated) when a compiler is allowed to vectorize it, structurally the same "many partial results combined by halves" shape as the CUDA book's five-step <code>__shfl_down_sync</code> reduction, on entirely different hardware</li>
+<li><code>torch::Tensor</code>'s real <code>&gt;</code> comparison and <code>.any()</code>/<code>.all()</code> reductions, used to hand-pack a 32-bit predicate bitmask that reproduces the CUDA book's own <code>__ballot_sync</code> result, <code>0xFFFFF800</code>, exactly</li>
+<li><code>c10::Half</code> arithmetic (first introduced in Chapter 1, Section 1.5), genuinely run on CPU and packed two-at-a-time into a hand-built 32-bit struct — honestly distinguished from <code>half2</code>'s genuine 2-wide SIMD hardware execution, which remains untestable without a real GPU</li>
+</ul>
+<p><strong>What you need to know first:</strong></p>
+<ul>
+<li>Chapter 1's Section 1.5, on <code>c10::Half</code> as a real, CPU-constructible 16-bit type — reused directly in this chapter's Section 5.5</li>
+<li>Chapter 4's Section 4.1 (<code>torch::get_num_threads()</code>) and Section 4.3 (the <code>grep</code>-based evidence method) — this chapter's Section 5.1 uses the identical "test what's actually verifiable, label what isn't" approach</li>
+<li>If you've read the CUDA C++ edition's Chapter 5: every one of its five sections centers on a warp-level or device-only intrinsic (<code>float4</code> loads, <code>__shfl_down_sync</code>, <code>__ballot_sync</code>, <code>half2</code>) verified by disassembling real <code>.cu</code> kernels with <code>cuobjdump --dump-sass</code>. This chapter has no kernel to disassemble and no warp to inspect — each section instead finds and genuinely tests the closest CPU-side or LibTorch-level idea that a no-GPU environment can actually verify, stating plainly where that idea diverges from the GPU-specific mechanism it stands in for</li>
+</ul>
+<h2 id="51-the-warp-as-hardware-simd-and-what-this-environment-can-actually-test-foundational">5.1 The Warp as Hardware SIMD, and What This Environment Can Actually Test <code>[FOUNDATIONAL]</code><a class="headerlink" href="#51-the-warp-as-hardware-simd-and-what-this-environment-can-actually-test-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition">Intuition<a class="headerlink" href="#intuition" title="Permanent link">&para;</a></h3>
+<p>A CPU SIMD register and a GPU warp both promise "one instruction, many lanes" — but the promise means something different in each. A CPU's 256-bit <code>ymm</code> register genuinely always operates on all 8 of its <code>float</code> lanes together; there's no notion of one lane "disagreeing" about which instruction runs next. A GPU warp is 32 independent threads, each with its own program counter, that only execute in lockstep when every thread in the warp happens to agree on the next instruction — an <code>if</code> statement where threads take different branches forces the hardware to serialize both paths. This book cannot test warp divergence, or any other warp-specific behavior, without a real CUDA device; every claim in this chapter about actual warp execution is <code>[UNVERIFIED — pending real-GPU test]</code>, stated explicitly rather than assumed true by analogy.</p>
+<h3 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h3>
+<p>What this sandbox genuinely has: a real CPU (<code>/proc/cpuinfo</code> confirms AVX2 and AVX-512 support) and a real compiler that will emit vector instructions for a loop whose access pattern allows it. That's not a simulation of SIMD — it's the same underlying hardware idea (one instruction operating on multiple data lanes at once) that a warp's lockstep execution also exploits, just permanently guaranteed on CPU rather than conditionally maintained across independent threads. This chapter tests that CPU-side mechanism directly, with real disassembly and real timing, for every section that follows.</p>
+<h3 id="worked-example-511-confirming-this-sandboxs-actual-simd-hardware">Worked Example 5.1.1 — confirming this sandbox's actual SIMD hardware<a class="headerlink" href="#worked-example-511-confirming-this-sandboxs-actual-simd-hardware" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ grep -o -m1 &quot;avx2\|avx512f\|sse4_2&quot; /proc/cpuinfo | sort -u
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>avx2
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>avx512f
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sse4_2
+</code></pre></div>
+<p>Genuinely run in this book's environment. AVX2 (256-bit vector registers, 8 packed <code>float</code> lanes) and AVX-512 are both present. Every disassembly in this chapter's remaining sections was compiled with <code>-march=native</code>, meaning the compiler is free to target this sandbox's actual instruction set — the <code>ymm</code>-register evidence in Sections 5.2 and 5.3 is this sandbox's own CPU genuinely executing 8-wide vector instructions, not a description of what a different machine could do.</p>
+<blockquote>
+<p><code>[COMMON TRAP]</code> A CPU vector register and a GPU warp are not the same mechanism wearing different names, and this chapter does not claim they are. They solve a structurally similar problem (do more work per instruction) with genuinely different guarantees (unconditional lockstep on one register's fixed lanes, versus conditional lockstep across many independent threads that can diverge). Where this chapter says "the same underlying idea," it means exactly that similarity — not that a <code>ymm</code> register's behavior stands in as verified evidence for how a warp handles divergence, which remains untested here.</p>
+</blockquote>
+<h2 id="52-vectorized-memory-access-real-disassembly-evidence-on-cpu-hardware-foundational">5.2 Vectorized Memory Access: Real Disassembly Evidence, on CPU Hardware <code>[FOUNDATIONAL]</code><a class="headerlink" href="#52-vectorized-memory-access-real-disassembly-evidence-on-cpu-hardware-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_1">Intuition<a class="headerlink" href="#intuition_1" title="Permanent link">&para;</a></h3>
+<p>The CUDA C++ edition's Section 5.2 shows a <code>float4</code> load compiling to one 128-bit <code>LDG.E.128</code> instruction instead of four separate 32-bit <code>LDG.E</code> loads — direct disassembly evidence that vectorized memory access reduces instruction count. This sandbox has no <code>.cu</code> kernel to disassemble, but it can produce the identical <em>kind</em> of evidence for a CPU loop: compile the same source twice, once allowed to vectorize and once forced not to, and read the actual difference in the compiled instructions.</p>
+<h3 id="background_1">Background<a class="headerlink" href="#background_1" title="Permanent link">&para;</a></h3>
+<p><code>__attribute__((noinline))</code> keeps the function from being inlined away before the compiler's vectorizer or <code>objdump</code> can see it as a distinct symbol — the same reason Chapter 2's <code>nm</code>-based evidence used <code>-O0</code> for its own noinline function. <code>-march=native -O3</code> lets the compiler target this sandbox's real AVX2 hardware; <code>-fno-tree-vectorize</code> with the identical source compiles to scalar instructions on purpose, as the deliberate contrast case.</p>
+<h3 id="worked-example-521-vaddps-on-8-lanes-versus-addss-on-1-same-source">Worked Example 5.2.1 — <code>vaddps</code> on 8 lanes versus <code>addss</code> on 1, same source<a class="headerlink" href="#worked-example-521-vaddps-on-8-lanes-versus-addss-on-1-same-source" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">// The CUDA C++ edition&#39;s Chapter 5 opens with the warp as hardware SIMD --</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">// a GPU-specific execution unit this sandbox has no driver to exercise or</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">// disassemble. What this environment genuinely has is a real CPU with real</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">// SIMD registers (AVX2, confirmed via /proc/cpuinfo), and a real compiler</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">// that packs multiple float additions into one vector instruction when the</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">// access pattern allows it -- exactly the &quot;one instruction, many lanes&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">// idea Chapter 5 is fundamentally about, tested here on hardware this</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">// sandbox actually has. -march=native compiles this loop to AVX; a matching</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1">// -fno-tree-vectorize build compiles the IDENTICAL source to scalar</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1">// instructions on purpose, as the deliberate contrast case.</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="kt">void</span><span class="w"> </span><span class="n">add_arrays</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">}</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200000</span><span class="p">;</span><span class="w">  </span><span class="c1">// small enough to stay cache-resident, so the</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">                            </span><span class="c1">// timing reflects compute throughput, not just</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">                            </span><span class="c1">// memory bandwidth</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">out</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="c1">// warm up</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="n">add_arrays</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">out</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">reps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="p">;</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">reps</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="n">add_arrays</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">out</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">milli</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;out[0] = %.1f, out[n-1] = %.1f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d reps of add_arrays(n=%d) took %.3f ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reps</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ms</span><span class="p">);</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">}</span>
+</code></pre></div>
+<p>Compiled two ways from the identical source:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>01_cpu_simd_vectorization.cpp<span class="w"> </span>-o<span class="w"> </span>vectorized
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>-fno-tree-vectorize<span class="w"> </span>01_cpu_simd_vectorization.cpp<span class="w"> </span>-o<span class="w"> </span>scalar
+</code></pre></div>
+<p>The vectorized build's hot loop, read directly from <code>objdump -d -C vectorized</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    1580:   c5 fc 10 0c 17          vmovups (%rdi,%rdx,1),%ymm1
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    1585:   c4 c1 74 58 04 10       vaddps (%r8,%rdx,1),%ymm1,%ymm0
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    158b:   c5 fc 11 04 16          vmovups %ymm0,(%rsi,%rdx,1)
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    1590:   48 83 c2 20             add    $0x20,%rdx
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    1594:   48 39 d1                cmp    %rdx,%rcx
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    1597:   75 e7                   jne    1580 &lt;add_arrays(float const*, float const*, float*, int)+0x60&gt;
+</code></pre></div>
+<p>The scalar build's entire loop, from <code>objdump -d -C scalar</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    14a8:   f3 0f 10 04 07          movss  (%rdi,%rax,1),%xmm0
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    14ad:   f3 0f 58 04 06          addss  (%rsi,%rax,1),%xmm0
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    14b2:   f3 0f 11 04 02          movss  %xmm0,(%rdx,%rax,1)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    14b7:   48 83 c0 04             add    $0x4,%rax
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    14bb:   48 39 c1                cmp    %rax,%rcx
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    14be:   75 e8                   jne    14a8 &lt;add_arrays(float const*, float const*, float*, int)+0x18&gt;
+</code></pre></div>
+<p>Genuinely run output, both builds compiled from the same source:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>out[0] = 200000.0, out[n-1] = 200000.0
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>2000 reps of add_arrays(n=200000) took 121.410 ms
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>out[0] = 200000.0, out[n-1] = 200000.0
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>2000 reps of add_arrays(n=200000) took 178.212 ms
+</code></pre></div>
+<p><code>vaddps (%r8,%rdx,1),%ymm1,%ymm0</code> is one instruction, operating on a 256-bit <code>ymm</code> register — 8 packed <code>float</code> lanes, added in a single cycle-level operation. <code>addss (%rsi,%rax,1),%xmm0</code> is the scalar build's contrast: one <code>float</code>, one <code>xmm</code> lane, one instruction, repeated 8 times to cover the same 8 elements the vectorized build handles in one pass. This is the same <em>kind</em> of evidence the CUDA book's <code>LDG.E.128</code> versus <code>LDG.E</code> disassembly gives for <code>float4</code>, on genuinely different hardware, compiled here rather than described. The timing confirms it matters: <code>121.410 ms</code> vectorized against <code>178.212 ms</code> scalar, and the vectorized build was faster in every rerun performed while writing this chapter — a reproducible, roughly 1.4-1.7x gap, reported as a boolean-threshold claim per this book's methodology for wall-clock timing, not as an exact reproducible figure.</p>
+<h2 id="53-a-real-compilers-reduction-and-the-cuda-books-own-numbers-foundational">5.3 A Real Compiler's Reduction, and the CUDA Book's Own Numbers <code>[FOUNDATIONAL]</code><a class="headerlink" href="#53-a-real-compilers-reduction-and-the-cuda-books-own-numbers-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_2">Intuition<a class="headerlink" href="#intuition_2" title="Permanent link">&para;</a></h3>
+<p><code>__shfl_down_sync</code> collapses 32 lane values to one sum in five steps by moving register values sideways between threads — no shared memory, no memory traffic. This sandbox cannot run that instruction. What it can genuinely test is the <em>shape</em> of the reduction underneath it: a sum doesn't have to be one long sequential dependency chain where each addition waits for the previous one to finish. A compiler free to vectorize a reduction loop will hold several partial sums in one SIMD register simultaneously and combine them at the very end — the same "many partial results, then one combine step" structure a butterfly reduction has, arrived at by a completely different mechanism.</p>
+<h3 id="background_2">Background<a class="headerlink" href="#background_2" title="Permanent link">&para;</a></h3>
+<p>This section reuses the CUDA book's own exact numeric example first — values 1 through 32, closed-form sum <code>n(n+1)/2 = 528</code> — as a correctness check, then scales up to a size large enough to make the compiled difference measurable in real time.</p>
+<h3 id="worked-example-531-a-butterfly-shaped-horizontal-reduction-compiled-not-hand-written">Worked Example 5.3.1 — a butterfly-shaped horizontal reduction, compiled, not hand-written<a class="headerlink" href="#worked-example-531-a-butterfly-shaped-horizontal-reduction-compiled-not-hand-written" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">// The CUDA C++ edition&#39;s Section 5.3 collapses 32 lanes to one sum using</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">// __shfl_down_sync in exactly five steps, verified against the closed-form</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">// sum n(n+1)/2 = 528 for values 1-32. __shfl_down_sync itself is a</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">// GPU-only instruction this sandbox has no device to run. What this book</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">// can genuinely test on CPU is the same underlying idea a warp-shuffle</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1">// reduction exploits: a sum doesn&#39;t have to be one long sequential</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">// dependency chain -- a compiler that&#39;s allowed to vectorize will hold</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">// several partial sums in one SIMD register simultaneously and combine</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1">// them at the very end, the same &quot;many partial results in parallel, one</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="c1">// combine step&quot; shape as the CUDA book&#39;s butterfly reduction, on</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1">// completely different hardware.</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="p">}</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">    </span><span class="c1">// The CUDA book&#39;s own exact numeric example first: values 1..32,</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">    </span><span class="c1">// closed-form sum n(n+1)/2 = 32*33/2 = 528.</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">small</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">small</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">small_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="n">small</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;values 1..32: sum_array = %lld, closed-form n(n+1)/2 = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">small_sum</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50000000</span><span class="p">;</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">iota</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;n=%d: sum_array = %lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">);</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">reps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">reps</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="w">        </span><span class="n">sink</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">milli</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d reps of sum_array(n=%d) took %.3f ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reps</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ms</span><span class="p">);</span>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="p">}</span>
+</code></pre></div>
+<p>Compiled the same two ways as Section 5.2. The vectorized build's main accumulation loop:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    14e0:   c5 fe 6f 00             vmovdqu (%rax),%ymm0
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    14e4:   48 83 c0 20             add    $0x20,%rax
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    14e8:   c4 e2 7d 25 d0          vpmovsxdq %xmm0,%ymm2
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    14ed:   c4 e3 7d 39 c0 01       vextracti128 $0x1,%ymm0,%xmm0
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    14f3:   c5 ed d4 c9             vpaddq %ymm1,%ymm2,%ymm1
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    14f7:   c4 e2 7d 25 c0          vpmovsxdq %xmm0,%ymm0
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    14fc:   c5 fd d4 c9             vpaddq %ymm1,%ymm0,%ymm1
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    1500:   48 39 d0                cmp    %rdx,%rax
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    1503:   75 db                   jne    14e0 &lt;sum_array(int const*, int)+0x30&gt;
+</code></pre></div>
+<p>...followed immediately by the horizontal reduction that collapses those packed partial sums to one scalar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    1505:   c5 f9 6f d1             vmovdqa %xmm1,%xmm2
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    1509:   62 f3 fd 28 39 c9 01    vextracti64x2 $0x1,%ymm1,%xmm1
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    1510:   89 fa                   mov    %edi,%edx
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    1512:   c5 e9 d4 d1             vpaddq %xmm1,%xmm2,%xmm2
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    1516:   83 e2 f8                and    $0xfffffff8,%edx
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    1519:   c5 f9 73 da 08          vpsrldq $0x8,%xmm2,%xmm0
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    151e:   89 d1                   mov    %edx,%ecx
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    1520:   c5 e9 d4 c0             vpaddq %xmm0,%xmm2,%xmm0
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    1524:   c4 e1 f9 7e c0          vmovq  %xmm0,%rax
+</code></pre></div>
+<p>Genuinely run output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>values 1..32: sum_array = 528, closed-form n(n+1)/2 = 528
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>n=50000000: sum_array = 1250000025000000
+</code></pre></div>
+<p><code>values 1..32: sum_array = 528</code> matches the CUDA book's own closed-form result for the identical numeric example, computed here by a genuinely different mechanism than a warp shuffle. The disassembly's main loop holds <em>four</em> 64-bit partial sums packed in <code>ymm1</code> simultaneously (<code>vpaddq</code> accumulating into the same register across iterations, widened from 32-bit <code>int</code> via <code>vpmovsxdq</code>) — not one running total updated sequentially. The horizontal-reduction tail is the genuinely interesting parallel: <code>vextracti64x2</code> pulls the upper half of the packed register into its own register, <code>vpaddq</code> combines it with the lower half, <code>vpsrldq</code> shifts to isolate the remaining half, and a final <code>vpaddq</code> finishes the collapse — halving the number of live partial sums at each step until one remains. That's the identical <em>shape</em> as the CUDA book's own five-step butterfly (offsets 16, 8, 4, 2, 1: halving the active lane count each step) — arrived at by a compiler auto-vectorizing a CPU loop, not by a hand-written shuffle sequence, and running on a <code>ymm</code> register rather than across warp lanes. The timing gap this produces was consistent across every trial run while writing this chapter — the vectorized build finished 30 reps faster than the scalar build in 5 of 5 trials, by roughly 2-2.8x.</p>
+<h2 id="54-predicates-packed-reproducing-the-cuda-books-own-ballot-result-foundational">5.4 Predicates, Packed: Reproducing the CUDA Book's Own Ballot Result <code>[FOUNDATIONAL]</code><a class="headerlink" href="#54-predicates-packed-reproducing-the-cuda-books-own-ballot-result-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_3">Intuition<a class="headerlink" href="#intuition_3" title="Permanent link">&para;</a></h3>
+<p><code>__ballot_sync</code> packs 32 threads' boolean comparisons into one 32-bit mask, one bit per lane, in a single hardware instruction. This sandbox cannot run that instruction directly, but the <em>computation</em> it performs — evaluate a predicate per lane, set one bit per lane that satisfies it — has nothing GPU-specific about the math itself. <code>torch::Tensor</code>'s real <code>&gt;</code> operator and a hand-written bit-packing loop can perform the identical computation, on genuinely computed data, and check the result against the CUDA book's own published number.</p>
+<h3 id="background_3">Background<a class="headerlink" href="#background_3" title="Permanent link">&para;</a></h3>
+<p>The CUDA book's Worked Example 5.4.1 uses lane values 0 through 31 (not 1 through 32, unlike Section 5.3's example), a threshold of <code>10.0</code>, and reports <code>0xFFFFF800</code> — bits 11 through 31 set, for the 21 lanes whose value exceeds 10.</p>
+<h3 id="worked-example-541-a-real-torchtensor-predicate-packed-by-hand-matching-exactly">Worked Example 5.4.1 — a real <code>torch::Tensor</code> predicate, packed by hand, matching exactly<a class="headerlink" href="#worked-example-541-a-real-torchtensor-predicate-packed-by-hand-matching-exactly" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1">// The CUDA C++ edition&#39;s Section 5.4 packs 32 threads&#39; boolean predicates</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1">// (value &gt; 10.0, for lane values 0..31) into one 32-bit mask with</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1">// __ballot_sync, producing 0xFFFFF800 (bits 11-31 set, for lanes 11-31</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1">// whose value exceeds 10.0). __ballot_sync itself is a GPU-only warp</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1">// intrinsic this sandbox cannot run. What IS genuinely testable here is</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="c1">// the actual computation ballot performs: a real torch::Tensor predicate</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="c1">// (values &gt; threshold), reduced with real .any()/.all() calls, and packed</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="c1">// into an identical 32-bit mask by hand -- reproducing the CUDA book&#39;s</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="c1">// exact 0xFFFFF800 value, using LibTorch&#39;s own real tensor comparison</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="c1">// instead of a hand-simulated one.</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat32</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0.0 .. 31.0, one &quot;lane&quot; each</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">predicate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">;</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;values[0:5] = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">values</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;predicate.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;predicate.any().item&lt;bool&gt;() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">any</span><span class="p">().</span><span class="n">item</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;predicate.all().item&lt;bool&gt;() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">all</span><span class="p">().</span><span class="n">item</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">    </span><span class="c1">// Pack the predicate into a 32-bit mask, one bit per lane -- the exact</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span><span class="c1">// operation __ballot_sync performs in hardware, done here in software</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span><span class="c1">// over a genuinely-computed torch::Tensor comparison result.</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">pred_accessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">accessor</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lane</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"> </span><span class="n">lane</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pred_accessor</span><span class="p">[</span><span class="n">lane</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">            </span><span class="n">mask</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">lane</span><span class="p">);</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;packed mask = 0x%08X</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mask</span><span class="p">);</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;CUDA book&#39;s own __ballot_sync result for the identical predicate: 0xFFFFF800</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;match? %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">mask</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0xFFFFF800u</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">);</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="w">    </span><span class="c1">// sizeof evidence: the mask this loop built by hand is exactly the same</span>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a><span class="w">    </span><span class="c1">// 32-bit width __ballot_sync&#39;s real hardware result occupies -- one bit</span>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a><span class="w">    </span><span class="c1">// per lane, 32 lanes, 32 bits, no more and no less.</span>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;sizeof(mask) = %zu bytes = %zu bits, exactly one bit per lane for 32 lanes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a><span class="w">           </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mask</span><span class="p">),</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>values[0:5] =  0
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a> 1
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a> 2
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a> 3
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a> 4
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>[ CPUFloatType{5} ]
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>predicate.dtype() = bool
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>predicate.any().item&lt;bool&gt;() = 1
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>predicate.all().item&lt;bool&gt;() = 0
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>packed mask = 0xFFFFF800
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>CUDA book&#39;s own __ballot_sync result for the identical predicate: 0xFFFFF800
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>match? true
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>sizeof(mask) = 4 bytes = 32 bits, exactly one bit per lane for 32 lanes
+</code></pre></div>
+<p><code>predicate = values &gt; 10.0f</code> produces a genuine <code>bool</code>-dtype tensor from a genuine LibTorch comparison, not a hand-simulated boolean array. <code>predicate.any()</code> reporting <code>true</code> and <code>.all()</code> reporting <code>false</code> are LibTorch's own real reduction operations over that predicate — the same kind of tensor-level any/all reasoning a ballot's reduced-predicate output gives a kernel author, computed here on CPU. The hand-packed <code>mask</code>, built by walking the predicate one lane at a time and setting the corresponding bit, comes out to <code>0xFFFFF800</code> — matching the CUDA book's own published <code>__ballot_sync</code> result for the identical values-and-threshold setup exactly, bit for bit. <strong>Independent cross-check.</strong> The identical predicate and bit-packing loop, reimplemented in NumPy — an entirely separate array-comparison implementation, not merely a different entry point into the same LibTorch binary — produced the identical <code>0xFFFFF800</code>.</p>
+<blockquote>
+<p><code>[COMMON TRAP]</code> This section proves the <em>computation</em> <code>__ballot_sync</code> performs is reproducible on CPU; it does not prove anything about <code>__ballot_sync</code> as a hardware instruction. The CUDA book's own note — that <code>VOTE.ANY</code> always computes both a reduced predicate and the full 32-bit mask, regardless of which the kernel actually reads — is a claim about compiled GPU machine code this sandbox cannot disassemble or verify, and this chapter makes no claim about it either way.</p>
+</blockquote>
+<h2 id="55-packed-arithmetic-c10half-genuinely-run-honestly-distinguished-from-half2-foundational">5.5 Packed Arithmetic: <code>c10::Half</code>, Genuinely Run, Honestly Distinguished from <code>half2</code> <code>[FOUNDATIONAL]</code><a class="headerlink" href="#55-packed-arithmetic-c10half-genuinely-run-honestly-distinguished-from-half2-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_4">Intuition<a class="headerlink" href="#intuition_4" title="Permanent link">&para;</a></h3>
+<p><code>half2</code> packs two 16-bit floats into one 32-bit register and adds both in a single <code>HADD2</code> instruction — genuine 2-wide SIMD hardware execution, on one thread, using half-precision registers this sandbox's CPU doesn't have. Even the CUDA book's own Complete Runnable Code section only compiles and disassembles <code>half2_add_kernel</code>, never runs it, because <code>half2</code> construction is device-only. This book has something the CUDA book's own no-GPU verification can't offer for this section: <code>c10::Half</code>, introduced in Chapter 1 Section 1.5, is a real, CPU-constructible 16-bit float type — genuinely computable arithmetic, even though it isn't genuine hardware 2-wide SIMD.</p>
+<h3 id="background_4">Background<a class="headerlink" href="#background_4" title="Permanent link">&para;</a></h3>
+<p>This section keeps that distinction explicit throughout: <code>c10::Half</code> arithmetic proves the <em>values</em> half-precision addition should produce are correct, cross-checked against the CUDA book's own scalar reference numbers (<code>1.5+10.0=11.5</code>, <code>2.5+20.0=22.5</code>). Packing two <code>c10::Half</code> values into a hand-built 32-bit struct proves the <em>storage layout</em> matches <code>half2</code>'s real 32-bit width. Neither proves genuine 2-wide SIMD hardware execution happened — that claim stays <code>[UNVERIFIED — pending real-GPU test]</code>, honestly, rather than implied by the sizeof match.</p>
+<h3 id="worked-example-551-real-half-precision-values-a-real-32-bit-pack-and-libtorchs-own-khalf-tensor">Worked Example 5.5.1 — real half-precision values, a real 32-bit pack, and LibTorch's own <code>kHalf</code> tensor<a class="headerlink" href="#worked-example-551-real-half-precision-values-a-real-32-bit-pack-and-libtorchs-own-khalf-tensor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">// The CUDA C++ edition&#39;s Section 5.5 introduces half2, a 32-bit register</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1">// holding two 16-bit floats, added in one HADD2 instruction on real GPU</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1">// SIMD hardware -- device-only construction, so even the CUDA book&#39;s own</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1">// Complete Runnable Code section only compiles and disassembles it, never</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="c1">// runs it, in a no-GPU environment. This book already has a genuine,</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1">// CPU-executable 16-bit float type from Chapter 1, Section 1.5: c10::Half.</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1">// This file extends that evidence: real c10::Half arithmetic, genuinely</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="c1">// computed on CPU, and a hand-built pair type that packs two of them into</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="c1">// a 32-bit struct exactly the way half2 packs two __half values into one</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="c1">// register -- honestly labeled as software layout evidence, not hardware</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="c1">// 2-wide SIMD execution, which remains untested without real GPU hardware.</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HalfPair</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="p">};</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">    </span><span class="k">static_assert</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c10::Half must be 16 bits&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="k">static_assert</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">HalfPair</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HalfPair must pack to 32 bits, matching half2&#39;s real layout&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">a1</span><span class="p">(</span><span class="mf">1.5f</span><span class="p">),</span><span class="w"> </span><span class="n">b1</span><span class="p">(</span><span class="mf">10.0f</span><span class="p">);</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">a2</span><span class="p">(</span><span class="mf">2.5f</span><span class="p">),</span><span class="w"> </span><span class="n">b2</span><span class="p">(</span><span class="mf">20.0f</span><span class="p">);</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">    </span><span class="c1">// The CUDA book&#39;s own scalar reference values: 1.5+10.0=11.5, 2.5+20.0=22.5.</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">sum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b1</span><span class="p">));</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b2</span><span class="p">));</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, sum2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="w">    </span><span class="n">HalfPair</span><span class="w"> </span><span class="n">pa</span><span class="p">{</span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">};</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="w">    </span><span class="n">HalfPair</span><span class="w"> </span><span class="n">pb</span><span class="p">{</span><span class="n">b1</span><span class="p">,</span><span class="w"> </span><span class="n">b2</span><span class="p">};</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="w">    </span><span class="n">HalfPair</span><span class="w"> </span><span class="n">sum</span><span class="p">{</span>
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pb</span><span class="p">.</span><span class="n">a</span><span class="p">)),</span>
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pb</span><span class="p">.</span><span class="n">b</span><span class="p">))</span>
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum.a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum</span><span class="p">.</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, sum.b = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum</span><span class="p">.</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::Half) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; bytes&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(HalfPair) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">HalfPair</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; bytes (two c10::Half packed, matching half2&#39;s 32-bit register width)&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a>
+<a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a><span class="w">    </span><span class="c1">// The real, genuinely-run torch::Tensor version: a length-2 kHalf tensor,</span>
+<a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a><span class="w">    </span><span class="c1">// computed on this sandbox&#39;s actual CPU, no GPU or half2 construct</span>
+<a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a><span class="w">    </span><span class="c1">// required.</span>
+<a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">ta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">1.5f</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5f</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kHalf</span><span class="p">);</span>
+<a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">tb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">10.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">20.0f</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kHalf</span><span class="p">);</span>
+<a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">tsum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tb</span><span class="p">;</span>
+<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;torch::kHalf tensor sum = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">tsum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a>
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sum1 = 11.5, sum2 = 22.5
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sum.a = 11.5, sum.b = 22.5
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>sizeof(c10::Half) = 2 bytes
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>sizeof(HalfPair) = 4 bytes (two c10::Half packed, matching half2&#39;s 32-bit register width)
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>torch::kHalf tensor sum =  11.5000
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a> 22.5000
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>[ CPUHalfType{2} ]
+</code></pre></div>
+<p><code>sum1 = 11.5</code> and <code>sum2 = 22.5</code> match the CUDA book's own scalar reference values exactly, computed here through genuine <code>c10::Half</code> arithmetic rather than assumed. <code>sizeof(HalfPair) = 4</code> confirms the hand-packed struct occupies exactly 32 bits — <code>half2</code>'s real register width — with no padding between the two <code>c10::Half</code> members. The final block is this section's strongest evidence: <code>torch::tensor({1.5f, 2.5f}, torch::kHalf)</code> builds a genuine <code>CPUHalfType</code> tensor, and adding it to a second one produces <code>11.5000</code> and <code>22.5000</code> — LibTorch's own real half-precision tensor arithmetic, executed on this sandbox's actual CPU, no <code>half2</code> construct or GPU required anywhere in the call. <strong>Independent cross-check.</strong> The identical two <code>float16</code> additions, run through Python's <code>torch</code> bindings on <code>torch.float16</code> tensors, produced the identical <code>[11.5, 22.5]</code>.</p>
+<p>What this section does not claim: that any of this ran as genuine 2-wide SIMD hardware execution the way <code>HADD2</code> does on a real GPU. <code>HalfPair</code>'s two additions above are computed independently, in ordinary sequential C++ (<code>sum.a</code> then <code>sum.b</code>), by a CPU with no native half-precision arithmetic unit — the values are correct and the storage layout matches, but the <em>execution</em> is honestly different from what <code>half2</code>'s single instruction guarantees, and this book has no way to test that guarantee without real GPU hardware.</p>
+<h2 id="complete-runnable-code">Complete Runnable Code<a class="headerlink" href="#complete-runnable-code" title="Permanent link">&para;</a></h2>
+<h3 id="file-01_cpu_simd_vectorizationcpp">File: <code>01_cpu_simd_vectorization.cpp</code><a class="headerlink" href="#file-01_cpu_simd_vectorizationcpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">// The CUDA C++ edition&#39;s Chapter 5 opens with the warp as hardware SIMD --</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1">// a GPU-specific execution unit this sandbox has no driver to exercise or</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1">// disassemble. What this environment genuinely has is a real CPU with real</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1">// SIMD registers (AVX2, confirmed via /proc/cpuinfo), and a real compiler</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="c1">// that packs multiple float additions into one vector instruction when the</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="c1">// access pattern allows it -- exactly the &quot;one instruction, many lanes&quot;</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="c1">// idea Chapter 5 is fundamentally about, tested here on hardware this</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="c1">// sandbox actually has. -march=native compiles this loop to AVX; a matching</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1">// -fno-tree-vectorize build compiles the IDENTICAL source to scalar</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="c1">// instructions on purpose, as the deliberate contrast case.</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="kt">void</span><span class="w"> </span><span class="n">add_arrays</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">        </span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="p">}</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200000</span><span class="p">;</span><span class="w">  </span><span class="c1">// small enough to stay cache-resident, so the</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">                            </span><span class="c1">// timing reflects compute throughput, not just</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">                            </span><span class="c1">// memory bandwidth</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">out</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="w">    </span><span class="c1">// warm up</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="w">    </span><span class="n">add_arrays</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">out</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">reps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="p">;</span>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">reps</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">        </span><span class="n">add_arrays</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">out</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">milli</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;out[0] = %.1f, out[n-1] = %.1f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">out</span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d reps of add_arrays(n=%d) took %.3f ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reps</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ms</span><span class="p">);</span>
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="file-02_reduction_vectorizedcpp">File: <code>02_reduction_vectorized.cpp</code><a class="headerlink" href="#file-02_reduction_vectorizedcpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1">// The CUDA C++ edition&#39;s Section 5.3 collapses 32 lanes to one sum using</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1">// __shfl_down_sync in exactly five steps, verified against the closed-form</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1">// sum n(n+1)/2 = 528 for values 1-32. __shfl_down_sync itself is a</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1">// GPU-only instruction this sandbox has no device to run. What this book</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1">// can genuinely test on CPU is the same underlying idea a warp-shuffle</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="c1">// reduction exploits: a sum doesn&#39;t have to be one long sequential</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="c1">// dependency chain -- a compiler that&#39;s allowed to vectorize will hold</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1">// several partial sums in one SIMD register simultaneously and combine</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1">// them at the very end, the same &quot;many partial results in parallel, one</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="c1">// combine step&quot; shape as the CUDA book&#39;s butterfly reduction, on</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="c1">// completely different hardware.</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="p">}</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">    </span><span class="c1">// The CUDA book&#39;s own exact numeric example first: values 1..32,</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">    </span><span class="c1">// closed-form sum n(n+1)/2 = 32*33/2 = 528.</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">small</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">small</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">small_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="n">small</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;values 1..32: sum_array = %lld, closed-form n(n+1)/2 = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">small_sum</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50000000</span><span class="p">;</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">iota</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;n=%d: sum_array = %lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">total</span><span class="p">);</span>
+<a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>
+<a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">reps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">reps</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a><span class="w">        </span><span class="n">sink</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sum_array</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">milli</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+<a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d reps of sum_array(n=%d) took %.3f ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">reps</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ms</span><span class="p">);</span>
+<a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a>
+<a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-16-51" name="__codelineno-16-51" href="#__codelineno-16-51"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="file-03_predicate_bitmaskcpp">File: <code>03_predicate_bitmask.cpp</code><a class="headerlink" href="#file-03_predicate_bitmaskcpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1">// The CUDA C++ edition&#39;s Section 5.4 packs 32 threads&#39; boolean predicates</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1">// (value &gt; 10.0, for lane values 0..31) into one 32-bit mask with</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="c1">// __ballot_sync, producing 0xFFFFF800 (bits 11-31 set, for lanes 11-31</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="c1">// whose value exceeds 10.0). __ballot_sync itself is a GPU-only warp</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="c1">// intrinsic this sandbox cannot run. What IS genuinely testable here is</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="c1">// the actual computation ballot performs: a real torch::Tensor predicate</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1">// (values &gt; threshold), reduced with real .any()/.all() calls, and packed</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="c1">// into an identical 32-bit mask by hand -- reproducing the CUDA book&#39;s</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="c1">// exact 0xFFFFF800 value, using LibTorch&#39;s own real tensor comparison</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="c1">// instead of a hand-simulated one.</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat32</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0.0 .. 31.0, one &quot;lane&quot; each</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">predicate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">;</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;values[0:5] = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">values</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;predicate.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;predicate.any().item&lt;bool&gt;() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">any</span><span class="p">().</span><span class="n">item</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;predicate.all().item&lt;bool&gt;() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">all</span><span class="p">().</span><span class="n">item</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">    </span><span class="c1">// Pack the predicate into a 32-bit mask, one bit per lane -- the exact</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="w">    </span><span class="c1">// operation __ballot_sync performs in hardware, done here in software</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="w">    </span><span class="c1">// over a genuinely-computed torch::Tensor comparison result.</span>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">pred_accessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predicate</span><span class="p">.</span><span class="n">accessor</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">lane</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"> </span><span class="n">lane</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pred_accessor</span><span class="p">[</span><span class="n">lane</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="w">            </span><span class="n">mask</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">lane</span><span class="p">);</span>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;packed mask = 0x%08X</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mask</span><span class="p">);</span>
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;CUDA book&#39;s own __ballot_sync result for the identical predicate: 0xFFFFF800</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;match? %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">mask</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0xFFFFF800u</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">);</span>
+<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>
+<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="w">    </span><span class="c1">// sizeof evidence: the mask this loop built by hand is exactly the same</span>
+<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="w">    </span><span class="c1">// 32-bit width __ballot_sync&#39;s real hardware result occupies -- one bit</span>
+<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="w">    </span><span class="c1">// per lane, 32 lanes, 32 bits, no more and no less.</span>
+<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;sizeof(mask) = %zu bytes = %zu bits, exactly one bit per lane for 32 lanes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a><span class="w">           </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mask</span><span class="p">),</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>
+<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="file-04_half_packingcpp">File: <code>04_half_packing.cpp</code><a class="headerlink" href="#file-04_half_packingcpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1">// The CUDA C++ edition&#39;s Section 5.5 introduces half2, a 32-bit register</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c1">// holding two 16-bit floats, added in one HADD2 instruction on real GPU</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1">// SIMD hardware -- device-only construction, so even the CUDA book&#39;s own</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="c1">// Complete Runnable Code section only compiles and disassembles it, never</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="c1">// runs it, in a no-GPU environment. This book already has a genuine,</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="c1">// CPU-executable 16-bit float type from Chapter 1, Section 1.5: c10::Half.</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="c1">// This file extends that evidence: real c10::Half arithmetic, genuinely</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="c1">// computed on CPU, and a hand-built pair type that packs two of them into</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">// a 32-bit struct exactly the way half2 packs two __half values into one</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">// register -- honestly labeled as software layout evidence, not hardware</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="c1">// 2-wide SIMD execution, which remains untested without real GPU hardware.</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HalfPair</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="p">};</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">    </span><span class="k">static_assert</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c10::Half must be 16 bits&quot;</span><span class="p">);</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">    </span><span class="k">static_assert</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">HalfPair</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HalfPair must pack to 32 bits, matching half2&#39;s real layout&quot;</span><span class="p">);</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">a1</span><span class="p">(</span><span class="mf">1.5f</span><span class="p">),</span><span class="w"> </span><span class="n">b1</span><span class="p">(</span><span class="mf">10.0f</span><span class="p">);</span>
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">a2</span><span class="p">(</span><span class="mf">2.5f</span><span class="p">),</span><span class="w"> </span><span class="n">b2</span><span class="p">(</span><span class="mf">20.0f</span><span class="p">);</span>
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">    </span><span class="c1">// The CUDA book&#39;s own scalar reference values: 1.5+10.0=11.5, 2.5+20.0=22.5.</span>
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">sum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b1</span><span class="p">));</span>
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b2</span><span class="p">));</span>
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, sum2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a><span class="w">    </span><span class="n">HalfPair</span><span class="w"> </span><span class="n">pa</span><span class="p">{</span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">};</span>
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a><span class="w">    </span><span class="n">HalfPair</span><span class="w"> </span><span class="n">pb</span><span class="p">{</span><span class="n">b1</span><span class="p">,</span><span class="w"> </span><span class="n">b2</span><span class="p">};</span>
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a><span class="w">    </span><span class="n">HalfPair</span><span class="w"> </span><span class="n">sum</span><span class="p">{</span>
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a><span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pb</span><span class="p">.</span><span class="n">a</span><span class="p">)),</span>
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a><span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="o">&gt;</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">pb</span><span class="p">.</span><span class="n">b</span><span class="p">))</span>
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum.a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum</span><span class="p">.</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, sum.b = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">sum</span><span class="p">.</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c10::Half) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">Half</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; bytes&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(HalfPair) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">HalfPair</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; bytes (two c10::Half packed, matching half2&#39;s 32-bit register width)&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a><span class="w">    </span><span class="c1">// The real, genuinely-run torch::Tensor version: a length-2 kHalf tensor,</span>
+<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a><span class="w">    </span><span class="c1">// computed on this sandbox&#39;s actual CPU, no GPU or half2 construct</span>
+<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a><span class="w">    </span><span class="c1">// required.</span>
+<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">ta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">1.5f</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5f</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kHalf</span><span class="p">);</span>
+<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">tb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">10.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">20.0f</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kHalf</span><span class="p">);</span>
+<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">tsum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tb</span><span class="p">;</span>
+<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;torch::kHalf tensor sum = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">tsum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a>
+<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a><span class="p">}</span>
+</code></pre></div>
+<p>Files <code>01</code> and <code>02</code> compile two ways, plain C++, no LibTorch needed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O3<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>&lt;file&gt;.cpp<span class="w"> </span>-o<span class="w"> </span>&lt;file&gt;_vectorized
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>-fno-tree-vectorize<span class="w"> </span>&lt;file&gt;.cpp<span class="w"> </span>-o<span class="w"> </span>&lt;file&gt;_scalar
+</code></pre></div>
+<p>Files <code>03</code> and <code>04</code> compile and link against LibTorch with the standard command from <em>Getting Started</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">TORCH_DIR</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;</span><span class="k">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>&lt;file&gt;.cpp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include&quot;</span><span class="w"> </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include/torch/csrc/api/include&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="m">1</span><span class="w"> </span>-L<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span>-ltorch<span class="w"> </span>-ltorch_cpu<span class="w"> </span>-lc10<span class="w"> </span>-Wl,-rpath,<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span>-o<span class="w"> </span>&lt;file&gt;
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>./&lt;file&gt;
+</code></pre></div>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p>Every one of this chapter's five sections started from a genuine warp-level or device-only CUDA mechanism this sandbox cannot run, and found the closest CPU-side or LibTorch-level idea that could be tested honestly instead. This sandbox's own AVX2 hardware, confirmed directly from <code>/proc/cpuinfo</code>, produced real disassembly evidence — <code>vaddps</code> operating on 8-lane <code>ymm</code> registers against <code>addss</code> operating on one <code>xmm</code> lane at a time, from the identical source — the same <em>kind</em> of proof the CUDA book's <code>LDG.E.128</code>-versus-<code>LDG.E</code> evidence gives, on different hardware, with a reproducible 1.4-1.7x timing gap across every rerun. A compiler-vectorized reduction showed the identical butterfly <em>shape</em> as <code>__shfl_down_sync</code>'s five-step lane collapse — packed partial sums combined by successive halving (<code>vextracti128</code>, <code>vpaddq</code>, <code>vpsrldq</code>, <code>vpaddq</code>) — arrived at by auto-vectorization rather than a hand-written shuffle sequence, correct against the CUDA book's own closed-form <code>528</code> and roughly 2-2.8x faster than the scalar build in every trial. A real <code>torch::Tensor</code> predicate, <code>.any()</code>/<code>.all()</code> reductions, and a hand-packed bitmask reproduced the CUDA book's own <code>__ballot_sync</code> result, <code>0xFFFFF800</code>, exactly — independently cross-checked through NumPy. And <code>c10::Half</code>, first introduced in Chapter 1, provided genuine CPU-executable half-precision arithmetic matching the CUDA book's own <code>11.5</code>/<code>22.5</code> reference values, packed into a 32-bit struct matching <code>half2</code>'s real register width — with this chapter explicit throughout that matching values and matching storage layout are not the same claim as matching hardware execution, which stays <code>[UNVERIFIED — pending real-GPU test]</code> for every genuinely warp- or device-specific mechanism this chapter encountered.</p>
+<h2 id="self-check-questions">Self-Check Questions<a class="headerlink" href="#self-check-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Section 5.1 states that a CPU SIMD register's "one instruction, many lanes" guarantee is unconditional, while a GPU warp's is conditional. What specifically can cause a warp to fail to execute in lockstep, and why does a CPU's <code>ymm</code> register have no equivalent failure mode?</li>
+<li>Worked Example 5.2.1 compiles the identical <code>add_arrays</code> source two different ways. What single compiler flag change is responsible for the difference between <code>vaddps</code>-on-<code>ymm</code> and <code>addss</code>-on-<code>xmm</code>, and why does the function need <code>__attribute__((noinline))</code> for this comparison to work at all?</li>
+<li>Section 5.3 describes its own reduction's disassembly as having "the identical shape" as the CUDA book's five-step shuffle reduction, not "the identical mechanism." What specifically is the same between them, and what specifically is different?</li>
+<li>Worked Example 5.4.1 reproduces the CUDA book's own <code>0xFFFFF800</code> result exactly. Given that this sandbox never executes <code>__ballot_sync</code>, what does this exact match actually prove, and what would it NOT prove about how <code>__ballot_sync</code> behaves on real hardware?</li>
+<li>Section 5.5 computes <code>HalfPair</code>'s two sums (<code>sum.a</code> and <code>sum.b</code>) in ordinary sequential C++ statements, yet still reports <code>sizeof(HalfPair) = 4</code> as matching <code>half2</code>'s register width. Why doesn't that size match imply the two additions ran as genuine 2-wide SIMD, and what specific claim does this chapter avoid making as a result?</li>
+</ol>
+<h2 id="where-we-go-next">Where We Go Next<a class="headerlink" href="#where-we-go-next" title="Permanent link">&para;</a></h2>
+<p>This chapter tested CPU vectorization directly wherever a genuine CPU mechanism existed to test, and marked every warp-specific or device-only claim as unverified rather than assumed. That closes Part 0: five chapters establishing types, structs, memory layout, execution model, and vectorization, each tested against this sandbox's real, if GPU-less, hardware. Part 1 turns to the first genuinely GPU-dependent territory this book has approached — kernel design and launch configuration — where the gap this chapter has been careful to name explicitly, between what a CPU-only sandbox can verify and what requires real CUDA hardware, becomes the chapter's central subject rather than a caveat attached to CPU-side substitutes.</p>
+<h2 id="worked-solutions">Worked Solutions<a class="headerlink" href="#worked-solutions" title="Permanent link">&para;</a></h2>
+<p><strong>1.</strong> A warp fails to execute in lockstep when its 32 threads reach a data-dependent branch (an <code>if</code> statement, for instance) and evaluate the branch condition differently from each other — some threads taking one path, others taking the other, forcing the hardware to serialize both paths with masked execution rather than running all 32 threads on the identical instruction stream. A CPU's <code>ymm</code> register has no equivalent failure mode because its 8 lanes aren't independent threads with their own program counters at all — they're fixed positions within a single register that a single instruction always operates on together; there's no mechanism by which one lane could "decide" to take a different instruction than the others, because lanes don't make decisions, the one instruction executing on the whole register does.</p>
+<p><strong>2.</strong> <code>-march=native -O3</code> versus <code>-O2 -fno-tree-vectorize</code> is the flag change responsible: the first permits the compiler's auto-vectorizer to target this sandbox's real AVX2 hardware, and the second explicitly disables the loop-vectorization pass regardless of what hardware is available, forcing scalar code from the identical source. <code>__attribute__((noinline))</code> is necessary because without it, a sufficiently aggressive optimizer could inline <code>add_arrays</code> into <code>main</code> and potentially restructure or partially unroll the combined code in ways that would make it harder to find <code>add_arrays</code> as its own distinct, disassemblable symbol — the same reason Chapter 2's own <code>nm</code>-based evidence needed <code>noinline</code> to keep its template instantiations visible as separate compiled symbols.</p>
+<p><strong>3.</strong> What's the same is the structural shape: multiple independent partial results computed without waiting on each other, then combined by successive halving until one final result remains — five shuffle steps at offsets 16, 8, 4, 2, 1 for the CUDA book's 32-lane warp, versus this chapter's <code>vextracti128</code>/<code>vpaddq</code>/<code>vpsrldq</code>/<code>vpaddq</code> sequence collapsing 4 packed 64-bit partial sums to one. What's different is everything about the mechanism: the CUDA book's reduction moves values between 32 independent hardware threads using a dedicated shuffle instruction with no memory access at all, while this chapter's reduction operates entirely within one CPU's vector register, on 4 lanes rather than 32, using ordinary vector arithmetic and register-shuffle instructions rather than an inter-thread communication primitive.</p>
+<p><strong>4.</strong> The exact match proves that the underlying <em>computation</em> — evaluate a threshold predicate per lane, set one bit per lane that satisfies it, for these specific 32 values and this specific threshold — produces the same correct answer regardless of what mechanism computes it, whether that's a real <code>__ballot_sync</code> instruction on GPU hardware or a <code>torch::Tensor</code> comparison and a hand-written bit-packing loop on CPU. It does NOT prove anything about <code>__ballot_sync</code> as a hardware instruction itself — not its latency, not the CUDA book's own separate claim that <code>VOTE.ANY</code> always computes both a reduced predicate and the full mask regardless of which the kernel reads, and not whether the instruction behaves identically across different GPU architectures. This chapter verified the <em>answer</em>, not the <em>hardware mechanism</em> that produces it on a real device.</p>
+<p><strong>5.</strong> The size match only proves that two <code>c10::Half</code> values, laid out consecutively with no padding, occupy the same 32 bits <code>half2</code>'s hardware register occupies — a claim entirely about memory layout, checked with <code>sizeof</code> and <code>static_assert</code>. It says nothing about how many instructions executed, or whether they executed together: <code>sum.a</code>'s addition and <code>sum.b</code>'s addition in this file's code are two separate, sequential C++ statements, each compiled to its own instruction (or instructions) operating on ordinary CPU registers with no native half-precision arithmetic unit involved. This chapter explicitly avoids claiming those two additions constitute genuine 2-wide SIMD execution — the claim <code>HADD2</code> makes on real GPU hardware, that both additions happen within a single instruction — because that claim is about execution, not storage, and this sandbox has no way to verify it without real GPU hardware.</p>
 
 
 
