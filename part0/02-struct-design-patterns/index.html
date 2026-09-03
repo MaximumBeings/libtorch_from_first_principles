@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-2-struct-design-patterns" class="md-skip">
+        <a href="#chapter-2-struct-design-patterns-read-from-libtorchs-own-headers" class="md-skip">
           Skip to content
         </a>
       
@@ -383,6 +383,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Struct Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -399,6 +417,369 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-what-a-struct-actually-is-engineered-down-to-eight-bytes-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 What a Struct Actually Is, Engineered Down to Eight Bytes [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 What a Struct Actually Is, Engineered Down to Eight Bytes [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-211-measuring-the-promise-and-exercising-the-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.1.1 — measuring the promise, and exercising the builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-multiple-constructors-and-value-semantics-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Multiple Constructors and Value Semantics [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Multiple Constructors and Value Semantics [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-templates-and-compile-time-specialization-and-a-view-that-doesnt-own-its-data-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Templates and Compile-Time Specialization, and a View That Doesn't Own Its Data [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Templates and Compile-Time Specialization, and a View That Doesn&#39;t Own Its Data [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-231-two-real-instantiations-proven-with-nm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.3.1 — two real instantiations, proven with nm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-raii-constructors-destructors-and-libtorchs-own-allocator-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 RAII: Constructors, Destructors, and LibTorch's Own Allocator [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 RAII: Constructors, Destructors, and LibTorch&#39;s Own Allocator [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-241-construction-and-destruction-order-then-a-real-tensors-own" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.4.1 — construction and destruction order, then a real Tensor's own
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-compile-time-interfaces-what-torchnncloneables-real-crtp-actually-buys-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Compile-Time Interfaces: What torch::nn::Cloneable's Real CRTP Actually Buys [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Compile-Time Interfaces: What torch::nn::Cloneable&#39;s Real CRTP Actually Buys [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-251-measuring-the-difference-honestly-then-genuinely-cloning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.5.1 — measuring the difference honestly, then genuinely cloning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-runnable-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Runnable Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Runnable Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-01_tensor_optionscpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 01_tensor_options.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-02_accessor_templatescpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 02_accessor_templates.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-03_raii_allocatorcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 03_raii_allocator.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-04_crtp_vs_virtualcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 04_crtp_vs_virtual.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where We Go Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Solutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1732,6 +2113,358 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-what-a-struct-actually-is-engineered-down-to-eight-bytes-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 What a Struct Actually Is, Engineered Down to Eight Bytes [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 What a Struct Actually Is, Engineered Down to Eight Bytes [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-211-measuring-the-promise-and-exercising-the-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.1.1 — measuring the promise, and exercising the builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-multiple-constructors-and-value-semantics-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Multiple Constructors and Value Semantics [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Multiple Constructors and Value Semantics [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-templates-and-compile-time-specialization-and-a-view-that-doesnt-own-its-data-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Templates and Compile-Time Specialization, and a View That Doesn't Own Its Data [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Templates and Compile-Time Specialization, and a View That Doesn&#39;t Own Its Data [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-231-two-real-instantiations-proven-with-nm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.3.1 — two real instantiations, proven with nm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-raii-constructors-destructors-and-libtorchs-own-allocator-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 RAII: Constructors, Destructors, and LibTorch's Own Allocator [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 RAII: Constructors, Destructors, and LibTorch&#39;s Own Allocator [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-241-construction-and-destruction-order-then-a-real-tensors-own" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.4.1 — construction and destruction order, then a real Tensor's own
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-compile-time-interfaces-what-torchnncloneables-real-crtp-actually-buys-foundational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Compile-Time Interfaces: What torch::nn::Cloneable's Real CRTP Actually Buys [FOUNDATIONAL]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Compile-Time Interfaces: What torch::nn::Cloneable&#39;s Real CRTP Actually Buys [FOUNDATIONAL]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuition_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-251-measuring-the-difference-honestly-then-genuinely-cloning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example 2.5.1 — measuring the difference honestly, then genuinely cloning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-runnable-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Runnable Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Runnable Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-01_tensor_optionscpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 01_tensor_options.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-02_accessor_templatescpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 02_accessor_templates.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-03_raii_allocatorcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 03_raii_allocator.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-04_crtp_vs_virtualcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File: 04_crtp_vs_virtual.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where We Go Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Solutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1747,14 +2480,618 @@
 
 
 
-<h1 id="chapter-2-struct-design-patterns">Chapter 2: Struct Design Patterns<a class="headerlink" href="#chapter-2-struct-design-patterns" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Coming soon</p>
-<p>This chapter has not been written yet. It maps to Chapter 2 ("Struct Design Patterns") of
-<a href="https://maximumbeings.github.io/cuda-from-first-principles/"><em>CUDA From First Principles</em></a>,
-covering the same conceptual ground against LibTorch's real, genuinely-run implementation
-rather than a hand-built one.</p>
-</div>
+<h1 id="chapter-2-struct-design-patterns-read-from-libtorchs-own-headers">Chapter 2: Struct Design Patterns, Read From LibTorch's Own Headers<a class="headerlink" href="#chapter-2-struct-design-patterns-read-from-libtorchs-own-headers" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>"Chapter 1 measured a handful of types nobody in this book had to design: <code>int</code>, <code>float</code>, <code>c10::Half</code>. A <code>struct</code> is where that changes — a promise about a memory layout that someone had to write, field by field, choosing exactly what to pack in and how tightly. LibTorch's own headers hand-write dozens of them, and this chapter reads four: a struct engineered down to eight bytes on purpose, a template that owns nothing but a pointer, an RAII wrapper genuinely borrowed from LibTorch's real allocator, and the one real, documented place in <code>torch::nn</code> where LibTorch reaches for the same compile-time trick CUDA C++'s hand-built classes use to dodge a vtable — used, honestly, for a different reason than dodging one."</p>
+</blockquote>
+<p><strong>What you will understand by the end of this chapter:</strong></p>
+<ul>
+<li>Why <code>torch::TensorOptions</code> — the struct this book's own code has already been passing to <code>torch::ones</code> and <code>torch::tensor</code> since Chapter 1 — is engineered down to a measured 8 bytes on purpose, using C++ bitfields instead of the more obvious <code>std::optional</code> per field, and what LibTorch's own header comments say that choice costs</li>
+<li>How <code>TensorOptions</code>'s builder-style methods (<code>.dtype(...)</code>, <code>.device(...)</code>, <code>.requires_grad(...)</code>) resolve through overloaded and implicit conversion constructors entirely at compile time, and why chaining them never mutates the object you started from</li>
+<li>Why <code>torch::TensorAccessor&lt;T, N&gt;</code>, a real template LibTorch ships and this chapter genuinely instantiates twice, proves template specialization the same way Chapter 2 of the CUDA C++ edition does — two distinct compiled symbols, confirmed with <code>nm</code> — while measuring the same size regardless of <code>T</code>, for a reason a value-owning template like the CUDA book's own <code>Vector&lt;T, N&gt;</code> never runs into</li>
+<li>RAII, genuinely observed through LibTorch's own CPU allocator (<code>c10::GetCPUAllocator()</code>) and through a real <code>torch::Tensor</code>'s own deleter firing at scope exit — not a hand-rolled stand-in for either</li>
+<li>The one place in <code>torch::nn</code> where LibTorch's own source code documents using CRTP (<code>torch::nn::Cloneable&lt;Derived&gt;</code>) on purpose, genuinely exercised through a real <code>.clone()</code> call — and an honest correction to the textbook "CRTP avoids a vtable" story once you actually measure what it costs here</li>
+</ul>
+<p><strong>What you need to know first:</strong></p>
+<ul>
+<li>Chapter 1 in full — this chapter leans on the runtime-vs-compile-time distinction from Sections 1.3 and 1.4 directly</li>
+<li>No prior LibTorch or PyTorch C++ experience assumed</li>
+<li>If you've read the CUDA C++ edition's Chapter 2: that chapter hand-builds a <code>Point2D</code>, a <code>DeviceBuffer</code>, and a <code>Shape</code>/<code>Circle</code> hierarchy from nothing, to teach struct layout, RAII, and CRTP in the abstract. This chapter has nothing to build from nothing — every struct it examines (<code>TensorOptions</code>, <code>TensorAccessor</code>, <code>Cloneable</code>) already exists in the LibTorch headers this book's code has been including since Chapter 1, so the worked examples here read and exercise real, already-shipped source rather than a teaching toy.</li>
+</ul>
+<h2 id="21-what-a-struct-actually-is-engineered-down-to-eight-bytes-foundational">2.1 What a Struct Actually Is, Engineered Down to Eight Bytes <code>[FOUNDATIONAL]</code><a class="headerlink" href="#21-what-a-struct-actually-is-engineered-down-to-eight-bytes-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition">Intuition<a class="headerlink" href="#intuition" title="Permanent link">&para;</a></h3>
+<p>A struct is a blueprint for memory: every field gets a fixed offset, known at compile time, identical for every instance of that struct. Most structs don't think hard about that layout — they just declare the fields they need and let the compiler pad them out. <code>torch::TensorOptions</code> is a struct that <em>did</em> think hard about it. It needs to represent five independent, optional settings (dtype, device, layout, memory format, requires-grad, pinned-memory) for a tensor under construction, and the obvious design — five <code>std::optional&lt;T&gt;</code> fields — is exactly the design its authors rejected, in favor of packing every "is this set?" flag into single bits.</p>
+<h3 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h3>
+<p>LibTorch's own <code>TensorOptions.h</code> lays the fields out like this (read directly from the installed header, not reconstructed from documentation):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Device</span><span class="w"> </span><span class="n">device_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">at</span><span class="o">::</span><span class="n">kCPU</span><span class="p">;</span><span class="w">                              </span><span class="c1">// 16-bit</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">caffe2</span><span class="o">::</span><span class="n">TypeMeta</span><span class="w"> </span><span class="n">dtype_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">caffe2</span><span class="o">::</span><span class="n">TypeMeta</span><span class="o">::</span><span class="n">Make</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// 16-bit</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">Layout</span><span class="w"> </span><span class="n">layout_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">at</span><span class="o">::</span><span class="n">kStrided</span><span class="p">;</span><span class="w">                            </span><span class="c1">// 8-bit</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">MemoryFormat</span><span class="w"> </span><span class="n">memory_format_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MemoryFormat</span><span class="o">::</span><span class="n">Contiguous</span><span class="p">;</span><span class="w">   </span><span class="c1">// 8-bit</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">bool</span><span class="w"> </span><span class="n">requires_grad_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kt">bool</span><span class="w"> </span><span class="n">pinned_memory_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kt">bool</span><span class="w"> </span><span class="n">has_device_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kt">bool</span><span class="w"> </span><span class="n">has_dtype_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kt">bool</span><span class="w"> </span><span class="n">has_layout_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kt">bool</span><span class="w"> </span><span class="n">has_requires_grad_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kt">bool</span><span class="w"> </span><span class="n">has_pinned_memory_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kt">bool</span><span class="w"> </span><span class="n">has_memory_format_</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</code></pre></div>
+<p>The header's own comment beside these fields explains the reason directly: <code>std::optional</code> was deliberately avoided <em>because</em> it would have prevented packing the seven <code>has_*_</code> presence flags down into a single byte. Every one of those <code>: 1</code> suffixes is a bitfield — one bit, not one byte — and the header backs the whole design with a compile-time check: <code>static_assert(sizeof(TensorOptions) &lt;= sizeof(int64_t) * 2)</code>, a promise that this struct will never grow past 16 bytes no matter how it's laid out internally.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A naive "five settings" struct</th>
+<th><code>torch::TensorOptions</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How presence is tracked</td>
+<td><code>std::optional&lt;T&gt;</code> per field</td>
+<td>A single packed byte of 1-bit flags</td>
+</tr>
+<tr>
+<td>Compile-time size guarantee</td>
+<td>None</td>
+<td><code>static_assert(sizeof(TensorOptions) &lt;= 16)</code></td>
+</tr>
+<tr>
+<td>Genuinely measured size</td>
+<td>Would depend on <code>optional</code>'s own overhead per field</td>
+<td>8 bytes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="worked-example-211-measuring-the-promise-and-exercising-the-builder">Worked Example 2.1.1 — measuring the promise, and exercising the builder<a class="headerlink" href="#worked-example-211-measuring-the-promise-and-exercising-the-builder" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::TensorOptions) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts1</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;default opts1.has_dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts1</span><span class="p">.</span><span class="n">has_dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="c1">// builder-style chaining: each call returns a NEW TensorOptions by value</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opts1</span><span class="p">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat64</span><span class="p">).</span><span class="n">device</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="p">).</span><span class="n">requires_grad</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts2.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts2</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, requires_grad = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts2</span><span class="p">.</span><span class="n">requires_grad</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="c1">// opts1 itself: unchanged, since dtype()/device()/requires_grad() are all const methods</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts1.has_dtype() after building opts2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts1</span><span class="p">.</span><span class="n">has_dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="c1">// implicit conversion constructors: TensorOptions(ScalarType) and TensorOptions(Device)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat32</span><span class="p">;</span><span class="w">   </span><span class="c1">// resolves via TensorOptions(ScalarType)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="p">;</span><span class="w">        </span><span class="c1">// resolves via TensorOptions(Device)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts3.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts3</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, opts3.has_device() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts3</span><span class="p">.</span><span class="n">has_device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts4.has_dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts4</span><span class="p">.</span><span class="n">has_dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, opts4.device() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts4</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="c1">// use it to build a real tensor</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="n">opts2</span><span class="p">);</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, t.requires_grad() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">requires_grad</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sizeof(torch::TensorOptions) = 8
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>default opts1.has_dtype() = 0
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>opts2.dtype() = double, requires_grad = 1
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>opts1.has_dtype() after building opts2 = 0
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>opts3.dtype() = float, opts3.has_device() = 0
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>opts4.has_dtype() = 0, opts4.device() = cpu
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>t.dtype() = double, t.requires_grad() = 1
+</code></pre></div>
+<p><code>sizeof(torch::TensorOptions)</code> genuinely measures 8 bytes — half the 16-byte ceiling the header's own <code>static_assert</code> allows, and far smaller than five independent <code>std::optional&lt;T&gt;</code> fields would have cost. <code>opts2</code>'s construction is the builder pattern in action: <code>opts1.dtype(...)</code> doesn't modify <code>opts1</code>, it returns a brand-new <code>TensorOptions</code> with one more field set, and <code>.device(...)</code> and <code>.requires_grad(...)</code> each do the same to the result of the call before them — three independent, chained, value-returning calls, not three mutations of one object. The last line makes this concrete: <code>t.dtype()</code> and <code>t.requires_grad()</code> come out as <code>double</code> and <code>true</code> on the real tensor built from <code>opts2</code>, exactly the settings that chain accumulated.</p>
+<blockquote>
+<p><code>[COMMON TRAP]</code> <code>has_dtype()</code> being <code>false</code> does not mean <code>.dtype()</code> is unsafe to call or will report an error — it genuinely returns <code>float</code>, the field's default value, silently. <code>opts3.has_device() = 0</code> above shows the same thing from the other side: <code>opts3</code> was built from a bare <code>ScalarType</code>, never touched <code>.device(...)</code> at all, and <code>has_device()</code> correctly reports that — but nothing stops code downstream from calling <code>opts3.device()</code> and getting back <code>cpu</code> with no indication it was never actually set. LibTorch's own construction functions (<code>torch::ones</code>, <code>torch::empty</code>, and the rest) are the code that actually checks <code>has_*_</code> internally to decide what to inherit from a tensor being constructed from another tensor; application code reading a <code>TensorOptions</code> back out generally shouldn't assume an unset field will look any different from an explicitly-set one holding the same default.</p>
+</blockquote>
+<h2 id="22-multiple-constructors-and-value-semantics-foundational">2.2 Multiple Constructors and Value Semantics <code>[FOUNDATIONAL]</code><a class="headerlink" href="#22-multiple-constructors-and-value-semantics-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_1">Intuition<a class="headerlink" href="#intuition_1" title="Permanent link">&para;</a></h3>
+<p><code>torch::TensorOptions</code> supports more than one way to get one: build it from nothing, build it implicitly from a bare <code>torch::ScalarType</code>, or build it implicitly from a bare <code>torch::Device</code>. Which constructor actually runs is decided the same way any C++ overload resolution is decided — entirely at compile time, by matching the argument's type against the available constructor signatures — and the result of every builder-method call is a genuinely new, independent object, never a mutation of the one it was called on.</p>
+<h3 id="background_1">Background<a class="headerlink" href="#background_1" title="Permanent link">&para;</a></h3>
+<p>Worked Example 2.1.1 already exercised this without naming it: <code>torch::TensorOptions opts3 = torch::kFloat32;</code> compiles because <code>TensorOptions</code> has a non-explicit, implicit constructor taking a <code>ScalarType</code>; <code>torch::TensorOptions opts4 = torch::kCPU;</code> compiles because it also has one taking a <code>Device</code>. The compiler picks between them purely from the argument's type — <code>torch::kFloat32</code> is a <code>ScalarType</code>, <code>torch::kCPU</code> is (convertible to) a <code>Device</code>, and there's no ambiguity to resolve at runtime because there is no runtime step here at all.</p>
+<table>
+<thead>
+<tr>
+<th>Constructor form</th>
+<th>What triggers it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TensorOptions()</code></td>
+<td>No arguments</td>
+</tr>
+<tr>
+<td><code>TensorOptions(ScalarType)</code> (implicit)</td>
+<td>A bare dtype value, e.g. <code>torch::kFloat32</code></td>
+</tr>
+<tr>
+<td><code>TensorOptions(Device)</code> (implicit)</td>
+<td>A bare device value, e.g. <code>torch::kCPU</code></td>
+</tr>
+</tbody>
+</table>
+<p>Value semantics follow directly from how the builder methods are declared: <code>dtype()</code>, <code>device()</code>, and <code>requires_grad()</code> are all <code>const</code> member functions marked <code>[[nodiscard]]</code>, each returning a <em>new</em> <code>TensorOptions</code> by value. A <code>const</code> method cannot modify the object it's called on even if it wanted to — <code>opts1.dtype(torch::kFloat64)</code> is guaranteed, by the method's own signature, to leave <code>opts1</code> exactly as it was, which is exactly what Worked Example 2.1.1's genuine output already confirmed: <code>opts1.has_dtype()</code> still reports <code>0</code> after <code>opts2</code> was built from it.</p>
+<h2 id="23-templates-and-compile-time-specialization-and-a-view-that-doesnt-own-its-data-foundational">2.3 Templates and Compile-Time Specialization, and a View That Doesn't Own Its Data <code>[FOUNDATIONAL]</code><a class="headerlink" href="#23-templates-and-compile-time-specialization-and-a-view-that-doesnt-own-its-data-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_2">Intuition<a class="headerlink" href="#intuition_2" title="Permanent link">&para;</a></h3>
+<p><code>torch::TensorAccessor&lt;T, N&gt;</code> is a real LibTorch template — a lightweight, typed, sized window onto a tensor's existing data, letting code index into it with ordinary <code>[]</code> syntax and a compile-time-known element type instead of going through <code>Tensor</code>'s general (and slower) <code>.index()</code> machinery. Instantiating it for two different <code>T</code>s produces two entirely separate pieces of compiled machine code, the same proof the CUDA C++ book's own <code>Vector&lt;T, N&gt;</code> demonstration relies on — but unlike <code>Vector&lt;T, N&gt;</code>, which stores its <code>N</code> elements <em>inside itself</em>, <code>TensorAccessor</code> stores nothing but pointers, and that difference shows up directly in what <code>sizeof</code> reports.</p>
+<h3 id="background_2">Background<a class="headerlink" href="#background_2" title="Permanent link">&para;</a></h3>
+<p>A template is a pattern, not compiled code — the compiler only emits real machine code once it sees a concrete combination of template arguments, and it emits one, fully independent copy per distinct combination. <code>torch::TensorAccessor&lt;T, N&gt;</code> (aliased from a shared implementation in <code>torch::headeronly::detail::TensorAccessor</code>) holds a <code>T*</code> data pointer plus two <code>index_t*</code> pointers for the tensor's sizes and strides — three pointers, nothing else, regardless of what <code>T</code> or <code>N</code> are. That's the structural difference from the CUDA book's <code>Vector&lt;T, N&gt;</code>, which embeds a real <code>T data[N]</code> array as a member and therefore genuinely changes size with both <code>T</code> and <code>N</code>. <code>TensorAccessor</code> is a <em>view</em>: it never owns the memory it lets you index into, so its own footprint doesn't depend on what it's a view of.</p>
+<h3 id="worked-example-231-two-real-instantiations-proven-with-nm">Worked Example 2.3.1 — two real instantiations, proven with <code>nm</code><a class="headerlink" href="#worked-example-231-two-real-instantiations-proven-with-nm" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">// A small template function around Tensor::accessor&lt;T,N&gt;(), mirroring the way</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">// this book&#39;s CUDA sibling proves template instantiation with its own Vector&lt;T,N&gt;::sum().</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// Kept noinline so nm can show it as a distinct symbol per instantiation, not folded away.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">T</span><span class="w"> </span><span class="n">accessor_sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">accessor</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">acc</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">acc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">}</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">float_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0f</span><span class="p">});</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">int_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kInt64</span><span class="p">);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">fsum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accessor_sum</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">float_t</span><span class="p">);</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">isum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accessor_sum</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">int_t</span><span class="p">);</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;accessor_sum&lt;float,1&gt;(float_t) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fsum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;accessor_sum&lt;int64_t,1&gt;(int_t) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">isum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::TensorAccessor&lt;float,1&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">TensorAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::TensorAccessor&lt;int64_t,1&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">TensorAccessor</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled (with <code>-O0</code>, so the compiler doesn't inline <code>accessor_sum</code> away before <code>nm</code> can see it) and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>accessor_sum&lt;float,1&gt;(float_t) = 10
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>accessor_sum&lt;int64_t,1&gt;(int_t) = 60
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>sizeof(torch::TensorAccessor&lt;float,1&gt;) = 24
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>sizeof(torch::TensorAccessor&lt;int64_t,1&gt;) = 24
+</code></pre></div>
+<p>And the compiled binary's own symbol table, read with <code>nm -C</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>000000000001754c W float accessor_sum&lt;float, 1&gt;(at::Tensor const&amp;)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>00000000000175fc W long accessor_sum&lt;long, 1&gt;(at::Tensor const&amp;)
+</code></pre></div>
+<p>(<code>long</code> is this platform's real underlying type for <code>int64_t</code> — <code>nm</code>'s demangler reports it that way, not a discrepancy.) Two distinct symbols at two distinct addresses in one compiled binary, exactly the CUDA book's own evidence for "this is genuinely separate machine code, not one generic function branching on a type tag" — reused here on a real LibTorch template instead of a purpose-built teaching one. <code>sizeof</code> tells the other half of the story: both instantiations measure exactly 24 bytes (three 8-byte pointers on this platform), identical for <code>float</code> and <code>int64_t</code> alike, because neither instantiation stores a single element of the tensor it's viewing — only where to find them.</p>
+<p><strong>Independent cross-check.</strong> Both sums were re-verified through LibTorch's Python bindings, calling into the same underlying <code>libtorch_cpu.so</code> through a different entry point than the <code>accessor&lt;T,N&gt;()</code> call above:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>          <span class="c1"># -&gt; 10.0</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>  <span class="c1"># -&gt; 60</span>
+</code></pre></div>
+<p>Genuinely run: both values agree exactly with the C++ output above.</p>
+<h2 id="24-raii-constructors-destructors-and-libtorchs-own-allocator-foundational">2.4 RAII: Constructors, Destructors, and LibTorch's Own Allocator <code>[FOUNDATIONAL]</code><a class="headerlink" href="#24-raii-constructors-destructors-and-libtorchs-own-allocator-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_3">Intuition<a class="headerlink" href="#intuition_3" title="Permanent link">&para;</a></h3>
+<p>RAII — Resource Acquisition Is Initialization — ties a resource's lifetime to an object's scope: a constructor acquires it, a destructor releases it automatically, no matter how the scope is left. The CUDA C++ book has to build this pattern from nothing, wrapping hand-called <code>cudaMalloc</code>/<code>cudaFree</code> in a struct it writes itself. LibTorch never asks a user of this book to do that — every <code>torch::Tensor</code>'s storage is already RAII-managed, by <code>c10::DataPtr</code> and the allocator behind it, and this chapter's worked example genuinely borrows that same real mechanism rather than reimplementing <code>new</code>/<code>delete</code> tracing by hand.</p>
+<h3 id="background_3">Background<a class="headerlink" href="#background_3" title="Permanent link">&para;</a></h3>
+<p><code>c10::GetCPUAllocator()</code> returns LibTorch's real, singleton CPU allocator — the exact one a CPU <code>torch::Tensor</code>'s storage allocates from — and calling <code>.allocate(n)</code> on it returns a <code>c10::DataPtr</code>: itself an RAII type, releasing its memory in its own destructor. Wrapping one in a struct with trace prints makes construction and destruction order directly observable, the same technique the CUDA book's <code>DeviceBuffer</code> example uses, but built on LibTorch's genuine allocator instead of a raw <code>cudaMalloc</code>/<code>cudaFree</code> pair.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Manual <code>new</code>/<code>delete</code> (or raw <code>cudaMalloc</code>/<code>cudaFree</code>)</th>
+<th>This chapter's <code>HostBuffer</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who releases the memory</td>
+<td>You, explicitly, at every exit path</td>
+<td><code>c10::DataPtr</code>'s own destructor, automatically</td>
+</tr>
+<tr>
+<td>What allocator is used</td>
+<td>Whatever you call directly</td>
+<td><code>c10::GetCPUAllocator()</code> — the same one <code>torch::Tensor</code> itself uses</td>
+</tr>
+<tr>
+<td>Forgetting to release</td>
+<td>Silent leak</td>
+<td>Not possible without forgetting the variable declaration itself</td>
+</tr>
+</tbody>
+</table>
+<h3 id="worked-example-241-construction-and-destruction-order-then-a-real-tensors-own">Worked Example 2.4.1 — construction and destruction order, then a real <code>Tensor</code>'s own<a class="headerlink" href="#worked-example-241-construction-and-destruction-order-then-a-real-tensors-own" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/core/CPUAllocator.h&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">// RAII around LibTorch&#39;s own real CPU allocator (the same allocator a CPU</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">// torch::Tensor&#39;s storage genuinely uses) -- not a hand-rolled new/delete.</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">// Addresses are deliberately not printed: they&#39;re genuine but change every run</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">// (heap layout), so only &quot;was memory actually acquired&quot; (a non-null DataPtr)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1">// and construction/destruction *order* are reported.</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HostBuffer</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">DataPtr</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="n">HostBuffer</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">n_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ptr</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">GetCPUAllocator</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="n">n_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">))),</span><span class="w"> </span><span class="n">n</span><span class="p">(</span><span class="n">n_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  HostBuffer(&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;) constructed -&gt; allocated via c10::GetCPUAllocator(), non-null: &quot;</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">                  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">ptr</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="o">~</span><span class="n">HostBuffer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  ~HostBuffer(size=&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;) destructor firing&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">        </span><span class="c1">// ptr&#39;s own destructor (c10::DataPtr is itself RAII) releases the memory here.</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="p">};</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="kt">void</span><span class="w"> </span><span class="nf">scoped_demo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;entering scoped_demo&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">    </span><span class="n">HostBuffer</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">    </span><span class="n">HostBuffer</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;both buffers constructed, about to leave scope&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="p">}</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">    </span><span class="n">scoped_demo</span><span class="p">();</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;back in main, both destructors already ran&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">    </span><span class="c1">// Now: torch::Tensor&#39;s OWN storage, genuinely observed firing a real deleter at scope exit,</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">    </span><span class="c1">// via torch::from_blob&#39;s deleter callback -- not a separate hand-built mechanism.</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;--- torch::Tensor&#39;s own RAII, observed directly ---&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="w">        </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">4</span><span class="p">]{</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0f</span><span class="p">};</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="w">        </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">from_blob</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">},</span><span class="w"> </span><span class="p">[](</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  Tensor-owned deleter firing, freeing the same buffer from_blob was given&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="w">            </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="w">        </span><span class="p">});</span>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  tensor constructed, sum = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">sum</span><span class="p">().</span><span class="n">item</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;back in main, the from_blob tensor&#39;s deleter already ran&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>entering scoped_demo
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  HostBuffer(100) constructed -&gt; allocated via c10::GetCPUAllocator(), non-null: 1
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  HostBuffer(200) constructed -&gt; allocated via c10::GetCPUAllocator(), non-null: 1
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>both buffers constructed, about to leave scope
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  ~HostBuffer(size=200) destructor firing
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  ~HostBuffer(size=100) destructor firing
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>back in main, both destructors already ran
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>--- torch::Tensor&#39;s own RAII, observed directly ---
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  tensor constructed, sum = 10
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  Tensor-owned deleter firing, freeing the same buffer from_blob was given
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>back in main, the from_blob tensor&#39;s deleter already ran
+</code></pre></div>
+<p><code>a</code> and <code>b</code> are declared in that order and destroyed in the exact reverse — <code>~HostBuffer(size=200)</code> fires before <code>~HostBuffer(size=100)</code> — the same LIFO guarantee C++ gives any scope's local objects, genuinely captured here on LibTorch's real allocator instead of a toy one. The second half is the more interesting result: <code>torch::from_blob</code> lets a tensor wrap externally-owned memory and take a deleter callback to run when that tensor's storage is finally released, and the trace print shows that deleter genuinely firing — after the tensor was used (<code>sum = 10</code>, matching <code>1+2+3+4</code>), and before the enclosing block's own closing brace finishes executing. This is not a separate demonstration mechanism standing in for how <code>torch::Tensor</code> manages memory — it <em>is</em> how <code>torch::Tensor</code> manages memory, observed directly rather than asserted.</p>
+<h2 id="25-compile-time-interfaces-what-torchnncloneables-real-crtp-actually-buys-foundational">2.5 Compile-Time Interfaces: What <code>torch::nn::Cloneable</code>'s Real CRTP Actually Buys <code>[FOUNDATIONAL]</code><a class="headerlink" href="#25-compile-time-interfaces-what-torchnncloneables-real-crtp-actually-buys-foundational" title="Permanent link">&para;</a></h2>
+<h3 id="intuition_4">Intuition<a class="headerlink" href="#intuition_4" title="Permanent link">&para;</a></h3>
+<p>The CUDA C++ book's Chapter 2 closes with a clean textbook contrast: virtual dispatch costs a vtable pointer and a runtime indirect call, CRTP costs neither, so a hand-built <code>CircleCRTP</code> measures smaller than a hand-built <code>Circle</code>. LibTorch's own <code>torch::nn</code> module has a real, documented CRTP use — <code>torch::nn::Cloneable&lt;Derived&gt;</code> — and genuinely measuring it tells a different, more honest story: <code>Cloneable&lt;Derived&gt;</code> inherits from <code>torch::nn::Module</code>, which already needs a vtable so that <code>forward()</code> and other methods can be called polymorphically through a base pointer, so there's no vtable left to dodge. CRTP earns its place here for a completely different reason than the textbook one.</p>
+<h3 id="background_4">Background<a class="headerlink" href="#background_4" title="Permanent link">&para;</a></h3>
+<p><code>torch::nn::Module</code>'s own <code>clone()</code> cannot know, from inside the base class, what concrete type a given module actually is — it would need that type to construct a copy of it. LibTorch's own header comment on <code>Cloneable</code> states the design plainly: it uses CRTP so that each derived module tells the compiler its own concrete type, letting <code>Cloneable&lt;Derived&gt;::clone()</code> be written once and reused by every subclass, <em>without</em> forcing <code>Module</code> itself to become a template — which would have made storing modules polymorphically (as <code>std::shared_ptr&lt;Module&gt;</code>, the way <code>torch::nn</code> containers actually do it) impossible. That is a different problem than the one CRTP solves in the CUDA book's toy example, and it's worth being precise about the difference rather than assuming the two must match:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CUDA book's <code>CircleCRTP</code> example</th>
+<th><code>torch::nn::Cloneable&lt;Derived&gt;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What CRTP is being used to avoid</td>
+<td>A vtable pointer and its runtime dispatch cost</td>
+<td>Templatizing the <em>base</em> class (<code>Module</code>) just to give <code>clone()</code> a default body</td>
+</tr>
+<tr>
+<td>Does the resulting type still have a vtable?</td>
+<td>No — no virtual functions at all</td>
+<td>Yes — it still inherits <code>Module</code>'s virtual <code>forward()</code>, <code>clone()</code>, and others</td>
+</tr>
+<tr>
+<td>Expected <code>sizeof</code> difference vs. a plain virtual sibling</td>
+<td>Large — a whole vtable pointer's worth</td>
+<td>None beyond whatever data members the derived type itself adds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="worked-example-251-measuring-the-difference-honestly-then-genuinely-cloning">Worked Example 2.5.1 — measuring the difference honestly, then genuinely cloning<a class="headerlink" href="#worked-example-251-measuring-the-difference-honestly-then-genuinely-cloning" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1">// Plain virtual dispatch: DoubleIt overrides Module&#39;s virtual forward-like method</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">// through an ordinary hand-written override, no CRTP involved.</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Doubler</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Module</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">};</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1">// LibTorch&#39;s real CRTP mechanism: Cloneable&lt;Derived&gt; gives clone() a default</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1">// implementation that needs to know the concrete derived type, without</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1">// templatizing Module itself.</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Adder</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Cloneable</span><span class="o">&lt;</span><span class="n">Adder</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">bias</span><span class="p">;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">reset</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">        </span><span class="n">bias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register_parameter</span><span class="p">(</span><span class="s">&quot;bias&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">3</span><span class="p">}));</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bias</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">};</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::nn::Module) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Module</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(Doubler) (plain virtual override, no CRTP) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Doubler</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(Adder) (torch::nn::Cloneable&lt;Adder&gt;, real CRTP) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Adder</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="w">    </span><span class="c1">// Virtual dispatch: stored and called through a base Module pointer.</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Module</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">modules</span><span class="p">;</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Doubler</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="w">    </span><span class="n">modules</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;virtual-dispatch storage: modules.size() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">modules</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a><span class="w">    </span><span class="c1">// CRTP: Adder&#39;s reset() must run once to materialize its parameter.</span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Adder</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="w">    </span><span class="n">original</span><span class="o">-&gt;</span><span class="n">reset</span><span class="p">();</span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">zeros</span><span class="p">({</span><span class="mi">3</span><span class="p">});</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="o">-&gt;</span><span class="n">forward</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;original-&gt;forward(zeros(3)) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="w">    </span><span class="c1">// clone() is Cloneable&#39;s real CRTP payoff: a working deep copy with no</span>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="w">    </span><span class="c1">// hand-written clone() on Adder itself.</span>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cloned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">Adder</span><span class="o">&gt;</span><span class="p">(</span><span class="n">original</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">());</span>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">NoGradGuard</span><span class="w"> </span><span class="n">no_grad</span><span class="p">;</span><span class="w"> </span><span class="n">cloned</span><span class="o">-&gt;</span><span class="n">bias</span><span class="p">.</span><span class="n">add_</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// mutate the CLONE&#39;s parameter, out-of-place w.r.t. autograd</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;original-&gt;bias = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">original</span><span class="o">-&gt;</span><span class="n">bias</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cloned-&gt;bias   = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cloned</span><span class="o">-&gt;</span><span class="n">bias</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;same underlying storage? &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">original</span><span class="o">-&gt;</span><span class="n">bias</span><span class="p">.</span><span class="n">data_ptr</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">cloned</span><span class="o">-&gt;</span><span class="n">bias</span><span class="p">.</span><span class="n">data_ptr</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run in this book's environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sizeof(torch::nn::Module) = 408
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sizeof(Doubler) (plain virtual override, no CRTP) = 408
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>sizeof(Adder) (torch::nn::Cloneable&lt;Adder&gt;, real CRTP) = 416
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>virtual-dispatch storage: modules.size() = 1
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>original-&gt;forward(zeros(3)) =  1
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a> 1
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a> 1
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>[ CPUFloatType{3} ]
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>original-&gt;bias =  1
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a> 1
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a> 1
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>[ CPUFloatType{3} ]
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>cloned-&gt;bias   =  11
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a> 11
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a> 11
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>[ CPUFloatType{3} ]
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>same underlying storage? 0
+</code></pre></div>
+<p><code>Doubler</code>, which adds no CRTP and no new members, measures exactly the same 408 bytes as bare <code>torch::nn::Module</code> — there was never a vtable to save by using CRTP here in the first place, because ordinary virtual dispatch was already fully in play the moment <code>Doubler</code> inherited from <code>Module</code>. <code>Adder</code>, built on <code>Cloneable&lt;Adder&gt;</code>, measures 408 + 8 = 416 — and that extra 8 bytes is exactly <code>sizeof(torch::Tensor)</code> (a <code>Tensor</code> is a thin handle around a reference-counted pointer, not a data-owning struct itself), i.e. precisely the cost of the one <code>bias</code> member <code>Adder</code> actually declared. No vtable pointer was avoided, because none could have been — <code>Cloneable&lt;Derived&gt;</code> still inherits every one of <code>Module</code>'s virtual functions. What CRTP genuinely bought here is visible in the next four lines instead: <code>Adder</code> never wrote its own <code>clone()</code>, and <code>original-&gt;clone()</code> still produced a real, independent copy — <code>cloned-&gt;bias</code> diverges from <code>original-&gt;bias</code> after mutation, and <code>data_ptr()</code> confirms they're genuinely backed by different storage, not two handles to the same tensor.</p>
+<blockquote>
+<p><code>[COMMON TRAP]</code> It's tempting to read "CRTP" and assume "no vtable" by reflex, because that's the lesson the classic textbook example teaches. <code>torch::nn::Cloneable&lt;Derived&gt;</code> is real, shipped, documented CRTP, and it demonstrates directly that the two ideas are separable: CRTP is a compile-time mechanism for giving a class knowledge of its own concrete subtype, and <em>sometimes</em> that's used to eliminate a vtable (the CUDA book's <code>CircleCRTP</code>), but here it's used for something else entirely — sharing one <code>clone()</code> implementation across every <code>Cloneable</code> subclass without templatizing <code>Module</code> itself — on a type that was always going to carry a vtable regardless.</p>
+</blockquote>
+<h2 id="complete-runnable-code">Complete Runnable Code<a class="headerlink" href="#complete-runnable-code" title="Permanent link">&para;</a></h2>
+<h3 id="file-01_tensor_optionscpp">File: <code>01_tensor_options.cpp</code><a class="headerlink" href="#file-01_tensor_optionscpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::TensorOptions) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts1</span><span class="p">;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;default opts1.has_dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts1</span><span class="p">.</span><span class="n">has_dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="c1">// builder-style chaining: each call returns a NEW TensorOptions by value</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">opts1</span><span class="p">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat64</span><span class="p">).</span><span class="n">device</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="p">).</span><span class="n">requires_grad</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts2.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts2</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, requires_grad = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts2</span><span class="p">.</span><span class="n">requires_grad</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="c1">// opts1 itself: unchanged, since dtype()/device()/requires_grad() are all const methods</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts1.has_dtype() after building opts2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts1</span><span class="p">.</span><span class="n">has_dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">    </span><span class="c1">// implicit conversion constructors: TensorOptions(ScalarType) and TensorOptions(Device)</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kFloat32</span><span class="p">;</span><span class="w">   </span><span class="c1">// resolves via TensorOptions(ScalarType)</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">TensorOptions</span><span class="w"> </span><span class="n">opts4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kCPU</span><span class="p">;</span><span class="w">        </span><span class="c1">// resolves via TensorOptions(Device)</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts3.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts3</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, opts3.has_device() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts3</span><span class="p">.</span><span class="n">has_device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;opts4.has_dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts4</span><span class="p">.</span><span class="n">has_dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, opts4.device() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">opts4</span><span class="p">.</span><span class="n">device</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="c1">// use it to build a real tensor</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="n">opts2</span><span class="p">);</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t.dtype() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">dtype</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, t.requires_grad() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">requires_grad</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">TORCH_DIR</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;</span><span class="k">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>01_tensor_options.cpp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include&quot;</span><span class="w"> </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include/torch/csrc/api/include&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="m">1</span><span class="w"> </span>-L<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span>-ltorch<span class="w"> </span>-ltorch_cpu<span class="w"> </span>-lc10<span class="w"> </span>-Wl,-rpath,<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span>-o<span class="w"> </span>01_tensor_options
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>./01_tensor_options
+</code></pre></div>
+<h3 id="file-02_accessor_templatescpp">File: <code>02_accessor_templates.cpp</code><a class="headerlink" href="#file-02_accessor_templatescpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1">// A small template function around Tensor::accessor&lt;T,N&gt;(), mirroring the way</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">// this book&#39;s CUDA sibling proves template instantiation with its own Vector&lt;T,N&gt;::sum().</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1">// Kept noinline so nm can show it as a distinct symbol per instantiation, not folded away.</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">noinline</span><span class="p">))</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">T</span><span class="w"> </span><span class="n">accessor_sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">accessor</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">acc</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">acc</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="p">}</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">float_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0f</span><span class="p">});</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">int_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">},</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">kInt64</span><span class="p">);</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">fsum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accessor_sum</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">float_t</span><span class="p">);</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">isum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accessor_sum</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">int_t</span><span class="p">);</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;accessor_sum&lt;float,1&gt;(float_t) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">fsum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;accessor_sum&lt;int64_t,1&gt;(int_t) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">isum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::TensorAccessor&lt;float,1&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">TensorAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::TensorAccessor&lt;int64_t,1&gt;) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">TensorAccessor</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">TORCH_DIR</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;</span><span class="k">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O0<span class="w"> </span>02_accessor_templates.cpp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include&quot;</span><span class="w"> </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include/torch/csrc/api/include&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="m">1</span><span class="w"> </span>-L<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span>-ltorch<span class="w"> </span>-ltorch_cpu<span class="w"> </span>-lc10<span class="w"> </span>-Wl,-rpath,<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span>-o<span class="w"> </span>02_accessor_templates
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>./02_accessor_templates
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>nm<span class="w"> </span>-C<span class="w"> </span>02_accessor_templates<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>accessor_sum
+</code></pre></div>
+<h3 id="file-03_raii_allocatorcpp">File: <code>03_raii_allocator.cpp</code><a class="headerlink" href="#file-03_raii_allocatorcpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;c10/core/CPUAllocator.h&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">// RAII around LibTorch&#39;s own real CPU allocator (the same allocator a CPU</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">// torch::Tensor&#39;s storage genuinely uses) -- not a hand-rolled new/delete.</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1">// Addresses are deliberately not printed: they&#39;re genuine but change every run</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1">// (heap layout), so only &quot;was memory actually acquired&quot; (a non-null DataPtr)</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1">// and construction/destruction *order* are reported.</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HostBuffer</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="n">c10</span><span class="o">::</span><span class="n">DataPtr</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="n">HostBuffer</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">n_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ptr</span><span class="p">(</span><span class="n">c10</span><span class="o">::</span><span class="n">GetCPUAllocator</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">allocate</span><span class="p">(</span><span class="n">n_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">))),</span><span class="w"> </span><span class="n">n</span><span class="p">(</span><span class="n">n_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  HostBuffer(&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;) constructed -&gt; allocated via c10::GetCPUAllocator(), non-null: &quot;</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">                  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">ptr</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="o">~</span><span class="n">HostBuffer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  ~HostBuffer(size=&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;) destructor firing&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">        </span><span class="c1">// ptr&#39;s own destructor (c10::DataPtr is itself RAII) releases the memory here.</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="p">};</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="kt">void</span><span class="w"> </span><span class="nf">scoped_demo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;entering scoped_demo&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="w">    </span><span class="n">HostBuffer</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="w">    </span><span class="n">HostBuffer</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;both buffers constructed, about to leave scope&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="p">}</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="w">    </span><span class="n">scoped_demo</span><span class="p">();</span>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;back in main, both destructors already ran&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="w">    </span><span class="c1">// Now: torch::Tensor&#39;s OWN storage, genuinely observed firing a real deleter at scope exit,</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="w">    </span><span class="c1">// via torch::from_blob&#39;s deleter callback -- not a separate hand-built mechanism.</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;--- torch::Tensor&#39;s own RAII, observed directly ---&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a><span class="w">        </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">float</span><span class="p">[</span><span class="mi">4</span><span class="p">]{</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0f</span><span class="p">};</span>
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a><span class="w">        </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">from_blob</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">},</span><span class="w"> </span><span class="p">[](</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a><span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  Tensor-owned deleter firing, freeing the same buffer from_blob was given&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a><span class="w">            </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a><span class="w">        </span><span class="p">});</span>
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  tensor constructed, sum = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">sum</span><span class="p">().</span><span class="n">item</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;back in main, the from_blob tensor&#39;s deleter already ran&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">TORCH_DIR</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;</span><span class="k">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>03_raii_allocator.cpp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include&quot;</span><span class="w"> </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include/torch/csrc/api/include&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="m">1</span><span class="w"> </span>-L<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span>-ltorch<span class="w"> </span>-ltorch_cpu<span class="w"> </span>-lc10<span class="w"> </span>-Wl,-rpath,<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span>-o<span class="w"> </span>03_raii_allocator
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>./03_raii_allocator
+</code></pre></div>
+<h3 id="file-04_crtp_vs_virtualcpp">File: <code>04_crtp_vs_virtual.cpp</code><a class="headerlink" href="#file-04_crtp_vs_virtualcpp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1">// Plain virtual dispatch: DoubleIt overrides Module&#39;s virtual forward-like method</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1">// through an ordinary hand-written override, no CRTP involved.</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Doubler</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Module</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">};</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1">// LibTorch&#39;s real CRTP mechanism: Cloneable&lt;Derived&gt; gives clone() a default</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="c1">// implementation that needs to know the concrete derived type, without</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="c1">// templatizing Module itself.</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Adder</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Cloneable</span><span class="o">&lt;</span><span class="n">Adder</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">bias</span><span class="p">;</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">reset</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">        </span><span class="n">bias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register_parameter</span><span class="p">(</span><span class="s">&quot;bias&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">ones</span><span class="p">({</span><span class="mi">3</span><span class="p">}));</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bias</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="p">};</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(torch::nn::Module) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Module</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(Doubler) (plain virtual override, no CRTP) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Doubler</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(Adder) (torch::nn::Cloneable&lt;Adder&gt;, real CRTP) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">Adder</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a><span class="w">    </span><span class="c1">// Virtual dispatch: stored and called through a base Module pointer.</span>
+<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">torch</span><span class="o">::</span><span class="n">nn</span><span class="o">::</span><span class="n">Module</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">modules</span><span class="p">;</span>
+<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Doubler</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a><span class="w">    </span><span class="n">modules</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;virtual-dispatch storage: modules.size() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">modules</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>
+<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a><span class="w">    </span><span class="c1">// CRTP: Adder&#39;s reset() must run once to materialize its parameter.</span>
+<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Adder</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="w">    </span><span class="n">original</span><span class="o">-&gt;</span><span class="n">reset</span><span class="p">();</span>
+<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">zeros</span><span class="p">({</span><span class="mi">3</span><span class="p">});</span>
+<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="o">-&gt;</span><span class="n">forward</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;original-&gt;forward(zeros(3)) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a>
+<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="w">    </span><span class="c1">// clone() is Cloneable&#39;s real CRTP payoff: a working deep copy with no</span>
+<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="w">    </span><span class="c1">// hand-written clone() on Adder itself.</span>
+<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">cloned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">dynamic_pointer_cast</span><span class="o">&lt;</span><span class="n">Adder</span><span class="o">&gt;</span><span class="p">(</span><span class="n">original</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">());</span>
+<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">NoGradGuard</span><span class="w"> </span><span class="n">no_grad</span><span class="p">;</span><span class="w"> </span><span class="n">cloned</span><span class="o">-&gt;</span><span class="n">bias</span><span class="p">.</span><span class="n">add_</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// mutate the CLONE&#39;s parameter, out-of-place w.r.t. autograd</span>
+<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;original-&gt;bias = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">original</span><span class="o">-&gt;</span><span class="n">bias</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cloned-&gt;bias   = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">cloned</span><span class="o">-&gt;</span><span class="n">bias</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;same underlying storage? &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">original</span><span class="o">-&gt;</span><span class="n">bias</span><span class="p">.</span><span class="n">data_ptr</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">cloned</span><span class="o">-&gt;</span><span class="n">bias</span><span class="p">.</span><span class="n">data_ptr</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>
+<a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">TORCH_DIR</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;</span><span class="k">)</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-O2<span class="w"> </span>04_crtp_vs_virtual.cpp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include&quot;</span><span class="w"> </span>-I<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/include/torch/csrc/api/include&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span>-D_GLIBCXX_USE_CXX11_ABI<span class="o">=</span><span class="m">1</span><span class="w"> </span>-L<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">  </span>-ltorch<span class="w"> </span>-ltorch_cpu<span class="w"> </span>-lc10<span class="w"> </span>-Wl,-rpath,<span class="s2">&quot;</span><span class="nv">$TORCH_DIR</span><span class="s2">/lib&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span>-o<span class="w"> </span>04_crtp_vs_virtual
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>./04_crtp_vs_virtual
+</code></pre></div>
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<p><code>torch::TensorOptions</code> is a struct genuinely engineered down to a measured 8 bytes, using bitfields instead of <code>std::optional</code> per field specifically to keep its seven presence flags packed into a single byte, backed by its own <code>static_assert</code> promising it will never exceed 16 — and its builder methods (<code>.dtype()</code>, <code>.device()</code>, <code>.requires_grad()</code>) are <code>const</code>, <code>[[nodiscard]]</code> functions that return a new object rather than mutating the one they're called on, giving chained construction genuine, verifiable value semantics. <code>torch::TensorAccessor&lt;T, N&gt;</code>, a real template this book's own code instantiated twice, proves template specialization the same way the CUDA C++ book's <code>Vector&lt;T, N&gt;</code> does — two separate compiled symbols, confirmed with <code>nm</code> — while measuring identically at 24 bytes for both <code>float</code> and <code>int64_t</code>, because it's a three-pointer view onto existing tensor data rather than a container that embeds its own elements. RAII needed no reconstruction from scratch: <code>c10::GetCPUAllocator()</code> and <code>c10::DataPtr</code> are LibTorch's own real allocation machinery, and this chapter observed a real <code>torch::Tensor</code>'s deleter genuinely fire at scope exit through <code>torch::from_blob</code>, not a hand-built stand-in for how <code>Tensor</code> manages memory. <code>torch::nn::Cloneable&lt;Derived&gt;</code> closed the chapter as LibTorch's own real, documented CRTP use — genuinely exercised through a working <code>.clone()</code> that produces independently-storage-backed copies — but measuring it honestly overturns the textbook "CRTP means no vtable" assumption: <code>Cloneable&lt;Derived&gt;</code> still inherits <code>Module</code>'s full vtable, and the pattern is being used here to avoid templatizing the <em>base</em> class, not to avoid virtual dispatch at all.</p>
+<h2 id="self-check-questions">Self-Check Questions<a class="headerlink" href="#self-check-questions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>torch::TensorOptions</code> could have used <code>std::optional&lt;T&gt;</code> for each of its five settable fields instead of a separate <code>has_*_</code> bitfield per field. What does the header's own <code>static_assert</code> tell you about why its authors didn't, and what would you expect to happen to <code>sizeof(TensorOptions)</code> if it had?</li>
+<li><code>torch::TensorOptions opts3 = torch::kFloat32;</code> and <code>torch::TensorOptions opts4 = torch::kCPU;</code> compile against two different constructors, chosen with no runtime branching at all. What C++ mechanism selects between them, and when does that selection happen?</li>
+<li><code>torch::TensorAccessor&lt;float, 1&gt;</code> and <code>torch::TensorAccessor&lt;int64_t, 1&gt;</code> both measure 24 bytes with <code>sizeof</code>, despite wrapping tensors of two different dtypes. Why doesn't the element type change the accessor's own size, and how would that answer change for a template that stored its elements directly (like the CUDA book's <code>Vector&lt;T, N&gt;</code>) instead of just pointing at them?</li>
+<li>This chapter's <code>HostBuffer</code> struct never calls <code>c10::GetCPUAllocator()</code>'s deallocation function directly anywhere in its own code. What actually frees the memory it allocated, and at what point in the program does that happen?</li>
+<li><code>sizeof(Doubler)</code> and <code>sizeof(torch::nn::Module)</code> come out identical in this chapter's genuine measurement, while <code>sizeof(Adder)</code> is 8 bytes larger. Given that <code>Adder</code> is the one built on <code>torch::nn::Cloneable&lt;Adder&gt;</code> (real CRTP) and <code>Doubler</code> isn't, what does that 8-byte gap actually represent, and why doesn't it represent "the cost of a vtable"?</li>
+</ol>
+<h2 id="where-we-go-next">Where We Go Next<a class="headerlink" href="#where-we-go-next" title="Permanent link">&para;</a></h2>
+<p>Every struct this chapter examined was self-contained — <code>TensorOptions</code> describes settings, <code>TensorAccessor</code> views one tensor's data, <code>HostBuffer</code> owns one allocation. Chapter 3 moves to the piece of memory-layout reasoning this book's own <code>Tensor</code> type is actually built on: how shape and stride together turn one flat buffer into something that can be indexed as multi-dimensional data at all, and what LibTorch's own <code>c10::IntArrayRef</code>-based sizes and strides genuinely do differently from a <code>TensorAccessor</code>'s fixed compile-time <code>N</code>.</p>
+<h2 id="worked-solutions">Worked Solutions<a class="headerlink" href="#worked-solutions" title="Permanent link">&para;</a></h2>
+<p><strong>1.</strong> The <code>static_assert(sizeof(TensorOptions) &lt;= sizeof(int64_t) * 2)</code> tells you the authors made a hard, compile-time-enforced promise that this struct will never exceed 16 bytes, no matter how many settings get added to it later — and the header's own comment states directly that packing the seven <code>has_*_</code> presence flags into single bits was necessary specifically because <code>std::optional&lt;T&gt;</code> couldn't be packed that tightly. Had they used <code>std::optional&lt;T&gt;</code> per field instead, <code>sizeof(TensorOptions)</code> would very likely have grown well past that 16-byte ceiling — each <code>std::optional&lt;T&gt;</code> typically costs at least <code>sizeof(T)</code> plus its own presence flag, with no sharing between fields the way the bitfield design achieves, and the <code>static_assert</code> itself would probably have started failing to compile.</p>
+<p><strong>2.</strong> Overload resolution — specifically, resolution among <code>TensorOptions</code>'s implicit (non-<code>explicit</code>) single-argument constructors — is what selects between them, matching the initializer's static type (<code>ScalarType</code> for <code>torch::kFloat32</code>, <code>Device</code> for <code>torch::kCPU</code>) against the available constructor signatures. That selection happens entirely at compile time: by the time the program runs, <code>opts3</code>'s and <code>opts4</code>'s constructors have already been fully resolved and compiled into ordinary function calls, with no type inspection or branching happening while the program executes.</p>
+<p><strong>3.</strong> <code>TensorAccessor&lt;T, N&gt;</code> doesn't change size with <code>T</code> because it never stores a single element of the tensor it's viewing — it holds three pointers (to the data, to the sizes array, and to the strides array), and a pointer is the same size regardless of what it points at. A template that stores its elements directly, the way the CUDA book's <code>Vector&lt;T, N&gt;</code> embeds <code>T data[N]</code> as an actual member, would genuinely change size with both <code>T</code> (each element's own width) and <code>N</code> (how many of them) — exactly why the CUDA book's own <code>Vector&lt;float, 4&gt;</code> and <code>Vector&lt;int, 3&gt;</code> measure different sizes from each other, while this chapter's two <code>TensorAccessor</code> instantiations measure identically.</p>
+<p><strong>4.</strong> <code>c10::DataPtr</code>'s own destructor is what actually frees the memory — <code>HostBuffer</code> only ever calls <code>c10::GetCPUAllocator()-&gt;allocate(...)</code>, once, in its constructor, storing the resulting <code>DataPtr</code> as a member; it never calls anything to release it explicitly. That release genuinely happens when <code>HostBuffer</code>'s own destructor runs (at the end of the scope that declared it, in this chapter's case <code>scoped_demo()</code>), because a struct's destructor automatically destroys every member that has its own destructor — <code>ptr</code>'s destructor runs as part of <code>~HostBuffer()</code> running, without <code>~HostBuffer()</code> needing to say so explicitly anywhere in its body.</p>
+<p><strong>5.</strong> The 8-byte gap is exactly <code>sizeof(torch::Tensor)</code> — the one <code>bias</code> member <code>Adder</code> declares that neither <code>Module</code> nor <code>Doubler</code> has. It doesn't represent the cost of a vtable because there was no vtable difference to begin with: <code>Adder</code> inherits from <code>Cloneable&lt;Adder&gt;</code>, which itself inherits from <code>Module</code>, so <code>Adder</code> already carries exactly the same vtable <code>Doubler</code> carries, by virtue of both ultimately being <code>Module</code>s — CRTP added a compile-time capability (a default, reusable <code>clone()</code> that knows its own concrete type) without adding or removing a single virtual function from the hierarchy, which is exactly why the size difference between <code>Adder</code> and <code>Doubler</code> is fully accounted for by ordinary data-member size, not vtable presence.</p>
 
 
 
