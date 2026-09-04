@@ -1459,6 +1459,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Installation & Setup
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1475,6 +1493,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-machine-cpu-or-gpu-with-libtorch-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local machine (CPU or GPU) with LibTorch installed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-local-nvidia-gpu-this-books-own-sandbox-and-honest-cpu-fallback-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No local NVIDIA GPU: this book's own sandbox, and honest CPU-fallback behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-this-books-own-documentation-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building this book's own documentation site
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1732,6 +1813,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#local-machine-cpu-or-gpu-with-libtorch-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local machine (CPU or GPU) with LibTorch installed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-local-nvidia-gpu-this-books-own-sandbox-and-honest-cpu-fallback-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No local NVIDIA GPU: this book's own sandbox, and honest CPU-fallback behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-this-books-own-documentation-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building this book's own documentation site
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1748,11 +1881,76 @@
 
 
 <h1 id="appendix-a-installation-setup">Appendix A: Installation &amp; Setup<a class="headerlink" href="#appendix-a-installation-setup" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Coming soon</p>
-<p>This appendix section has not been written yet. It mirrors Appendix A
-of <a href="https://maximumbeings.github.io/cuda-from-first-principles/"><em>CUDA From First Principles</em></a>.</p>
-</div>
+<p>The CUDA C++ edition's own Appendix A is deliberately short and loose -- four plain sections, no epigraph, no numbered worked examples, no self-check questions -- because installation is not a conceptual topic the way a chapter's own material is; it is a one-time checklist to get through before any of the book's own real content can be compiled at all. This appendix follows that same loose shape rather than forcing the numbered-chapter template onto material that does not need it.</p>
+<h2 id="local-machine-cpu-or-gpu-with-libtorch-installed">Local machine (CPU or GPU) with LibTorch installed<a class="headerlink" href="#local-machine-cpu-or-gpu-with-libtorch-installed" title="Permanent link">&para;</a></h2>
+<p>Every chapter of this book was built and genuinely compiled against a real, installed LibTorch -- not a standalone download of the separate C++ distribution archive from pytorch.org, but the LibTorch shared libraries and headers that already ship INSIDE a normal Python <code>torch</code> package (<code>pip install torch</code>). This is worth stating plainly, because it is the actual, tested path every single source file in this book has used, not a simplification for this appendix alone: a Python <code>torch</code> installation already contains the full <code>libtorch.so</code>, <code>libtorch_cpu.so</code>, and <code>libc10.so</code> shared libraries, plus every C++ header under <code>torch/csrc/api/include</code>, at a fixed, discoverable path relative to the Python package itself. Locating that path is one Python one-liner:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>TORCH_DIR=$(python3 -c &quot;import torch,os;print(os.path.dirname(torch.__file__))&quot;)
+</code></pre></div>
+<p>and the standard compile line used throughout this entire book, unchanged from Chapter 1 to Chapter 22, is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>g++ -std=c++20 -O2 some_example.cpp \
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    -I&quot;$TORCH_DIR/include&quot; \
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    -I&quot;$TORCH_DIR/include/torch/csrc/api/include&quot; \
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    -D_GLIBCXX_USE_CXX11_ABI=1 \
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    -L&quot;$TORCH_DIR/lib&quot; \
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    -ltorch -ltorch_cpu -lc10 \
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    -Wl,-rpath,&quot;$TORCH_DIR/lib&quot; \
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    -o some_example
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>./some_example
+</code></pre></div>
+<p>The <code>-D_GLIBCXX_USE_CXX11_ABI=1</code> flag is not optional decoration -- it is the single most common source of a genuinely confusing LibTorch linker error for a newcomer, and it has no equivalent at all in the CUDA C++ edition's own installation appendix, since raw CUDA/C++ code has no dual-ABI concern to navigate. A <code>pip</code>-installed <code>torch</code> package on Linux is built against the new (C++11) <code>libstdc++</code> ABI, and code compiled against it with the OLD ABI (the pre-C++11 default some older toolchains still ship) fails to link at all, with error messages that do not obviously point back to this flag. Passing <code>-D_GLIBCXX_USE_CXX11_ABI=1</code> explicitly, matching whatever ABI the installed <code>torch</code> package itself was built with, is what every compile line in this book does, for exactly this reason -- confirmed directly against this sandbox's own installed <code>torch</code> package below, not assumed.</p>
+<p><strong>Smoke test.</strong> The direct LibTorch-native equivalent of the CUDA book's own <code>nvidia-smi</code> / <code>nvcc --version</code> pair -- two checks that must both work before compiling anything else in this book at all.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;torch/torch.h&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">// Appendix A&#39;s own smoke test: the LibTorch-native equivalent of the</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// CUDA book&#39;s own `nvidia-smi` / `nvcc --version` pair -- two quick</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">// checks that must both work before compiling anything else in this</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">// book. `torch::cuda::is_available()` is the real, production check</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">// for whether a CUDA-capable device is actually present and usable</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">// (the direct LibTorch analog of `nvidia-smi` reporting a real GPU);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">// building and running one minimal real torch::Tensor program is the</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">// direct analog of `nvcc --version` -- proof that the include paths,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1">// library paths, and ABI flags are all genuinely correct, not just</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">// that a version string prints.</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;LibTorch version: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">TORCH_VERSION</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;torch::cuda::is_available() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">cuda</span><span class="o">::</span><span class="n">is_available</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;torch::cuda::device_count() = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">cuda</span><span class="o">::</span><span class="n">device_count</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="n">torch</span><span class="o">::</span><span class="n">Tensor</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">})</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;smoke test tensor (torch::tensor({1,2,3}) * 2) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;smoke test passed: real torch::Tensor arithmetic executed and produced [2,4,6]? &quot;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">allclose</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">torch</span><span class="o">::</span><span class="n">tensor</span><span class="p">({</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">}))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="p">}</span>
+</code></pre></div>
+<p>Genuinely compiled and run, in this exact sandbox, via the exact compile line above:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>LibTorch version: 2.14.0
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>torch::cuda::is_available() = 0
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>torch::cuda::device_count() = 0
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>smoke test tensor (torch::tensor({1,2,3}) * 2) =  2
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a> 4
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a> 6
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>[ CPUFloatType{3} ]
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>smoke test passed: real torch::Tensor arithmetic executed and produced [2,4,6]? 1
+</code></pre></div>
+<p>If this program fails to compile or link, fix that before compiling anything in this book -- every chapter assumes it already works, exactly as the CUDA book's own appendix states about <code>nvidia-smi</code>/<code>nvcc --version</code>.</p>
+<h2 id="no-local-nvidia-gpu-this-books-own-sandbox-and-honest-cpu-fallback-behavior">No local NVIDIA GPU: this book's own sandbox, and honest CPU-fallback behavior<a class="headerlink" href="#no-local-nvidia-gpu-this-books-own-sandbox-and-honest-cpu-fallback-behavior" title="Permanent link">&para;</a></h2>
+<p>This entire book -- every one of the roughly seventy source files compiled and genuinely run across Chapters 1 through 22 -- was built inside a sandbox with no NVIDIA driver and no GPU hardware attached at all. The installed <code>torch</code> package itself IS a CUDA-enabled build (<code>2.14.0+cu130</code>, meaning it was compiled with CUDA support and is capable of running on a GPU if one were present); what makes every chapter's own work genuinely CPU-only is not a CPU-only LibTorch build, but the simple fact that <code>torch::cuda::is_available()</code> genuinely, correctly reports <code>false</code> in an environment with no actual GPU hardware or driver -- confirmed directly above, not assumed, in the exact same smoke test that confirms the ABI and library paths are correct. This is the direct LibTorch-native analog of the CUDA book's own Section 2 (a cloud instance with no GPU attached still compiles and runs Runtime API calls, which then return <code>cudaErrorNoDevice</code>): a real, production LibTorch build genuinely queries for a device, genuinely finds none, and genuinely, correctly reports that absence through its own real API -- <code>torch::cuda::is_available()</code> returning <code>false</code>, rather than a raw CUDA error code, since a LibTorch program's own tensor operations simply execute on CPU by default and never attempt a CUDA call at all unless a tensor or model is explicitly moved there with <code>.to(torch::kCUDA)</code>.</p>
+<p>Every chapter of this book that had any GPU-hardware-dependent claim to make -- Chapters 18 and 19 specifically, on GPU kernel implementation and performance optimization -- disclosed this honestly and explicitly at the point that claim was made, tagging anything that could not be genuinely tested on this sandbox's own CPU-only hardware as <code>[UNVERIFIED -- pending real-GPU test]</code>, rather than fabricating a plausible-looking GPU result. Chapters 20 through 22 (Parts 6 and 7) needed no such tags at all -- neural network layers, autograd internals, serialization, gradient debugging, attention algorithms, Mixture-of-Experts routing, and every technique in Chapter 22's own quantitative finance material turn out to be pure mathematics and software engineering with no CUDA-hardware dependency whatsoever, a genuinely useful property of this book's own chosen subject matter, confirmed chapter by chapter rather than assumed from the outset.</p>
+<h2 id="version-notes">Version notes<a class="headerlink" href="#version-notes" title="Permanent link">&para;</a></h2>
+<p>This book's own installed <code>torch</code> package: version <code>2.14.0+cu130</code> (a CUDA 13.0-enabled build; genuinely CUDA-capable, but running with no GPU attached, per above), <code>LibTorch</code> version string <code>2.14.0</code> (reported by the <code>TORCH_VERSION</code> macro directly in the smoke test above), compiled with <code>_GLIBCXX_USE_CXX11_ABI=1</code> (confirmed directly from the installed package's own <code>torch._C._GLIBCXX_USE_CXX11_ABI</code> attribute, which reports <code>True</code>). The system compiler used throughout is <code>g++ 13.3.0</code> on Ubuntu 24.04, with every source file compiled under the C++20 standard (<code>-std=c++20</code>) -- nothing in this book requires a feature newer than C++17 (<code>torch::autograd::Function</code>, structured bindings, and ordinary template code are all that any chapter uses), so an older compiler targeting C++17 would likely work for every example in this book, though this was not independently tested, exactly as the CUDA book's own hedged version language ("older toolkits may work too") is itself hedged rather than a tested guarantee.</p>
+<p>Unlike the CUDA book's own target (a fixed compute capability, <code>sm_80</code>, chosen for broad availability and specific tensor-core feature support), LibTorch's own version compatibility concern is almost entirely about the ABI flag above, not about a specific hardware generation -- any reasonably recent <code>torch</code> package (this book's own chapters were written and tested against version <code>2.14</code>, but nothing in this book's own code uses an API newer than what has been stable in LibTorch for several major versions) paired with a compiler whose ABI matches what that package reports should reproduce every result in this book.</p>
+<h2 id="building-this-books-own-documentation-site">Building this book's own documentation site<a class="headerlink" href="#building-this-books-own-documentation-site" title="Permanent link">&para;</a></h2>
+<p>Identical in spirit to the CUDA book's own final section, adjusted only for this book's own repository:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git clone https://github.com/MaximumBeings/libtorch_from_first_principles.git
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>cd libtorch_from_first_principles
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>python3 -m venv .venv &amp;&amp; source .venv/bin/activate
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>pip install mkdocs-material
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>mkdocs serve
+</code></pre></div>
+<p><code>mkdocs serve</code> builds and serves this book's own documentation site directly from the Markdown files under <code>docs/</code> -- no LibTorch installation, no compiler, and no GPU is needed for this step at all, since it only renders already-written Markdown into a browsable site; every code block embedded in every chapter of this site is a static, already-verified transcript of a real compile and run, not something the documentation build itself re-executes.</p>
 
 
 
