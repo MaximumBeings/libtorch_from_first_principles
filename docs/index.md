@@ -3,7 +3,13 @@
 **Learning PyTorch's Real C++ Frontend, One Layer at a Time**
 
 !!! info "This book is under development"
-    Chapters are written and posted one at a time, in page order, each one carrying real code and honestly labeled output — the same discipline [*CUDA From First Principles*](https://maximumbeings.github.io/cuda-from-first-principles/) is being built with. It is the sixth sibling project to [*Mojo From First Principles*](https://maximumbeings.github.io/mojo-from-first-principles/), [*Triton From First Principles*](https://maximumbeings.github.io/triton-from-first-principles/), [*CUDA From First Principles*](https://maximumbeings.github.io/cuda-from-first-principles/), [*Rust From First Principles*](https://maximumbeings.github.io/rust-from-first-principles/), and [*CuTile Python From First Principles*](https://maximumbeings.github.io/cutile-python-from-first-principles/).
+    Chapters are written and posted one at a time, in page order, each one carrying real code and honestly labeled output — the same discipline [*CUDA From First Principles*](https://maximumbeings.github.io/cuda-from-first-principles/) is being built with. It is the sixth sibling project in the series:
+
+    - [*Mojo From First Principles*](https://maximumbeings.github.io/mojo-from-first-principles/)
+    - [*Triton From First Principles*](https://maximumbeings.github.io/triton-from-first-principles/)
+    - [*CUDA From First Principles*](https://maximumbeings.github.io/cuda-from-first-principles/)
+    - [*Rust From First Principles*](https://maximumbeings.github.io/rust-from-first-principles/)
+    - [*CuTile Python From First Principles*](https://maximumbeings.github.io/cutile-python-from-first-principles/)
 
 > "The CUDA book asks what a `Tensor` has to be, from nothing, to survive contact with a GPU. This book asks a different question of the same territory: what did the people who actually had to ship one decide? `torch::Tensor` is not a teaching example — it is production code with a decade of hard-won tradeoffs baked into it, and reading it honestly means running it, not just admiring it from a distance."
 
