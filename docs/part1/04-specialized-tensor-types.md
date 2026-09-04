@@ -86,6 +86,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_identity_view.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_identity_view
+./01_identity_view
+```
+
 ```text
 eye(4).numel() = 16, real bytes allocated = 64 (n*n*4, NOT a fixed 4 bytes)
 eye(1000).numel() = 1000000, real bytes allocated = 4000000 (3.8147 MB)
@@ -181,6 +190,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_diagonal_tridiagonal.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_diagonal_tridiagonal
+./02_diagonal_tridiagonal
+```
 
 ```text
 stored floats (sub+main+super) = 13, CUDA book's own expected = 13, match = 1
@@ -310,6 +328,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_sparse_coo.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_sparse_coo
+./03_sparse_coo
+```
+
 ```text
 count after 4 inserts (1 explicit zero skipped) = 3, CUDA book's own expected = 3, match = 1
 sparse._nnz() = 3
@@ -430,6 +457,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_triangular_packing.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_triangular_packing
+./04_triangular_packing
+```
 
 ```text
 buggy_upper_index(0,2) = 2, buggy_upper_index(1,1) = 2, collide? 1 (CUDA book's own expected: both = 2, collide = true)

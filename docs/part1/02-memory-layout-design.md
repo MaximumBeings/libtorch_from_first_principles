@@ -109,6 +109,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_row_col_major_strides.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_row_col_major_strides
+./01_row_col_major_strides
+```
+
 ```text
 row_major.strides() = [12, 4, 1]
 col_major.strides() = [1, 2, 6]
@@ -207,6 +216,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_view_transpose_slice.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_view_transpose_slice
+./02_view_transpose_slice
+```
 
 ```text
 view.sizes() = [3, 4], view.strides() = [4, 1]
@@ -319,6 +337,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_alignment_padding.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_alignment_padding
+./03_alignment_padding
+```
+
 ```text
 sizeof(InterleavedHeader) = 16 (char,int,char,int -- padding after each char)
 sizeof(GroupedHeader) = 12 (int,int,char,char -- padding only at the end)
@@ -429,6 +456,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_broadcast_expand_strides.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_broadcast_expand_strides
+./04_broadcast_expand_strides
+```
 
 ```text
 v.sizes() = [3], v.strides() = [1]

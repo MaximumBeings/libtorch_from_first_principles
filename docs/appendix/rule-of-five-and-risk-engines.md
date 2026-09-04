@@ -67,6 +67,11 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 01_market_quote_default_copy.cpp -o 01_market_quote_default_copy
+./01_market_quote_default_copy
+```
+
 ```text
 sizeof(MarketQuote) = 16 bytes (two doubles, no owned resource of any kind)
 q1 = {bid=100.05, ask=100.1}, mid=100.075, spread=0.05
@@ -147,6 +152,11 @@ int main() {
 ```
 
 Genuinely compiled with `g++ -std=c++17 -Wall -Wextra -fsanitize=address -g` and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -fsanitize=address -g 02_double_free_trap.cpp -o double_free_trap
+./double_free_trap
+```
 
 ```text
 a.paths[0..2] = 0.0 1.0 2.0, a.count = 10
@@ -356,6 +366,11 @@ int main() {
 
 Genuinely compiled with `g++ -std=c++17 -Wall -Wextra -fsanitize=address -g` (one expected `-Wself-move` warning on the deliberate `h = std::move(h)` line, discussed rather than suppressed) and run, ASan-clean:
 
+```bash
+g++ -std=c++17 -Wall -Wextra -fsanitize=address -g 03_rule_of_five_correct_and_guards.cpp -o rule_of_five_correct_and_guards
+./rule_of_five_correct_and_guards
+```
+
 ```text
 copy: a.paths == b.paths? false, a.paths[0]=0.0 (untouched), b.paths[0]=999.0 (mutated)
 move: c.paths == a's own pre-move pointer? true, a.paths after move = (nil) (nulled)
@@ -442,6 +457,11 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 04_rule_of_zero.cpp -o 04_rule_of_zero
+./04_rule_of_zero
+```
 
 ```text
 copy: a.paths.data() == b.paths.data()? false, a.paths[0]=0.0 (untouched), b.paths[0]=999.0
@@ -530,6 +550,11 @@ int main() {
 ```
 
 Genuinely compiled with `g++ -std=c++17 -Wall -Wextra -fsanitize=address -g` and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -fsanitize=address -g 05_copy_and_swap_unsafe_trap.cpp -o copy_and_swap_unsafe_trap
+./copy_and_swap_unsafe_trap
+```
 
 ```text
 injecting a std::bad_alloc into u2 = u1's own copy-assignment allocation...
@@ -643,6 +668,11 @@ int main() {
 
 Genuinely compiled and run, ASan-clean:
 
+```bash
+g++ -std=c++17 -Wall -Wextra -fsanitize=address -g 06_copy_and_swap_safe.cpp -o copy_and_swap_safe
+./copy_and_swap_safe
+```
+
 ```text
 injecting the identical std::bad_alloc into s2 = s1's own copy-assignment...
 caught std::bad_alloc. s2.paths[0]=0.0 (was 0.0), s2.count=8 (was 8) -- COMPLETELY UNCHANGED: the exception happened while building operator='s own by-value parameter, before *this was ever touched at all -- the strong exception guarantee.
@@ -732,6 +762,11 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 07_noexcept_and_reallocation.cpp -o 07_noexcept_and_reallocation
+./07_noexcept_and_reallocation
+```
 
 ```text
 WithNoexcept (move ctor IS noexcept): after forcing reallocation, copy_count=0, move_count=2 -- the 2 pre-existing elements were relocated by MOVING them (safe: a noexcept move can never leave the vector in a corrupted half-moved state)
@@ -842,6 +877,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 08_tensor_rule_of_zero_for_device_memory.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 08_tensor_rule_of_zero_for_device_memory
+./08_tensor_rule_of_zero_for_device_memory
+```
+
 ```text
 a.paths.use_count() right after construction = 1
 copy: a.paths.data_ptr() == b.paths.data_ptr()? 1 (SHARED storage, unlike Section G.3's own deep copy), use_count now = 2 (both a and b's own handles reference the identical storage)
@@ -939,6 +983,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 09_value_at_risk.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 09_value_at_risk
+./09_value_at_risk
+```
 
 ```text
 1-day GBM P&L, S0=100, mu=0.03, sigma=0.2, 200000 paths, real torch::randn (manual_seed 42), Chapter 22.1's own vectorized closed-form GBM step:
@@ -1072,6 +1125,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 10_xva_and_variants.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 10_xva_and_variants
+./10_xva_and_variants
+```
 
 ```text
 quarterly exposure profile, forward contract, S0=100, K=100, mu=0.03, sigma=0.2, 200000 paths:

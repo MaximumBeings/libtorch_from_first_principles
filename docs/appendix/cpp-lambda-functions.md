@@ -77,6 +77,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_anatomy_of_a_lambda.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_anatomy_of_a_lambda
+./01_anatomy_of_a_lambda
+```
+
 ```text
 add_explicit(3, 4) = 7 (explicit trailing return type -> int)
 add_deduced(3, 4)  = 7 (deduced return type, identical result)
@@ -158,6 +167,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 02_lambda_is_a_real_object.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_lambda_is_a_real_object
+./02_lambda_is_a_real_object
+```
 
 ```text
 sizeof(captures_nothing) = 1 bytes (captures no state -- the smallest a lambda's own closure object can be, still nonzero: every C++ object has at least size 1)
@@ -258,6 +276,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 03_capture_clause_in_full.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_capture_clause_in_full
+./03_capture_clause_in_full
+```
+
 ```text
 p=10, q=20 initially. mixed(5) = 35 (p captured BY VALUE, q captured BY REFERENCE)
   after the call: p = 10 (unchanged, it was only a copy), q = 25 (genuinely mutated, since mixed held a real reference to it)
@@ -343,6 +370,11 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 04_mutable_and_const_by_default.cpp -o 04_mutable_and_const_by_default
+./04_mutable_and_const_by_default
+```
 
 ```text
 the broken version above (captured by value, no mutable) fails to compile with a real, genuine g++ error: "increment of read-only variable 'counter'" -- confirmed by actually compiling that exact snippet separately in this sandbox.
@@ -438,6 +470,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 05_generalized_init_capture.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_generalized_init_capture
+./05_generalized_init_capture
+```
 
 ```text
 make_momentum_smoother(0.9), the same gradient tensor {1,2,3} applied 3 times in a row:
@@ -537,6 +578,11 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 06_lambdas_as_comparators_and_predicates.cpp -o 06_lambdas_as_comparators_and_predicates
+./06_lambdas_as_comparators_and_predicates
+```
+
 ```text
 spreads (bp): 52 21 88 13 95 34 
 
@@ -614,6 +660,11 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 07_std_function_and_type_erasure.cpp -o 07_std_function_and_type_erasure
+./07_std_function_and_type_erasure
+```
 
 ```text
 three lambdas of three genuinely different compiler-synthesized types (Section F.2's own finding), all stored in one std::vector<std::function<int(int)>>, each applied to x = 7:

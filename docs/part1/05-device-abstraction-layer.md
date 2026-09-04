@@ -135,6 +135,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_device_discovery.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_device_discovery
+./01_device_discovery
+```
+
 ```text
 mgr.cuda_available = 0
 mgr.device_count = 0
@@ -277,6 +286,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_device_aware_allocator.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_device_aware_allocator
+./02_device_aware_allocator
+```
 
 ```text
 alloc.device_available = 0

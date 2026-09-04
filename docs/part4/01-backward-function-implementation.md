@@ -127,6 +127,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_chain_rule_elementwise.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_chain_rule_elementwise
+./01_chain_rule_elementwise
+```
+
 ```text
 w = 15.000000, CUDA book's own expected = 15.0, match = 1
 x.grad = 5.000000, CUDA book's own expected = 5.0 (=y+1), match = 1
@@ -228,6 +237,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_matmul_gradients.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_matmul_gradients
+./02_matmul_gradients
+```
 
 ```text
 Y = X @ M =
@@ -384,6 +402,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_algebraic_gradients.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_algebraic_gradients
+./03_algebraic_gradients
+```
+
 ```text
 sub: c=a-b=3.000000, grad_a=1.000000, grad_b=-1.000000, CUDA book's own expected c=3.0,grad_a=1,grad_b=-1, match = 1
 div: c=a/b=1.600000, grad_a=0.200000, grad_b=-0.320000, CUDA book's own expected c=1.6,grad_a=0.2,grad_b=-0.32, match (to float32 precision) = 1
@@ -496,6 +523,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_activation_trig_gradients.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_activation_trig_gradients
+./04_activation_trig_gradients
+```
 
 ```text
 x =
@@ -648,6 +684,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 05_reduction_shape_gradients.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_reduction_shape_gradients
+./05_reduction_shape_gradients
+```
+
 ```text
 sum(x) = 30.000000, grad =
  1
@@ -791,6 +836,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 06_custom_function.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 06_custom_function
+./06_custom_function
+```
 
 ```text
 x (bisection-solved sqrt(2.0)) = 1.4142136, CUDA book's own expected ~1.4142136, match (to 6 dp) = 1

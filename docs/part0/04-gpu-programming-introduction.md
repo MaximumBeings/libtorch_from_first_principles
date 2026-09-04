@@ -94,6 +94,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment (this sandbox has 2 CPU cores; the exact millisecond figures are wall-clock timing and, per this book's stated methodology, not treated as byte-reproducible — the boolean claim is):
 
+```bash
+g++ -std=c++20 -O2 01_thread_pool.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_thread_pool
+./01_thread_pool
+```
+
 ```text
 torch::get_num_threads() (default) = 2
 trial 0: 1 thread = 1118.52 ms, 2 threads = 754.749 ms, multi_faster = true
@@ -175,6 +184,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_data_ptr_identity.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_data_ptr_identity
+./02_data_ptr_identity
+```
 
 ```text
 t.device() = cpu
@@ -300,6 +318,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment (millisecond figures are wall-clock timing, treated per this book's methodology as a boolean-threshold claim, not an exact reproducible figure):
 
+```bash
+g++ -std=c++20 -O2 03_coalescing_transpose.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_coalescing_transpose
+./03_coalescing_transpose
+```
+
 ```text
 m.strides() = [4000, 1], m.is_contiguous() = 1
 col_view.strides() = [4000], col_view.is_contiguous() = 0
@@ -386,6 +413,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 04_broadcasting_semantics.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_broadcasting_semantics
+./04_broadcasting_semantics
+```
+
 ```text
 a.sizes() = [4], scalar.sizes() = [], (a + scalar).sizes() = [4]
 a + scalar =  11
@@ -468,6 +504,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 05_matmul_dot_products.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_matmul_dot_products
+./05_matmul_dot_products
+```
 
 ```text
 A =  1  2

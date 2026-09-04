@@ -84,6 +84,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_refcounted_tensor.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_refcounted_tensor
+./01_refcounted_tensor
+```
+
 ```text
 after construction: original.use_count() = 1, CUDA book's own expected = 1, match = 1
 after copy construction: original.use_count() = 2, CUDA book's own expected = 2, match = 1
@@ -194,6 +203,13 @@ int main() {
 ```
 
 Genuinely compiled two separate ways and run in this book's environment -- once as an ordinary debug build, once with `-DNDEBUG`:
+
+```bash
+g++ -std=c++20 -O2 02_arena_allocator.cpp -o arena_allocator_debug
+g++ -std=c++20 -O2 -DNDEBUG 02_arena_allocator.cpp -o arena_allocator_release
+./arena_allocator_debug
+./arena_allocator_release
+```
 
 ```text
 first request (100 floats = 400 bytes): (0+255)&~255 = 0, CUDA book's own expected = 0, match = 1
@@ -342,6 +358,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_memory_pool.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_memory_pool
+./03_memory_pool
+```
+
 ```text
 step 1: acquire(256) -> fresh. bytes_allocated=1024, bytes_reused=0, CUDA book's own expected: allocated=1024, reused=0, match=1
 step 2: acquire(256) -> reused (p2==p1)? 1. bytes_allocated=1024, bytes_reused=1024, CUDA book's own expected: allocated=1024, reused=1024, match=1
@@ -451,6 +476,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_double_release_bug.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_double_release_bug
+./04_double_release_bug
+```
 
 ```text
 free_lists[128] now holds 2 entries after double-releasing ONE real pointer, CUDA book's own expected = 2, match = 1

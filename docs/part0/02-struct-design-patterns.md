@@ -85,6 +85,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 probe_options.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o probe_options
+./probe_options
+```
+
 ```text
 sizeof(torch::TensorOptions) = 8
 default opts1.has_dtype() = 0
@@ -164,6 +173,15 @@ int main() {
 ```
 
 Genuinely compiled (with `-O0`, so the compiler doesn't inline `accessor_sum` away before `nm` can see it) and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_accessor_templates.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_accessor_templates
+./02_accessor_templates
+```
 
 ```text
 accessor_sum<float,1>(float_t) = 10
@@ -264,6 +282,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_raii_allocator.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_raii_allocator
+./03_raii_allocator
+```
+
 ```text
 entering scoped_demo
   HostBuffer(100) constructed -> allocated via c10::GetCPUAllocator(), non-null: 1
@@ -352,6 +379,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_crtp_vs_virtual.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_crtp_vs_virtual
+./04_crtp_vs_virtual
+```
 
 ```text
 sizeof(torch::nn::Module) = 408

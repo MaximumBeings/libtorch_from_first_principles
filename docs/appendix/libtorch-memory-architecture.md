@@ -76,6 +76,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_memory_hierarchy_query.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_memory_hierarchy_query
+./01_memory_hierarchy_query
+```
+
 ```text
 a real torch::Tensor's own memory-hierarchy surface, as seen by ordinary LibTorch code (no custom CUDA kernel involved):
   t.device() = cpu (the ONE placement decision a LibTorch programmer makes directly -- everything below this, in a real op, is chosen by ATen's own kernel dispatch, not by this code)
@@ -182,6 +191,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 02_inplace_vs_allocation.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_inplace_vs_allocation
+./02_inplace_vs_allocation
+```
+
 ```text
 unfused, out-of-place: relu(a*b+c) computed as three separate steps:
   (a*b) got a genuinely NEW allocation (different data_ptr from both a and b)? 1
@@ -286,6 +304,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 03_contiguity_stride_penalty.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_contiguity_stride_penalty
+./03_contiguity_stride_penalty
+```
+
 ```text
 t.is_contiguous() = 1, t.strides() = [6000, 1]
 t.t().is_contiguous() = 0, t.t().strides() = [1, 6000] (a real VIEW -- SAME underlying storage as t, t.data_ptr() == t.t().data_ptr()? 1, just addressed with swapped strides)
@@ -380,6 +407,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 04_broadcast_expand_vs_repeat.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_broadcast_expand_vs_repeat
+./04_broadcast_expand_vs_repeat
+```
 
 ```text
 small.unsqueeze(0).expand({1000, 3}): logical shape = [1000, 3], but small.storage().nbytes() = 12 bytes, expanded.storage().nbytes() = 12 bytes (SAME storage, no duplication -- confirmed via data_ptr() equality: 1)
@@ -505,6 +541,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 05_host_device_and_access_patterns.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_host_device_and_access_patterns
+./05_host_device_and_access_patterns
+```
+
 ```text
 torch::cuda::is_available() = 0
 host_tensor.pin_memory() genuinely FAILED in this GPU-less sandbox, real caught exception (not fabricated), first line: "Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx" -- exactly the honest failure mode this book has reported since Chapter 18 for anything requiring real CUDA hardware; pinned memory exists to speed up a host<->device transfer, and there is no device to transfer to here at all.
@@ -609,6 +654,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 06_cpu_thread_pool_execution_model.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 06_cpu_thread_pool_execution_model
+./06_cpu_thread_pool_execution_model
+```
+
 ```text
 torch::get_num_threads() (this sandbox's own real, default intra-op CPU thread pool size) = 2
 
@@ -706,6 +760,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 07_fp16_matmul_tensor_cores.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 07_fp16_matmul_tensor_cores
+./07_fp16_matmul_tensor_cores
+```
 
 ```text
 real torch::matmul(A, B), A=16x16 fp16 identity, B[i][j]=i*16+j (fp16): torch::equal(C, B) (exact match, not merely allclose)? 1

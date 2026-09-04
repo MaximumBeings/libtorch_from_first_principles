@@ -100,6 +100,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_registry_dispatch.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_registry_dispatch
+./01_registry_dispatch
+```
+
 ```text
 d(x*y)/dx at x=3,y=4 = 4, CUDA book's own expected = 4.0 (=y), match = 1
 d(x*y)/dy at x=3,y=4 = 3, CUDA book's own expected = 3.0 (=x), match = 1
@@ -207,6 +216,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 02_graph_nodes.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_graph_nodes
+./02_graph_nodes
+```
+
 ```text
 z (Node #0) = 12, op_name (real grad_fn name) = MulBackward0
 matches CUDA book's own Node #0: op=mul, output=12.0? 1
@@ -305,6 +323,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 03_gating_rule.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_gating_rule
+./03_gating_rule
+```
 
 ```text
 both requires_grad=true: z.grad_fn() present = 1, CUDA book's own 'ANY input requires_grad' rule predicts = 1, match = 1
@@ -415,6 +442,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_topological_order.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_topological_order
+./04_topological_order
+```
 
 ```text
 a.grad = 5, hand-derived expected = 5.0 (=b+1, from d(a*b+a)/da), match = 1

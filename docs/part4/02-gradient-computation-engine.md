@@ -100,6 +100,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_grad_table_identity.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_grad_table_identity
+./01_grad_table_identity
+```
+
 ```text
 x and x_copy share the same underlying TensorImpl (same data_ptr, before any computation)? 1
 
@@ -250,6 +259,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 02_accumulation_broadcast.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_accumulation_broadcast
+./02_accumulation_broadcast
+```
+
 ```text
 single-use: x.grad() (x used only in x*y) = 4.000000, CUDA book's own local mul-only expected = 4.0 (=y), match = 1
   x's own leaf hook fired 1 time(s), with the FINAL accumulated value = 5.000000
@@ -382,6 +400,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_graph_lifetime.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_graph_lifetime
+./03_graph_lifetime
+```
+
 ```text
 first backward() succeeded, x.grad() = 5
 second backward() on the same (already-discarded) graph, with no retain_graph, threw a real error? 1 (matches the CUDA book's own single-use graph design)
@@ -504,6 +531,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_saved_tensor_refs.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_saved_tensor_refs
+./04_saved_tensor_refs
+```
 
 ```text
 control: use_count() with requires_grad=false on both operands, before add = 1, after add = 1 (no autograd bookkeeping exists at all here, so no change expected)

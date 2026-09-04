@@ -80,6 +80,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_cpu_pipeline_boxes_queried_live.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_cpu_pipeline_boxes_queried_live
+./01_cpu_pipeline_boxes_queried_live
+```
+
 ```text
 This sandbox's own CPU 'pipeline' boxes, queried live via sysconf() and LibTorch's own torch::get_num_threads():
   Control / instruction fetch-decode : no LibTorch-level query exists -- entirely below this book's own level of visibility, same as it is for a CUDA kernel author reasoning about a warp scheduler from source code
@@ -186,6 +195,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 02_real_cache_latency_curve.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_real_cache_latency_curve
+./02_real_cache_latency_curve
+```
 
 ```text
 a genuine pointer-chase latency benchmark, run directly on this sandbox's own CPU (the cache sizes above are this sandbox's own real, queried figures from Section E.1):
@@ -300,6 +318,11 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 03_tiling_factor_counted_exactly.cpp -o 03_tiling_factor_counted_exactly
+./03_tiling_factor_counted_exactly
+```
+
 ```text
 naive: 221184 total global reads (closed form N^2*K*2 = 221184, exact match)
 TILE_WIDTH=4: 55296 tiled reads, ratio=4.0000
@@ -407,6 +430,11 @@ int main() {
 
 Genuinely compiled with `g++ -std=c++17 -Wall -Wextra`, no CUDA toolchain required, no LibTorch linkage required either -- this program, like the CUDA book's own reference implementation, is pure host C++:
 
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 03_tiling_factor_counted_exactly.cpp -o 03_tiling_factor_counted_exactly
+./03_tiling_factor_counted_exactly
+```
+
 ```text
 naive: 221184 total global reads (closed form N^2*K*2 = 221184, exact match)
 TILE_WIDTH=4: 55296 tiled reads, ratio=4.0000
@@ -494,6 +522,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 04_real_matmul_payoff.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_real_matmul_payoff
+./04_real_matmul_payoff
+```
 
 ```text
 256x256 matmul, hand-written naive triple-loop C++ (the exact read pattern Section E.3's own simulate_naive() counts) versus a real torch::matmul() call:

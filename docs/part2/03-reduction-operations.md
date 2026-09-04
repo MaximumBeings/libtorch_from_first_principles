@@ -87,6 +87,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_sum_mean.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_sum_mean
+./01_sum_mean
+```
+
 ```text
 sum([1,4,9,16]) = 30, CUDA book's own expected = 30, match = 1
 mean([1,4,9,16]) = 7.5, CUDA book's own expected = 7.5, match = 1
@@ -191,6 +200,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 02_max_argmax.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_max_argmax
+./02_max_argmax
+```
+
 ```text
 max([3,7,2,9]) = 9 at index 3, CUDA book's own expected = 9.0 at index 3, match = 1
 
@@ -287,6 +305,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 03_norm_clipping.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_norm_clipping
+./03_norm_clipping
+```
 
 ```text
 norm([3,4]) = 5, CUDA book's own expected = 5.0, match = 1
@@ -397,6 +424,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_statistics.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_statistics
+./04_statistics
+```
 
 ```text
 mean([2,4,4,4,5,5,7,9]) = 5, CUDA book's own expected = 5.0, match = 1

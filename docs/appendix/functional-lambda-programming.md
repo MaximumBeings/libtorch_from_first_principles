@@ -92,6 +92,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_ordinary_lambdas_no_restrictions.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_ordinary_lambdas_no_restrictions
+./01_ordinary_lambdas_no_restrictions
+```
+
 ```text
 an ordinary, unannotated C++ lambda: square(5.0) = 25
 a lambda capturing a real variable BY REFERENCE (this alone is a genuine, categorical compile-time REJECTION for a CUDA extended __device__/__host__ __device__ lambda, per Section D.4's own reported restriction): add_bias(5.0) = 15
@@ -222,6 +231,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 02_generic_functions_and_functors.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_generic_functions_and_functors
+./02_generic_functions_and_functors
+```
+
 ```text
 input: 1, 2, 3, 4, 5
 squared (lambda [](float x){ return x*x; }): 1, 4, 9, 16, 25
@@ -334,6 +352,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 03_generic_reduction_vs_tensor_ops.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_generic_reduction_vs_tensor_ops
+./03_generic_reduction_vs_tensor_ops
+```
 
 ```text
 reduce_all<double>(data, op) over {3, 7, 1, 9, 4, 2, 8, 5}, four different binary-op lambdas handed to the identical generic reduce_all<T, Op> body (the CUDA book's own Section D.6 pattern, here as an ordinary host template<T, Op> function, no reduce_kernel launch anywhere):
@@ -456,6 +483,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 04_std_function_real_non_failure.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_std_function_real_non_failure
+./04_std_function_real_non_failure
+```
+
 ```text
 std::function<void()> wrapping torch::matmul(a, b) (500x500), passed by reference into an ordinary host time_op_ms(const std::function<void()>&, int) helper -- the same pattern Chapter 19's Benchmark::time_function and Appendix C's time_op_ms already use throughout this book: compiled and ran with zero issues.
 [TIMING] mean time per call over 20 reps: 1.97501 ms
@@ -558,6 +594,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 05_composing_lambdas.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_composing_lambdas
+./05_composing_lambdas
+```
 
 ```text
 compose(f, g) := an ordinary auto-returning template<F,G> function returning a lambda that computes f(g(x)) -- the CUDA book's own Section D.8 reports this exact construct genuinely FAILS to compile as an extended __device__ lambda ('the enclosing function ... must not have a deduced return type'), forcing a hand-written Composed<F,G> functor workaround instead. Ordinary host C++, as used throughout this book, has no such restriction -- this file's own compose(f, g) is the literal auto-returning version, compiled and run with zero workaround.
@@ -740,6 +785,15 @@ int main(int argc, char** argv) {
 
 Genuinely compiled (the ordinary compile line used throughout this book) and run with no arguments:
 
+```bash
+g++ -std=c++20 -O2 06_capture_value_vs_reference_and_asan_bug.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o capture_value_vs_reference_plain
+./capture_value_vs_reference_plain
+```
+
 ```text
 Section 1 -- snapshot (by value) vs live (by reference) capture:
   counter = 10 initially. snapshot() = 10, live() = 10
@@ -765,6 +819,15 @@ Section 5 (skipped in this run -- pass --trigger-dangling to a build compiled wi
 ```
 
 **Worked Example D.6.2.** The identical, unmodified source file, compiled a second time with `-fsanitize=address -g`, run with `--trigger-dangling`: `make_dangling_closure()`'s own returned closure is called, reading a destroyed stack frame -- a genuine `stack-use-after-return`, caught and reported by AddressSanitizer, which aborts the process with exit code 1. Only the report's own stable, address-free summary line is locked below; the full report (genuinely produced on every run) additionally includes real memory addresses and a real process ID that, correctly, differ on every single run, for the identical reason Appendix C.5's own `pin_memory()` exception message locks only its first line.
+
+```bash
+g++ -std=c++20 -fsanitize=address -g -O0 06_capture_value_vs_reference_and_asan_bug.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o capture_value_vs_reference_asan
+./capture_value_vs_reference_asan --trigger-dangling
+```
 
 ```text
 SUMMARY: AddressSanitizer: stack-use-after-return /home/claude/appendixD/06_capture_value_vs_reference_and_asan_bug.cpp:116 in operator()

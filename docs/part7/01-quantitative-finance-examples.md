@@ -172,6 +172,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_bond_pricing_soa.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_bond_pricing_soa
+./01_bond_pricing_soa
+```
+
 ```text
 Worked Example 22.1.1 -- first three bonds of the deterministic 1024-bond portfolio:
   bond 0: face=1000.000000, t=0.250000, risk_free=0.020000, spread=0.001000, yield=0.021000, PV=994.7638
@@ -320,6 +329,11 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 02_zspread_bisection.cpp -o 02_zspread_bisection
+./02_zspread_bisection
+```
+
 ```text
 Worked Example 22.2.1: 2-year, quarterly-coupon bond, coupon_rate=risk_free=3%, market price=$98.00, face=$100.00.
   quarterly coupon = 0.750000, 8 total coupons = 6.000000, + face = 106.000000 undiscounted
@@ -461,6 +475,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 03_portfolio_duration.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_portfolio_duration
+./03_portfolio_duration
+```
 
 ```text
 Worked Example 22.3.1: bonds A ($400, 2yr), B ($350, 5yr), C ($250, 10yr):
@@ -704,6 +727,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 04_monte_carlo_gbm.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_monte_carlo_gbm
+./04_monte_carlo_gbm
+```
 
 ```text
 Worked Example 22.4.1 -- 5 hand-specified terminal prices, S0=100, K=100, r=3%, T=1:

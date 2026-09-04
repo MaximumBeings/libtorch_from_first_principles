@@ -115,6 +115,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_launch_configuration.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_launch_configuration
+./01_launch_configuration
+```
+
 ```text
 torch::cuda::is_available() in this sandbox = 0 (no NVIDIA GPU or CUDA toolkit present -- every claim below is pure host-side arithmetic, genuinely computed, with NO kernel actually launched anywhere in this chapter; any claim requiring real GPU execution is explicitly tagged [UNVERIFIED -- pending real-GPU test] rather than fabricated)
 
@@ -292,6 +301,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_memory_layout_aos_soa.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_memory_layout_aos_soa
+./02_memory_layout_aos_soa
+```
 
 ```text
 sizeof(ZeroCouponBondAoS) = 32, CUDA book's own claimed struct size = 32 bytes, match = 1
@@ -481,6 +499,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_shared_memory_tiling.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_shared_memory_tiling
+./03_shared_memory_tiling
+```
+
 ```text
 naive kernel: total simulated global reads = 36, CUDA book's own expected = 36 (4 outputs x 9 taps), match = 1
 naive output = [[30,35],[50,55]], CUDA book's own expected = [[30,35],[50,55]], match = 1
@@ -659,6 +686,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_warp_reduction_and_identity_trap.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_warp_reduction_and_identity_trap
+./04_warp_reduction_and_identity_trap
+```
 
 ```text
 round 1 (offset=4): lane 0 = 6, lane 1 = 8.000000

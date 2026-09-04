@@ -127,6 +127,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_simd_vectorization_arithmetic.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_simd_vectorization_arithmetic
+./01_simd_vectorization_arithmetic
+```
+
 ```text
 size=10, width=4: simd_count=8, vector_instructions=2, scalar_instructions=2, total_instructions=4 (scalar-only baseline=10)
 matches CUDA book's own Worked Example 19.1.1 (simd_count=8, vector=2, scalar=2, total=4)? 1
@@ -403,6 +412,15 @@ int main() {
 
 Genuinely compiled and run (the `[TIMING]`-adjacent line's own millisecond figures are this sandbox's own, and vary slightly run to run; every structural count and boolean check above them is exact and reproducible):
 
+```bash
+g++ -std=c++20 -O2 02_unrolling_and_fusion.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_unrolling_and_fusion
+./02_unrolling_and_fusion
+```
+
 ```text
 size=1000, UNROLL=4 (evenly divisible):
   plain loop:    1000 loop-control events, 1000 arithmetic ops
@@ -529,6 +547,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 03_compile_time_specialization.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_compile_time_specialization
+./03_compile_time_specialization
+```
 
 ```text
 compile_time_specialized_dot<4>([1,2,3,4], [5,6,7,8]) = 70 (expected 1*5+2*6+3*7+4*8 = 70)
@@ -693,6 +720,15 @@ int main() {
 ```
 
 Genuinely compiled and run (again, every `[TIMING]` line's own numeric value is this sandbox's own measurement from this specific run, and will vary slightly on a fresh rerun; every structural fact and boolean check is exact):
+
+```bash
+g++ -std=c++20 -O2 04_benchmark_harness_and_bandwidth.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_benchmark_harness_and_bandwidth
+./04_benchmark_harness_and_bandwidth
+```
 
 ```text
 vector_add_workload over 2000000 elements, 5 warmup + 20 timed runs:

@@ -209,6 +209,11 @@ int main() {
 
 Compiled the same two ways as Section 5.2. The vectorized build's main accumulation loop:
 
+```bash
+g++ -std=c++20 -O3 -march=native 02_reduction_vectorized.cpp -o reduction_vectorized
+g++ -std=c++20 -O2 -fno-tree-vectorize 02_reduction_vectorized.cpp -o reduction_scalar
+```
+
 ```text
     14e0:	c5 fe 6f 00          	vmovdqu (%rax),%ymm0
     14e4:	48 83 c0 20          	add    $0x20,%rax
@@ -307,6 +312,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_predicate_bitmask.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_predicate_bitmask
+./03_predicate_bitmask
+```
+
 ```text
 values[0:5] =  0
  1
@@ -396,6 +410,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_half_packing.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_half_packing
+./04_half_packing
+```
 
 ```text
 sum1 = 11.5, sum2 = 22.5

@@ -167,6 +167,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_tensor_indexing.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_tensor_indexing
+./01_tensor_indexing
+```
+
 ```text
 shape  = [2, 3, 4]
 strides = [12, 4, 1]
@@ -400,6 +409,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 02_generic_contraction.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_generic_contraction
+./02_generic_contraction
+```
+
 ```text
 A [3x2]:
   [1, 2]
@@ -606,6 +624,11 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 03_double_contraction.cpp -o 03_double_contraction
+./03_double_contraction
+```
 
 ```text
 A.shape = [2, 3, 4]
@@ -851,6 +874,11 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 04_shape_mismatch_trap.cpp -o 04_shape_mismatch_trap
+./04_shape_mismatch_trap
+```
+
 ```text
 A.shape = [3, 2], B.shape = [4, 5]
 requesting contract(A, {1}, B, {0}): axis sizes 2 vs 4 -- mismatched
@@ -1014,6 +1042,11 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 05_loop_order_performance.cpp -o 05_loop_order_performance
+./05_loop_order_performance
+```
 
 ```text
 N-by-N naive matmul, ijk order vs. ikj order (same FLOPs, same exact result):

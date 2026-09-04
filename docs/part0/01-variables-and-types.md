@@ -56,6 +56,11 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_stack_types.cpp -o 01_stack_types
+./01_stack_types
+```
+
 ```text
 x = 42, sizeof(int) = 4
 y = 3.141590, sizeof(float) = 4
@@ -131,6 +136,11 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_auto_inference.cpp -o 02_auto_inference
+./02_auto_inference
+```
 
 ```text
 a=10 (sizeof 4)
@@ -235,6 +245,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 03_device_runtime_tag.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_device_runtime_tag
+./03_device_runtime_tag
+```
+
 ```text
 t.device() = cpu
 t.device().type() == torch::kCPU: true
@@ -293,6 +312,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 04_specialized_scalar_types.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_specialized_scalar_types
+./04_specialized_scalar_types
+```
 
 ```text
 sizeof(float) = 4, alignof(float) = 4

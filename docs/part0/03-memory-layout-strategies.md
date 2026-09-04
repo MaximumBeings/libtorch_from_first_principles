@@ -80,6 +80,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 01_bus_utilization.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_bus_utilization
+./01_bus_utilization
+```
+
 ```text
 sizeof(Particle) = 28 bytes
 AoS: 28000 bytes moved, 16000 useful -> 57.1% utilization
@@ -157,6 +166,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 02_tensor_aos_vs_soa.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_tensor_aos_vs_soa
+./02_tensor_aos_vs_soa
+```
 
 ```text
 aos.sizes() = [4, 7], aos.strides() = [7, 1]
@@ -242,6 +260,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment (one representative run — see the note below on why the millisecond figures themselves are not the claim):
 
+```bash
+g++ -std=c++20 -O2 03_timing_benchmark.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_timing_benchmark
+./03_timing_benchmark
+```
+
 ```text
 N = 2000000, reps per trial = 50, trials = 7
 aos_vx_view.is_contiguous() = 0, vx.is_contiguous() = 1
@@ -317,6 +344,15 @@ int main() {
 
 Genuinely compiled and run in this book's environment:
 
+```bash
+g++ -std=c++20 -O2 04_kinetic_energy_cross_check.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_kinetic_energy_cross_check
+./04_kinetic_energy_cross_check
+```
+
 ```text
 AoS kinetic energy = 49.500000
 SoA kinetic energy = 49.500000
@@ -388,6 +424,15 @@ int main() {
 ```
 
 Genuinely compiled and run in this book's environment:
+
+```bash
+g++ -std=c++20 -O2 05_no_native_aos.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_no_native_aos
+./05_no_native_aos
+```
 
 ```text
 std::vector<Particle> has no .dtype() -- it's not a tensor concept at all

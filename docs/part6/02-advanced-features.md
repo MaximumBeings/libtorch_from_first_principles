@@ -196,6 +196,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_custom_autograd_implicit_function.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_custom_autograd_implicit_function
+./01_custom_autograd_implicit_function
+```
+
 ```text
 bond: 5-year, 3% base rate, $5 annual coupon, $100 face. Bisection solves for the spread that reprices this bond to target_price=$98:
   solved spread = 0.0246794, in 42 bisection iterations (no autograd involved in this loop at all)
@@ -369,6 +378,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 02_higher_order_derivatives.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_higher_order_derivatives
+./02_higher_order_derivatives
+```
 
 ```text
 g(x)=x^3 at x=2: g'(2) (first backward, create_graph=true) = 12, CUDA book's own expected 12, match? 1
@@ -549,6 +567,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 03_model_serialization.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_model_serialization
+./03_model_serialization
+```
+
 ```text
 hand-rolled format: [count(int64)] then per-tensor [rows(int64) cols(int64) data(float*)]. W1[3,2], W2[2,1] serialize to 72 bytes, CUDA book's own expected 72 bytes, match? 1
   byte layout: offset 0-8 count=2, offset 8-16 W1.rows=3, offset 16-24 W1.cols=2, offset 24-48 W1.data (6 floats), offset 48-56 W2.rows=2, offset 56-64 W2.cols=1, offset 64-72 W2.data (2 floats) -- matches the CUDA book's own exact byte layout.
@@ -683,6 +710,15 @@ int main() {
 
 Genuinely compiled and run, plain build (no `-DNDEBUG`, `assert()` active and enforcing):
 
+```bash
+g++ -std=c++20 -O2 04_debugging_gradient_checks.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o debugging_gradient_checks_plain
+./debugging_gradient_checks_plain
+```
+
 ```text
 gradient check (double precision): f(x)=sin(x)*x^2 at x=1.5. real autograd grad = 3.15164, central finite difference (eps=1e-6) = 3.15164, absolute difference = 1.85106e-10
   within 1e-8 (double precision finite difference genuinely agrees with real autograd to near machine precision)? 1
@@ -695,6 +731,15 @@ NDEBUG is NOT defined for this build: assert() is active and enforcing below.
 ```
 
 The identical source file, recompiled with `-DNDEBUG` added to the compile line (`assert()` compiles to a complete no-op) and rerun from scratch:
+
+```bash
+g++ -std=c++20 -O2 -DNDEBUG 04_debugging_gradient_checks.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o debugging_gradient_checks_ndebug
+./debugging_gradient_checks_ndebug
+```
 
 ```text
 gradient check (double precision): f(x)=sin(x)*x^2 at x=1.5. real autograd grad = 3.15164, central finite difference (eps=1e-6) = 3.15164, absolute difference = 1.85106e-10
@@ -813,6 +858,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 05_flash_attention_online_softmax.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_flash_attention_online_softmax
+./05_flash_attention_online_softmax
+```
 
 ```text
 full attention (all 4 keys processed at once, the [1,4] score matrix fully materialized): scores= 0.5774  0.2887  0.2887 -0.8660
@@ -957,6 +1011,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 06_mixture_of_experts.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 06_mixture_of_experts
+./06_mixture_of_experts
+```
+
 ```text
 4 experts, each Linear(4,3): 15 parameters per expert, 60 TOTAL parameters across all 4 experts (whether or not a given input uses them).
 
@@ -1087,6 +1150,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 07_multi_head_latent_attention.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 07_multi_head_latent_attention
+./07_multi_head_latent_attention
+```
 
 ```text
 token representation dim=8, compressed to a single cached latent of dim=3 (this is the ONLY thing stored per token, regardless of how many attention heads will later read from it): cached_latent=-0.4620 -0.1191 -0.6123

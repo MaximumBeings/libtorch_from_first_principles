@@ -118,6 +118,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_linear_layer_init.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_linear_layer_init
+./01_linear_layer_init
+```
+
 ```text
 He (kaiming_normal_, nonlinearity=relu) init over fan_in=1000: empirical std = 0.0448869, CUDA book's own formula std=sqrt(2/fan_in) = 0.0447214, within 10% relative tolerance? 1
 
@@ -231,6 +240,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 02_activations_and_derivatives.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_activations_and_derivatives
+./02_activations_and_derivatives
+```
 
 ```text
 relu(0) = 0, real autograd grad at x=0 = 0, CUDA book's own hand-derived formula (x>0?1:0) at x=0 = 0, autograd matches hand formula? 1
@@ -362,6 +380,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 03_mse_loss_scale_trap.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_mse_loss_scale_trap
+./03_mse_loss_scale_trap
+```
 
 ```text
 compute_mse_loss([0.8,0.3], [1.0,0.0]) = (1/2) * ((0.8-1.0)^2 + (0.3-0.0)^2) = 0.065, CUDA book's own expected 0.065, match? 1
@@ -506,6 +533,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 04_two_layer_forward_backward.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 04_two_layer_forward_backward
+./04_two_layer_forward_backward
+```
 
 ```text
 Forward pass (real torch:: ops): Z1= 0.1000  0.9000  0.8500
@@ -724,6 +760,15 @@ int main() {
 ```
 
 Genuinely compiled and run (both `torch::manual_seed(42)` for weight init and `std::mt19937 data_rng(123)` for data generation are fixed seeds, so this specific run is fully deterministic on this sandbox -- rerunning it reproduces these exact numbers):
+
+```bash
+g++ -std=c++20 -O2 05_metrics_and_full_training.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 05_metrics_and_full_training
+./05_metrics_and_full_training
+```
 
 ```text
 Worked Example 20.5.1: tp=3, tn=2, fp=1, fn=1 (7 samples):

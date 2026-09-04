@@ -114,6 +114,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 01_dispatch_and_device_query.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 01_dispatch_and_device_query
+./01_dispatch_and_device_query
+```
+
 ```text
 torch::cuda::is_available() = false
 torch::cuda::device_count()  = 0
@@ -251,6 +260,15 @@ int main() {
 
 Genuinely compiled and run:
 
+```bash
+g++ -std=c++20 -O2 02_tiling_payoff_revisited.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 02_tiling_payoff_revisited
+./02_tiling_payoff_revisited
+```
+
 ```text
 M=37, K=23, N=19 (K is not a multiple of any particular tile width -- the CUDA edition's own I.2 boundary case)
 naive triple-loop matmul vs. torch::matmul(): results agree (torch::allclose)? 1
@@ -380,6 +398,15 @@ int main() {
 ```
 
 Genuinely compiled and run:
+
+```bash
+g++ -std=c++20 -O2 03_multi_axis_same_code.cpp \
+    -I"$TORCH_DIR/include" -I"$TORCH_DIR/include/torch/csrc/api/include" \
+    -D_GLIBCXX_USE_CXX11_ABI=1 -L"$TORCH_DIR/lib" \
+    -ltorch -ltorch_cpu -lc10 -Wl,-rpath,"$TORCH_DIR/lib" \
+    -o 03_multi_axis_same_code
+./03_multi_axis_same_code
+```
 
 ```text
 running on device: cpu
